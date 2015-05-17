@@ -264,7 +264,8 @@ Cuoci, A., Frassoldati, A., Faravelli, T., Ranzi E.,
 OpenSMOKE++: An object-oriented framework for the numerical modeling of
  reactive systems with detailed kinetic mechanisms
 \emph default
-, Computer Physics Communications, In press (2015), DOI: 10.1016/j.cpc.2015.02.014
+, Computer Physics Communications, 192, p.
+ 237-264 (2015), DOI: 10.1016/j.cpc.2015.02.014
 \end_layout
 
 \begin_layout Enumerate
@@ -939,15 +940,19 @@ List of supported operating systems
 \end_layout
 
 \begin_layout Subsection*
-Windows family
+Microsoft Windows family
 \end_layout
 
 \begin_layout Itemize
-Windows 7 (32/64 bit)
+Microsoft Windows 8 (32/64 bit)
 \end_layout
 
 \begin_layout Itemize
-Windows XP (32/64 bit)
+Microsoft Windows 7 (32/64 bit)
+\end_layout
+
+\begin_layout Itemize
+Microsoft Windows XP (32/64 bit)
 \end_layout
 
 \begin_layout Subsection*
@@ -963,20 +968,24 @@ Fedora 21 (64 bit)
 \end_layout
 
 \begin_layout Itemize
-Ubuntu 12.04 or more recent (64 bit)
+Ubuntu 12.04 (64 bit) and higher
 \end_layout
 
 \begin_layout Itemize
-Xubuntu 14.04 or more recent (64 bit)
+Xubuntu 12.04 (64 bit) and higher
 \end_layout
 
 \begin_layout Subsection*
 Mac OS X
 \end_layout
 
+\begin_layout Itemize
+Mac OS X 10.7 (64 bit) and higher
+\end_layout
+
 \begin_layout Standard
-No precompiled binaries for Mac OSX are currently available.
- We suggest to install an Oracle VirtualBox (
+If your operating system does not appear in the list reported above, we
+ suggest to install an Oracle VirtualBox (
 \begin_inset Flex URL
 status open
 
@@ -1003,6 +1012,44 @@ http://www.ubuntu.com/
 
 \begin_layout Section
 Microsoft Windows
+\end_layout
+
+\begin_layout Subsubsection*
+Prerequisites for the graphical post-processor:
+\end_layout
+
+\begin_layout Itemize
+Irfanview: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.irfanview.com/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Graphiviz: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.graphviz.org
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Installation of solvers
 \end_layout
 
 \begin_layout Standard
@@ -1474,6 +1521,80 @@ end{lstlisting}
 Linux
 \end_layout
 
+\begin_layout Subsubsection*
+Prerequisites for OpenSMOKE++ Suite Solvers:
+\end_layout
+
+\begin_layout Itemize
+gfortran libraries: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://gcc.gnu.org/wiki/GFortran
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Prerequisites for the graphical post-processor:
+\end_layout
+
+\begin_layout Itemize
+Qt4 libraries: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.qt.io/download-open-source/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Graphiviz: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.graphviz.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Installation of solvers
+\end_layout
+
+\begin_layout Enumerate
+Be sure that 
+\family typewriter
+gfortran
+\family default
+ libraries are available on your machine.
+ If not, you can easily find precompiled packages for most Linux distributions
+ (see paragraph 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Notes-about-shared-libraries"
+
+\end_inset
+
+).
+\end_layout
+
 \begin_layout Enumerate
 Unpack the 
 \family typewriter
@@ -1655,7 +1776,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-export PATH=$PATH:$HOME/OpenSMOKEppSuite/bin
+export PATH=$PATH:$HOME/opensmoke++suite-0.1/bin
 \end_layout
 
 \begin_layout Plain Layout
@@ -1707,13 +1828,263 @@ bin
 \end_layout
 
 \begin_layout Subsection
+Notes about the OpenSMOKE++ Graphical Post-Processor
+\end_layout
+
+\begin_layout Standard
+In order to use all the features of the graphical post-processor, the QT4
+ libraries are needed.
+ Moreover, the installation of the Graphviz library (even if not strictly
+ needed) is strongly recommended.
+ Without it, you cannot perform automatic generation of flux diagrams.
+ However, all the other features of graphical post-processor work correctly
+ even without the Graphviz library.
+\end_layout
+
+\begin_layout Subsubsection*
+Instructions to install the Qt4 libraries
+\end_layout
+
+\begin_layout Standard
+Precompiled Qt4 libraries are already available in most Linux distributions
+ (e.g.
+ Ubuntu, Xubuntu, Debian, Mandriva), which means that you do not have to
+ install them.
+ Thus, the instructions below refer to Linux distributions which are distributed
+ without Qt4 libraries (e.g.
+ OpenSuse).
+\end_layout
+
+\begin_layout Enumerate
+Installation of pre-compiled libraries (recommended)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Even if not available in the basic distribution, precompiled Qt4 libraries
+ available for most Linux distributions.
+ Please, follow the instructions specific to the distribution you are using.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Compilation from source code
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+If no pre-compiled libraries are available for your Linux distribution,
+ you need to compile the source code.
+ It can be download it from 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.qt.io/download-open-source/
+\end_layout
+
+\end_inset
+
+.
+ Please, follow the instructions provided in the source code to compile
+ and install the library.
+ Be sure that the 
+\family typewriter
+LD_LIBRARY_PATH
+\family default
+ environment variable includes the 
+\family typewriter
+lib
+\family default
+ folder of installed Qt4 library.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+Instructions to install the Graphviz library
+\end_layout
+
+\begin_layout Standard
+In order to create the flux analysis plots, the Graphviz software must be
+ installed on your machine.
+ Two options are possible: installation of pre-compiled binaries (if available
+ for your Linux distribution) or compilation from source code.
+\end_layout
+
+\begin_layout Enumerate
+Installation of pre-compiled binaries
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+If available for your Linux distribution, you can simply install the Graphviz
+ library directly from the pre-compiled binaries.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Fedora
+\end_layout
+
+\begin_layout Standard
+The easiest way to install and maintain graphviz on Fedora is to use yum.
+ To set up yum, download the 
+\family typewriter
+graphviz-fedora.repo
+\family default
+ 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.graphviz.org/graphviz-fedora.repo
+\end_layout
+
+\end_inset
+
+ .
+ Save it (as root) in 
+\family typewriter
+/etc/yum.repos.d/
+\family default
+ Then you can (as root) type:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[style=codesingleline]
+\end_layout
+
+\begin_layout Plain Layout
+
+yum list available 'graphviz*'
+\end_layout
+
+\begin_layout Plain Layout
+
+yum install 'graphviz*'
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+OpenSuse
+\end_layout
+
+\begin_layout Standard
+Use the 
+\family typewriter
+Yast
+\family default
+ utility to install GraphViz.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Ubuntu and Xubuntu
+\end_layout
+
+\begin_layout Standard
+type the following command in a terminal:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[style=codesingleline]
+\end_layout
+
+\begin_layout Plain Layout
+
+sudo apt-get install graphviz
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Compilation from source code
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+If no pre-compiled binaries are avialble for your Linux distribution, you
+ need to compile the source code.
+ It can be download it from 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.graphviz.org/
+\end_layout
+
+\end_inset
+
+.
+ Please, follow the instructions provided in the source code to compile
+ and install the library.
+ Be sure that the 
+\family typewriter
+PATH
+\family default
+ environment variable includes the 
+\family typewriter
+bin
+\family default
+ folder of installed GraphViz library.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
 Check your installation
 \end_layout
 
 \begin_layout Enumerate
-Check if installation of solvers was done properly: go to the quick-start
+Check if installation of solvers was done properly: go to the 
+\family typewriter
+quick-start
 \backslash
-01-adiabatic-batch-reactor folder and run the simulation by typing 
+01-adiabatic-batch-reactor
+\family default
+ folder and run the simulation by typing 
 \end_layout
 
 \begin_deeper
@@ -1788,6 +2159,13 @@ If error messages about missing shared libraries appear, have a look at
 
 \begin_layout Subsection
 Notes about shared libraries
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Notes-about-shared-libraries"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1894,70 +2272,98 @@ sudo apt-get install libaudio2
 \end_layout
 
 \end_deeper
-\begin_layout Subsection
-Notes about the OpenSMOKE++ Graphical Post-Processor
-\end_layout
-
-\begin_layout Standard
-In order to use all the features of the graphical post-processor, the installati
-on of the Graphviz library is strongly recommended.
- Without it, you cannot perform automatic generation of flux diagrams.
- However, all the other features of graphical post-processor work correctly
- even without the Graphviz library.
+\begin_layout Section
+Mac OS X
 \end_layout
 
 \begin_layout Subsubsection*
-Instructions to install the Graphviz library
+Prerequisites for OpenSMOKE++ Suite Solvers:
 \end_layout
 
-\begin_layout Standard
-In order to create the flux analysis plots, the Graphviz software must be
- installed on your machine.
- Two options are possible: installation of pre-compiled binaries (if available
- for your Linux distribution) or compilation from source code.
-\end_layout
-
-\begin_layout Enumerate
-Installation of pre-compiled binaries
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-If available for your Linux distribution, you can simply install the Graphviz
- library directly from the pre-compiled binaries.
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Fedora
-\end_layout
-
-\begin_layout Standard
-The easiest way to install and maintain graphviz on Fedora is to use yum.
- To set up yum, download the 
-\family typewriter
-graphviz-fedora.repo
-\family default
- 
+\begin_layout Itemize
+gfortran libraries: 
 \begin_inset Flex URL
 status open
 
 \begin_layout Plain Layout
 
-http://www.graphviz.org/graphviz-fedora.repo
+https://gcc.gnu.org/wiki/GFortranBinaries#MacOS
 \end_layout
 
 \end_inset
 
- .
- Save it (as root) in 
+
+\end_layout
+
+\begin_layout Subsubsection*
+Prerequisites for the graphical post-processor:
+\end_layout
+
+\begin_layout Itemize
+Qt5 libraries: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.qt.io/download-open-source/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Graphiviz: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.graphviz.org/Download_macos.php
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Installation of solvers
+\end_layout
+
+\begin_layout Enumerate
+Be sure that gfortran libraries are available on your machine.
+ If not, you can download and installed precompiled libraries for your Mac
+ OS X at the following web-address: 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://gcc.gnu.org/wiki/GFortranBinaries#MacOS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Unpack the 
 \family typewriter
-/etc/yum.repos.d/
+opensmoke++suite-0.1-macos.tar.gz
 \family default
- Then you can (as root) type:
+ file using the following command:
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
 \begin_inset ERT
 status open
@@ -1971,60 +2377,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-yum list available 'graphviz*'
-\end_layout
-
-\begin_layout Plain Layout
-
-yum install 'graphviz*'
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{lstlisting}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-OpenSuse
-\end_layout
-
-\begin_layout Standard
-Use the Yast utility to install GraphViz.
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Ubuntu and Xubuntu
-\end_layout
-
-\begin_layout Standard
-type the following command in a terminal:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{lstlisting}[style=codesingleline]
-\end_layout
-
-\begin_layout Plain Layout
-
-sudo apt-get install graphviz
+tar -xzf opensmoke++suite-0.1-macos.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
@@ -2041,14 +2394,201 @@ end{lstlisting}
 
 \end_deeper
 \begin_layout Enumerate
+Update the environment variable settings:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+edit your 
+\family typewriter
+$HOME/.profile
+\family default
+ file by adding the following line:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[style=codesingleline]
+\end_layout
+
+\begin_layout Plain Layout
+
+export PATH=$PATH:/path_to_opensmoke_suite/bin
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As an example, if you unpacked the 
+\family typewriter
+opensmoke++suite-0.1-macos.tar.gz
+\family default
+ file directly in your home folder, the following line has to be added.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Close the terminal and open a new terminal or source the updated 
+\family typewriter
+$HOME/.profile
+\end_layout
+
+\begin_layout Subsection
+Installation of license file
+\end_layout
+
+\begin_layout Standard
+The 
+\family typewriter
+OpenSMOKE++ Suite
+\family default
+ solvers can be used only if a suitable license file (called 
+\family typewriter
+license.dat
+\family default
+) is available.
+ The 
+\family typewriter
+license.dat
+\family default
+ file must be present in the 
+\family typewriter
+bin
+\family default
+ folder.
+\end_layout
+
+\begin_layout Subsection
+Notes about the OpenSMOKE++ Graphical Post-Processor
+\end_layout
+
+\begin_layout Standard
+In order to use all the features of the graphical post-processor, the Qt5
+ libraries are needed.
+ Moreover, the installation of the Graphviz library (even if not strictly
+ needed) is strongly recommended.
+ Without it, you cannot perform automatic generation of flux diagrams.
+ However, all the other features of graphical post-processor work correctly
+ even without the Graphviz library.
+\end_layout
+
+\begin_layout Subsubsection*
+Instructions to install the Qt5 libraries
+\end_layout
+
+\begin_layout Standard
+Precompiled Qt5 libraries are available at the following address: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.qt.io/download-open-source/
+\end_layout
+
+\end_inset
+
+.
+ After installation, remember to update the environment variables, in order
+ to properly use the shared variables which are contained in the 
+\family typewriter
+lib
+\family default
+ folder of your Qt5 installation.
+ As an example, if the Qt5 libraries were installed in the 
+\family typewriter
+$HOME/Qt5.4.1
+\family default
+ folder, update the environment variable settings, by editing your 
+\family typewriter
+$HOME/.profile
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[style=codesingleline]
+\end_layout
+
+\begin_layout Plain Layout
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/Qt5.4.1/5.4/clang_64/lib
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Instructions to install the Graphviz library
+\end_layout
+
+\begin_layout Standard
+In order to create the flux analysis plots, the Graphviz software must be
+ installed on your machine.
+ Two options are possible: installation of pre-compiled binaries (recommended)
+ or compilation from source code.
+\end_layout
+
+\begin_layout Enumerate
+Installation of pre-compiled binaries
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Precompiled Graphviz is available at the following web address: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.graphviz.org/Download_macos.php
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
 Compilation from source code
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
-If no pre-compiled binaries are avialble for your Linux distribution, you
- need to compile the source code.
- It can be download it from 
+The source code can be download it from 
 \begin_inset Flex URL
 status open
 
@@ -2071,6 +2611,85 @@ PATH
 bin
 \family default
  folder of installed GraphViz library.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Check your installation
+\end_layout
+
+\begin_layout Enumerate
+Check if installation of solvers was done properly: go to the 
+\family typewriter
+quick-start
+\backslash
+01-adiabatic-batch-reactor
+\family default
+ folder and run the simulation by typing 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[style=codesingleline]
+\end_layout
+
+\begin_layout Plain Layout
+
+./Run.sh
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Check if installation of graphical post-processor was done properly: from
+ the same folder, type
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[style=codesingleline]
+\end_layout
+
+\begin_layout Plain Layout
+
+OpenSMOKE_PostProcessor.sh
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -4134,7 +4753,7 @@ As better explained in the previous Chapters, the input data have to be
 \family typewriter
 OpenSMOKE++ Suite
 \family default
- five different solvers are available:
+ six different solvers are available:
 \end_layout
 
 \begin_layout Enumerate
@@ -4155,6 +4774,10 @@ Shock-Tube-Reactor
 
 \begin_layout Enumerate
 Plug-Flow-Reactor
+\end_layout
+
+\begin_layout Enumerate
+PremixedLaminarFlame1D (under development)
 \end_layout
 
 \begin_layout Standard
@@ -8653,6 +9276,776 @@ reference "sec:Sub-Dictionary-Parametric-Analysis"
  to have more details.
 \end_layout
 
+\begin_layout Section
+Dictionary: PremixedLaminarFlame1D (under development)
+\end_layout
+
+\begin_layout Standard
+This dictionary is used for setting the simulation for calculating laminar
+ flame speeds.
+ Please, consider that the current version of OpenSMOKE_PremixedLaminarFlame1D
+ tool is only preliminary.
+ The tool is under development.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="14" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="3.5cm">
+<column alignment="center" valignment="top" width="13cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none" width="6cm">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Option
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Meaning
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@KineticsFolder
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PATH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Name of the folder containing the kinetic scheme (XML Version) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@KineticsPreProcessor 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [Rapid-Kinetics]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary containing the list of kinetic files to be interpreted (see Section
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Rapid-Kinetics"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Grid 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [AdaptiveGrid-1D]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary defining the computational 1D grid (see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Adaptive-Grid1D-dictionary"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@InletStream
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [Gas-Status]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary defining the inlet gas composition, temperature, and pressure
+ (see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Gas-Status"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@OutletStream
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [Gas-Status] 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary defining the outlet stream (gas composition, temperature and
+ pressure).
+ This information is used only as a first guess solution.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Gas-Status"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@InletVelocity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MEASURE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Laminar flame speed: first guess value
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Output
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PATH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Folder where to write the results of the simulation 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@SensitivityAnalysis 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [Sensitivity-Analysis]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary containing additional options for sensitivity analysis (see Section
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Sensitivity-Analysis"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@DaeParameters
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [DAE-TridiagonalBlock-Solver]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary containing the numerical parameters for solving the Triadiagonal
+ Block DAE system (see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:DAE-TridiagonalBlock-Parameters"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@NlsParameters
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [NLS-TridiagonalBlock-Solver]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary containing the numerical parameters for solving the Triadiagonal
+ Block non-linear system (see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:NLS-TridiagonalBlock-Parameters"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@FalseTransientParameters
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [FalseTransient-Solver]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary containing the numerical parameters governing the false-transient
+ approach (see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:FalseTransient-Parameters-dictio"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@CheckMassFractions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Force non-negative mass fractions (default: false)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@UseDaeSolver
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Use DAE solver (instead of NL solver) to solve the steady-state problems
+ (default: true)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+PremixedLaminarFlame1D options
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Additional comments
+\end_layout
+
+\begin_layout Subsubsection*
+@KineticsFolder 
+\end_layout
+
+\begin_layout Standard
+This option is used to specify the name of the folder containing the kinetic
+ scheme in XML Version (
+\family typewriter
+kinetics.xml
+\family default
+).
+ This file has to be generated using the 
+\family typewriter
+OpenSMOKE_CHEMKIN_Preprocessor
+\family default
+.
+ Instead of using this option, the user has the possibility to pre-process
+ the kinetic scheme on the fly using the 
+\family typewriter
+@KineticsPreProcessor
+\family default
+ option (see below).
+\end_layout
+
+\begin_layout Subsubsection*
+@KineticsPreProcessor 
+\end_layout
+
+\begin_layout Standard
+The user can pre-process a kinetic scheme available in CHEMKIN format on
+ the fly, when the reactor simulation is performed (instead of pre-processing
+ the kinetics in a previous step).
+ This option is very useful when the kinetic mechanism is under construction
+ and/or tuning and the user has the need to change often the reactions and
+ the kinetic parameters.
+ Please consider that the pre-processing operation can be quite long for
+ very detailed kinetic schemes (thousands of species).
+ The 
+\family typewriter
+@KineticsPreProcessor
+\family default
+ option requires that the user specify the name of the sub-dictionary containing
+ all the information needed to pre-process kinetic mechanisms on the fly.
+ Please look at Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Rapid-Kinetics"
+
+\end_inset
+
+ to have more details.
+\end_layout
+
+\begin_layout Subsubsection*
+@Grid
+\end_layout
+
+\begin_layout Standard
+Dictionary defining the computational 1D grid (see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Adaptive-Grid1D-dictionary"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Subsubsection*
+@InletStream
+\end_layout
+
+\begin_layout Standard
+This option is used to specify the features (temperature, pressure and compositi
+on) of the inlet stream.
+ The 
+\family typewriter
+@InletStatus
+\family default
+ option requires that the user specify the name of the corresponding sub-diction
+ary.
+ Please look at Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Gas-Status"
+
+\end_inset
+
+ to have more details.
+\end_layout
+
+\begin_layout Subsubsection*
+@OutletStream
+\end_layout
+
+\begin_layout Standard
+Dictionary defining the inlet gas composition, temperature, and pressure
+ (see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Gas-Status"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsubsection*
+@OutletStream
+\end_layout
+
+\begin_layout Standard
+Dictionary defining the outlet stream (gas composition, temperature and
+ pressure).
+ This information is used only as a first guess solution.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Gas-Status"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+@InletVelocity 
+\end_layout
+
+\begin_layout Standard
+First guess laminar flame speed.
+ This value is used only to start the calculations.
+ Obviously, if data are available, it is more convenient to provide a first-gues
+s laminar flame speed close to the real value.
+\end_layout
+
+\begin_layout Subsubsection*
+@Output
+\end_layout
+
+\begin_layout Standard
+Folder where to write the results of the simulation 
+\end_layout
+
+\begin_layout Subsubsection*
+@SensitivityAnalysis 
+\end_layout
+
+\begin_layout Standard
+The user has to specify the name of the sub-dictionary in which the options
+ for performing the sensitivity analysis are reported.
+ Please look at Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Sensitivity-Analysis"
+
+\end_inset
+
+ to have more details.
+\end_layout
+
+\begin_layout Subsubsection*
+@DaeParameters 
+\end_layout
+
+\begin_layout Standard
+The user has to specify the name of the sub-dictionary in which the options
+ about the tridiagonal-block DAE solver adopted for the solution of transport
+ equations.
+ Please look at Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:DAE-TridiagonalBlock-Parameters"
+
+\end_inset
+
+ to have more details.
+\end_layout
+
+\begin_layout Subsubsection*
+@NlsParameters 
+\end_layout
+
+\begin_layout Standard
+The user has to specify the name of the sub-dictionary in which the options
+ about the tridiagonal-block non-linear (NL) solver adopted for the solution
+ of transport equations.
+ Please look at Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:NLS-TridiagonalBlock-Parameters"
+
+\end_inset
+
+ to have more details.
+\end_layout
+
+\begin_layout Subsubsection*
+@FalseTransientParameters 
+\end_layout
+
+\begin_layout Standard
+The user has to specify the name of the sub-dictionary in which the options
+ about the false-transient method adopted for the solution of transport
+ equations.
+ Please look at Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:FalseTransient-Parameters-dictio"
+
+\end_inset
+
+ to have more details.
+\end_layout
+
+\begin_layout Subsubsection*
+@CheckMassFractions
+\end_layout
+
+\begin_layout Standard
+Force non-negative mass fractions (default: false).
+\end_layout
+
+\begin_layout Subsubsection*
+@UseDaeSolver
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Use DAE solver (instead of NL solver) to solve the steady-state problems
+ (default: true)
+\end_layout
+
 \begin_layout Chapter
 Sub-Dictionaries
 \begin_inset CommandInset label
@@ -8706,6 +10099,22 @@ XY-Profile
 
 \begin_layout Enumerate
 Parametric Analysis
+\end_layout
+
+\begin_layout Enumerate
+Adaptive-Grid1D
+\end_layout
+
+\begin_layout Enumerate
+Dae-TridiagonalBlock-Parameters
+\end_layout
+
+\begin_layout Enumerate
+Nls-TridiagonalBlock-Parameters
+\end_layout
+
+\begin_layout Enumerate
+FalseTransient-Parameters
 \end_layout
 
 \begin_layout Section
@@ -12347,6 +13756,2966 @@ Dictionary parametric-analysis
 \begin_layout Plain Layout
 
 	@NumberOfThreads	5;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Sub-Dictionary: Adaptive-Grid1D
+\end_layout
+
+\begin_layout Standard
+This dictionary is used for setting the options for the adaptive grid for
+ 1D problems (see Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Adaptive-Grid1D-dictionary"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="13" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="3cm">
+<column alignment="center" valignment="top" width="14cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Option
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Meaning
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STRING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type of grid: centered | database
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Length
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MEASURE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Length of computational domain
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@InitialPoints
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Initial number of points (must be between 7 and 15)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Center
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MEASURE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Center position (default: middle point)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Width
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MEASURE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Estimated (first guess) width of flame (default: 0.2*length)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@FixedPoint
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MEASURE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Coordinate of fixed point (default: center of the grid)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MaxPoints
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maximum number of allowed points (default 300)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MaxAdaptivePoints
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maximum number of points that can be added per grid adaptation (default
+ 10)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@GradientCoefficient
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Controls the maximum gradient allowed between two points (default 0.1)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@CurvatureCoefficient
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Controls the maximum curvature allowed between two points (default 0.5)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Threshold
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Controls the minimum amount of each species to be considered active in the
+ adaptive process (default: 1e-7)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@RegridPoints
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Points used for regrid operation (default: 20)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Adaptive-Grid1D-dictionary"
+
+\end_inset
+
+Adaptive-Grid1D dictionary
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Additional comments
+\end_layout
+
+\begin_layout Subsubsection*
+@Type
+\end_layout
+
+\begin_layout Standard
+Type of grid: centered | database
+\end_layout
+
+\begin_layout Subsubsection*
+@Lenght
+\end_layout
+
+\begin_layout Standard
+Length of computational domain
+\end_layout
+
+\begin_layout Subsubsection*
+@InitialPoints
+\end_layout
+
+\begin_layout Standard
+Initial number of points (must be between 7 and 15)
+\end_layout
+
+\begin_layout Subsubsection*
+@Center
+\end_layout
+
+\begin_layout Standard
+Center position (default: middle point)
+\end_layout
+
+\begin_layout Subsubsection*
+@Width
+\end_layout
+
+\begin_layout Standard
+Estimated (first guess) width of flame (default: 0.2*length)
+\end_layout
+
+\begin_layout Subsubsection*
+@FixedPoint
+\end_layout
+
+\begin_layout Standard
+Coordinate of fixed point (default: center of the grid)
+\end_layout
+
+\begin_layout Subsubsection*
+@MaxPoints
+\end_layout
+
+\begin_layout Standard
+Maximum number of allowed points (default 300)
+\end_layout
+
+\begin_layout Subsubsection*
+@MaxAdaptivePoints
+\end_layout
+
+\begin_layout Standard
+Maximum number of points that can be added per grid adaptation (default
+ 10)
+\end_layout
+
+\begin_layout Subsubsection*
+@GradientCoefficient
+\end_layout
+
+\begin_layout Standard
+Controls the maximum gradient allowed between two points (default 0.1)
+\end_layout
+
+\begin_layout Subsubsection*
+@CurvatureCoefficient
+\end_layout
+
+\begin_layout Standard
+Controls the maximum curvature allowed between two points (default 0.5)
+\end_layout
+
+\begin_layout Subsubsection*
+@Threshold
+\end_layout
+
+\begin_layout Standard
+Controls the minimum amount of each species to be considered active in the
+ adaptive process (default: 1e-7)
+\end_layout
+
+\begin_layout Subsubsection*
+@RegridPoints
+\end_layout
+
+\begin_layout Standard
+Points used for regrid operation (default: 20)
+\end_layout
+
+\begin_layout Subsection
+Example
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[style=codefragment]
+\end_layout
+
+\begin_layout Plain Layout
+
+Dictionary grid
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+	@Length                 3 cm; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@InitialPoints          12; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@Type                   database; 
+\end_layout
+
+\begin_layout Plain Layout
+
+	@MaxPoints              1000; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@MaxAdaptivePoints      15; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@GradientCoefficient    0.05; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@CurvatureCoefficient   0.25; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@Threshold              1e-5; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@RegridPoints           20;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Sub-Dictionary: DAE-TridiagonalBlock-Parameters 
+\end_layout
+
+\begin_layout Standard
+This dictionary is used for setting the options for the stiff tridiagonal-block
+ DAE solvers available in 
+\family typewriter
+OpenSMOKE++ Suite
+\family default
+ (see Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:DAE-TridiagonalBlock-Parameters"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="3cm">
+<column alignment="center" valignment="top" width="14cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Option
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Meaning
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@DaeSolver
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STRING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DAE Solver: BzzDae | IDA 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@RelativeTolerance
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Relative tolerance (default 1.e-6)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@AbsoluteTolerance
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Absolute tolerance (default 1.e-10)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MaximumNumberOfSteps
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maximum number of steps (default 500000)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MaximumStep
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maximum step (default: automatically chosen by the solver)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MinimumStep
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Minimum step (default: automatically chosen by the solver)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@InitialStep
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Initial step (default: automatically chosen by the solver)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MaximumOrder
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maximum order of the method (default 5)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@LinearAlgebra
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STRING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Linear algebra package to solve the tridiagonal-block (or banded) linear
+ system: native | Lapack
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MeanResidualThreshold
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Stop the integration when the mean residual is below this threshold (default:
+ 0.)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@VerbosityLevel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Verbosity level: 0=no output, 3 maximum level of output
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:DAE-TridiagonalBlock-Parameters"
+
+\end_inset
+
+DAE-TridiagonalBlock-Parameters dictionary
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Additional comments
+\end_layout
+
+\begin_layout Subsubsection*
+@DaeSolver
+\end_layout
+
+\begin_layout Standard
+The user can choose among two different DAE solvers: BzzDae (from the BzzMath
+ library) or IDA (from the Sundials Suite)
+\end_layout
+
+\begin_layout Subsubsection*
+@RelativeTolerance
+\end_layout
+
+\begin_layout Standard
+Relative tolerance (default 1.e-6).
+\end_layout
+
+\begin_layout Subsubsection*
+@AbsoluteTolerance
+\end_layout
+
+\begin_layout Standard
+Absolute tolerance (default 1.e-10).
+ For 
+\family typewriter
+IDA
+\family default
+ solver we suggest to use stricter absolute tolerance (i.e.
+ at least 1e-12).
+\end_layout
+
+\begin_layout Subsubsection*
+@MaximumNumberOfSteps
+\end_layout
+
+\begin_layout Standard
+Maximum number of steps (default 500000)
+\end_layout
+
+\begin_layout Subsubsection*
+@MaximumStep
+\end_layout
+
+\begin_layout Standard
+Maximum step (default: automatically chosen by the solver)
+\end_layout
+
+\begin_layout Subsubsection*
+@MinimumStep
+\end_layout
+
+\begin_layout Standard
+Minimum step (default: automatically chosen by the solver)
+\end_layout
+
+\begin_layout Subsubsection*
+@InitialStep
+\end_layout
+
+\begin_layout Standard
+Initial step (default: automatically chosen by the solver)
+\end_layout
+
+\begin_layout Subsubsection*
+@MaximumOrder
+\end_layout
+
+\begin_layout Standard
+Maximum order of the method (default 5)
+\end_layout
+
+\begin_layout Subsubsection*
+@LinearAlgebra
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Linear algebra package to solve the tridiagonal-block (or banded) linear
+ system: native | Lapack
+\end_layout
+
+\begin_layout Subsubsection*
+@MeanResidualThreshold
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Stop the integration when the mean residual is below this threshold (default:
+ 0.)
+\end_layout
+
+\begin_layout Subsubsection*
+@VerbosityLevel
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Verbosity level: 0=no output, 3 maximum level of output
+\end_layout
+
+\begin_layout Subsection
+Example
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[style=codefragment]
+\end_layout
+
+\begin_layout Plain Layout
+
+Dictionary dae-parameters
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+	@DaeSolver              BzzDae; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@LinearAlgebra          Lapack; 
+\end_layout
+
+\begin_layout Plain Layout
+
+	@RelativeTolerance      1e-6;
+\end_layout
+
+\begin_layout Plain Layout
+
+	@AbsoluteTolerance      1e-10;
+\end_layout
+
+\begin_layout Plain Layout
+
+	@MaximumNumberOfSteps   100000; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@MaximumStep            1e3;
+\end_layout
+
+\begin_layout Plain Layout
+
+	@MinimumStep            1e-9;
+\end_layout
+
+\begin_layout Plain Layout
+
+	@InitialStep            1e-9;
+\end_layout
+
+\begin_layout Plain Layout
+
+	@MaximumOrder           5; 
+\end_layout
+
+\begin_layout Plain Layout
+
+	@MeanResidualThreshold  1e-5;
+\end_layout
+
+\begin_layout Plain Layout
+
+	@VerbosityLevel         0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Sub-Dictionary: NLS-TridiagonalBlock-Parameters 
+\end_layout
+
+\begin_layout Standard
+This dictionary is used for setting the options for the tridiagonal-block
+ non-linear (NL) solvers available in 
+\family typewriter
+OpenSMOKE++ Suite
+\family default
+ (see Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:NLS-TridiagonalBlock-Parameters"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="3cm">
+<column alignment="center" valignment="top" width="14cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Option
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Meaning
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@NlsSolver
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STRING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NLS Solver: BzzNls | KinSol
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Tolerance
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Function tolerance (default 6.e-6)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@StepTolerance
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Step tolerance (default 3.6e-11)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@RelativeError
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Relative error (default 1.5e-8)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MaximumNumberOfIterations
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maximum number of iterations (default 200)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MaximumSetupCalls
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maximum number of setup calls (default 10)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MaximumSubSetupCalls
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maximum number of setup sub-calls (default 5)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Scaling
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Scaling strategy for evaluation of residuals (default 1)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Strategy
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Numerical methodology: NewtonBasic | NewtonGlobalization (default)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@LinearAlgebra
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STRING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Linear algebra package to solve the tridiagonal-block (or banded) linear
+ system: native | Lapack
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@VerbosityLevel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Verbosity level: 0=no output, 3 maximum level of output
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:NLS-TridiagonalBlock-Parameters"
+
+\end_inset
+
+NLS-TridiagonalBlock-Parameters dictionary
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Additional comments
+\end_layout
+
+\begin_layout Subsubsection*
+@NlsSolver
+\end_layout
+
+\begin_layout Standard
+The user can choose among two different NLS solvers: BzzNls (from the BzzMath
+ library) or KinSol (from the Sundials Suite)
+\end_layout
+
+\begin_layout Subsubsection*
+@Tolerance
+\end_layout
+
+\begin_layout Standard
+Function tolerance (default 6.e-6)
+\end_layout
+
+\begin_layout Subsubsection*
+@StepTolerance
+\end_layout
+
+\begin_layout Standard
+Step tolerance (default 3.6e-11)
+\end_layout
+
+\begin_layout Subsubsection*
+@RelativeError
+\end_layout
+
+\begin_layout Standard
+Relative error (default 1.5e-8)
+\end_layout
+
+\begin_layout Subsubsection*
+@MaximumNumberOfIterations
+\end_layout
+
+\begin_layout Standard
+Maximum number of iterations (default 200)
+\end_layout
+
+\begin_layout Subsubsection*
+@MaximumSetupCalls
+\end_layout
+
+\begin_layout Standard
+Maximum number of setup calls (default 10)
+\end_layout
+
+\begin_layout Subsubsection*
+@MinimumSubSetupCalls
+\end_layout
+
+\begin_layout Standard
+Maximum number of setup sub-calls (default 5)
+\end_layout
+
+\begin_layout Subsubsection*
+@Scaling
+\end_layout
+
+\begin_layout Standard
+Scaling strategy for evaluation of residuals (default 1)
+\end_layout
+
+\begin_layout Subsubsection*
+@Strategy
+\end_layout
+
+\begin_layout Standard
+Numerical methodology: NewtonBasic | NewtonGlobalization (default)
+\end_layout
+
+\begin_layout Subsubsection*
+@LinearAlgebra
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Linear algebra package to solve the tridiagonal-block (or banded) linear
+ system: native | Lapack
+\end_layout
+
+\begin_layout Subsubsection*
+@VerbosityLevel
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Verbosity level: 0=no output, 3 maximum level of output
+\end_layout
+
+\begin_layout Subsection
+Example
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[style=codefragment]
+\end_layout
+
+\begin_layout Plain Layout
+
+Dictionary nls-parameters
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+	@NlsSolver                    BzzNls; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@LinearAlgebra                Lapack; 
+\end_layout
+
+\begin_layout Plain Layout
+
+	@Tolerance                    1e-7; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@ToleranceStep                3e-11; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@RelativeError                1.5e-8; 
+\end_layout
+
+\begin_layout Plain Layout
+
+	@MaximumNumberOfIterations    200; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@MaximumSetupCalls            10; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@MaximumSubSetupCalls         5; 
+\end_layout
+
+\begin_layout Plain Layout
+
+	@Scaling                      1; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@VerbosityLevel               0; 
+\end_layout
+
+\begin_layout Plain Layout
+
+	@Strategy                     NewtonGlobalization;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Sub-Dictionary: FalseTransient-Parameters 
+\end_layout
+
+\begin_layout Standard
+This dictionary is used for setting the options governing the false-transient
+ methodology (see Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:FalseTransient-Parameters-dictio"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="20" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="3cm">
+<column alignment="center" valignment="top" width="14cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Option
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Meaning
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@FalseTransientSolver
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STRING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NLS Solver: KinSol
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Tolerance
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Function tolerance (default 6.e-6)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@StepTolerance
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Step tolerance (default 3.6e-11)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@RelativeError
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Relative error (default 1.5e-8)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MaximumNumberOfIterations
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maximum number of iterations (default 200)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MaximumSetupCalls
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maximum number of setup calls (default 10)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MaximumSubSetupCalls
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maximum number of setup sub-calls (default 5)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Scaling
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Scaling strategy for evaluation of residuals (default 1)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Strategy
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Numerical methodology: NewtonBasic | NewtonGlobalization (default)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@LinearAlgebra
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STRING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Linear algebra package to solve the tridiagonal-block (or banded) linear
+ system: native | Lapack
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@VerbosityLevel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Verbosity level: 0=no output, 3 maximum level of output
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@InitialStep
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Initial step (default: 1e-6)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@IncrementFactor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Increment factor (default: 10.)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MaximumStep
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maximum step (default: 0.1)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@DecrementFactor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Decrement factor (default: 2.)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MinimumStep
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Minimum step (default: 1e-9)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MinimumNumberSteps
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Minimum number of steps (default: 100)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@StepsBeforeIncreasing
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Steps to be performed before increasing the step (default: 20)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@StepsReusingJacobian
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Steps for which the Jacobian is kept fixed (default: 20)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:FalseTransient-Parameters-dictio"
+
+\end_inset
+
+FalseTransient-Parameters dictionary
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Additional comments
+\end_layout
+
+\begin_layout Subsubsection*
+@FalseTransientSolver
+\end_layout
+
+\begin_layout Standard
+In the current version only the KinSol solver (from the Sundials Suite)
+ is avalable
+\end_layout
+
+\begin_layout Subsubsection*
+@Tolerance
+\end_layout
+
+\begin_layout Standard
+Function tolerance (default 6.e-6)
+\end_layout
+
+\begin_layout Subsubsection*
+@StepTolerance
+\end_layout
+
+\begin_layout Standard
+Step tolerance (default 3.6e-11)
+\end_layout
+
+\begin_layout Subsubsection*
+@RelativeError
+\end_layout
+
+\begin_layout Standard
+Relative error (default 1.5e-8)
+\end_layout
+
+\begin_layout Subsubsection*
+@MaximumNumberOfIterations
+\end_layout
+
+\begin_layout Standard
+Maximum number of iterations (default 200)
+\end_layout
+
+\begin_layout Subsubsection*
+@MaximumSetupCalls
+\end_layout
+
+\begin_layout Standard
+Maximum number of setup calls (default 10)
+\end_layout
+
+\begin_layout Subsubsection*
+@MinimumSubSetupCalls
+\end_layout
+
+\begin_layout Standard
+Maximum number of setup sub-calls (default 5)
+\end_layout
+
+\begin_layout Subsubsection*
+@Scaling
+\end_layout
+
+\begin_layout Standard
+Scaling strategy for evaluation of residuals (default 1)
+\end_layout
+
+\begin_layout Subsubsection*
+@Strategy
+\end_layout
+
+\begin_layout Standard
+Numerical methodology: NewtonBasic | NewtonGlobalization (default)
+\end_layout
+
+\begin_layout Subsubsection*
+@LinearAlgebra
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Linear algebra package to solve the tridiagonal-block (or banded) linear
+ system: native | Lapack
+\end_layout
+
+\begin_layout Subsubsection*
+@VerbosityLevel
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Verbosity level: 0=no output, 3 maximum level of output
+\end_layout
+
+\begin_layout Subsubsection*
+@InitialStep
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Initial step (default: 1e-6)
+\end_layout
+
+\begin_layout Subsubsection*
+@IncrementFactor
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Increment factor (default: 10.)
+\end_layout
+
+\begin_layout Subsubsection*
+@MaximumStep	
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Maximum step (default: 0.1)
+\end_layout
+
+\begin_layout Subsubsection*
+@DecrementFactor
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Decrement factor (default: 2.)
+\end_layout
+
+\begin_layout Subsubsection*
+@MinimumStep
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Minimum step (default: 1e-9)
+\end_layout
+
+\begin_layout Subsubsection*
+@MinimumNumberSteps
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Minimum number of steps (default: 100)
+\end_layout
+
+\begin_layout Subsubsection*
+@StepsBeforeIncreasing
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Steps to be performed before increasing the step (default: 20)
+\end_layout
+
+\begin_layout Subsubsection*
+@StepsReusingJacobian
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Steps for which the Jacobian is kept fixed (default: 20)
+\end_layout
+
+\begin_layout Subsection
+Example
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[style=codefragment]
+\end_layout
+
+\begin_layout Plain Layout
+
+Dictionary falsetransient-parameters
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+	@FalseTransientSolver        KinSol;
+\end_layout
+
+\begin_layout Plain Layout
+
+	@LinearAlgebra               Lapack; 
+\end_layout
+
+\begin_layout Plain Layout
+
+	@Tolerance                   1e-8; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@ToleranceStep               3e-11; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@RelativeError               1.5e-8; 
+\end_layout
+
+\begin_layout Plain Layout
+
+	@MaximumNumberOfIterations   200; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@MaximumSetupCalls           10; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@MaximumSubSetupCalls        5; 
+\end_layout
+
+\begin_layout Plain Layout
+
+	@Scaling                     1; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@VerbosityLevel              0; 
+\end_layout
+
+\begin_layout Plain Layout
+
+	@Strategy                    NewtonGlobalization; 
+\end_layout
+
+\begin_layout Plain Layout
+
+	@StepsReusingJacobian        20; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@StepsBeforeIncreasing       25; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@MinimumNumberSteps          80; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@InitialStep                 1e-6; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@IncrementFactor             10.; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@MaximumStep                 0.01; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@DecrementFactor             2.; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@MinimumStep                 1e-9;
 \end_layout
 
 \begin_layout Plain Layout
