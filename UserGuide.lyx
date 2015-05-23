@@ -5,9 +5,9 @@
 \textclass memoir
 \begin_preamble
 \usepackage{hyperref}
-\usepackage{draftwatermark}
-\SetWatermarkText{Draft}
-\SetWatermarkScale{6}
+%\usepackage{draftwatermark}
+%\SetWatermarkText{Draft}
+%\SetWatermarkScale{6}
 
 \usepackage{listings}
 \lstdefinestyle{codefragment}{language=C,basicstyle=\small\sffamily,numbers=left,numberstyle=\tiny,frame=single,keepspaces=true}
@@ -88,7 +88,13 @@
 \begin_body
 
 \begin_layout Title
+
+\series bold
 The OpenSMOKE++ Suite
+\begin_inset Newline newline
+\end_inset
+
+Version 0.2
 \end_layout
 
 \begin_layout Standard
@@ -313,6 +319,76 @@ THIS SOFTWARE IS PROVIDED "AS IS" AND WITHOUT WARRANTIES AS TO PERFORMANCE
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Main developers 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Alberto Cuoci
+\series default
+: kernel and core functions, ideal reactors, ODE solvers, CHEMKIN interpreter,
+ graphical post-processor
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Mattia Bissoli
+\series default
+: interfaces with third-party ODE and DAE solvers, internal combustion enegines,
+ sensitivity analysis
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Alessandro Stagni
+\series default
+: analysis and reduction of kinetic mechansims, portability to Mac OSX and
+ Linux
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Acknowledgments
+\end_layout
+
+\begin_layout Standard
+We thank the members of CRECK Modeling Group at Politecnico di Milano for
+ their many suggestions, bug reports, valuable comments on the source code,
+ functionality, and documentation.
 \begin_inset Newpage pagebreak
 \end_inset
 
@@ -358,7 +434,14 @@ OpenSMOKE++
 
 \begin_layout Enumerate
 a kinetic pre-processor, a utility which is able to read, pre-process and
- analyze kinetic mechanisms written in the CHEMKIN format.
+ analyze kinetic mechanisms written in the CHEMKIN format 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kee1989_CHEMKIN2,Kee1996_CHEMKIN3,CHEMKINPRO2008"
+
+\end_inset
+
+.
  Its main purpose is to rewrite the kinetic scheme in a XML format which
  can be efficiently used by the 
 \family typewriter
@@ -701,8 +784,8 @@ OpenSMOKE++ Suite
  solvers, together with the kinetic pre-processor, do not have any graphical
  interface.
  They are based on input files in ASCII format.
- Only the graphical post-processor is works with a GUI (Graphical User Interface
-), based on the QT libraries.
+ Only the graphical post-processor works with a GUI (Graphical User Interface),
+ based on the QT libraries.
  This means that if you want to pre-process a kinetic mechanism (together
  with the thermodynamic and transport properties) or you want to simulate
  a reactor, your input conditions must be provided through one or more input
@@ -1015,7 +1098,7 @@ Microsoft Windows
 \end_layout
 
 \begin_layout Subsubsection*
-Prerequisites for the graphical post-processor:
+Pre-requisites for the graphical post-processor:
 \end_layout
 
 \begin_layout Itemize
@@ -1057,7 +1140,7 @@ In order to install the
 \family typewriter
 OpenSMOKE++ Suite
 \family default
-, simply double-click on the 
+, double-click on the 
 \family typewriter
 msi
 \family default
@@ -1153,7 +1236,7 @@ OpenSMOKE++ Suite
 \family typewriter
 OpenSMOKE++ Suite
 \family default
- in the 
+ in 
 \family typewriter
 C:
 \backslash
@@ -1246,19 +1329,19 @@ Notes about the OpenSMOKE++ Graphical Post-Processor
 
 \begin_layout Standard
 In order to use all the features of the graphical post-processor, the installati
-on of the Graphviz library and the Irfanview software are strongly recommended.
+on of Graphviz and Irfanview is strongly recommended.
  Without them, you cannot perform automatic generation of flux diagrams.
  However, all the other features of graphical post-processor work correctly
- even without the Graphviz library and the Irfanview software.
+ even without Graphviz and Irfanview.
 \end_layout
 
 \begin_layout Subsubsection*
-Instructions to install the Graphviz library 
+Instructions to install Graphviz 
 \end_layout
 
 \begin_layout Standard
-In order to create the flux analysis plots, the Graphviz software must be
- installed on your machine.
+In order to create the flux analysis plots, Graphviz must be installed on
+ your machine.
  You can download it from 
 \begin_inset Flex URL
 status open
@@ -1271,8 +1354,8 @@ http://www.graphviz.org/
 \end_inset
 
 .
- Once you installed the software, you have to update the environment variables
- using the following procedure:
+ Once you installed the software, you need to update the environment variables
+ using the following procedure (already described above):
 \end_layout
 
 \begin_layout Enumerate
@@ -1339,7 +1422,7 @@ PATH
  folder.
  Of course the path depends on your system (i.e.
  on the location where you installed the Graphviz library).
- As an example, if you installed the GraphViz library in the 
+ As an example, if you installed the GraphViz library in 
 \family typewriter
 C:
 \backslash
@@ -1364,13 +1447,13 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-C:
+"C:
 \backslash
 Program Files (x86)
 \backslash
 Graphviz2.38
 \backslash
-bin;
+bin";
 \end_layout
 
 \begin_layout Plain Layout
@@ -1385,9 +1468,26 @@ end{lstlisting}
 
 \end_layout
 
+\begin_layout Standard
+Remember to use the 
+\family typewriter
+
+\begin_inset Quotes eld
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+
+\family default
+ symbols if your path contains empty spaces.
+ 
+\end_layout
+
 \end_deeper
 \begin_layout Subsubsection*
-Instructions to install the Irfanview software 
+Instructions to install Irfanview 
 \end_layout
 
 \begin_layout Standard
@@ -1405,8 +1505,8 @@ http://www.irfanview.com/
 \end_inset
 
 .
- Once you installed the software, you have to update the environment variables
- using the following procedure:
+ Once you installed the software, you need to update the environment variables
+ using the following procedure (already described above):
 \end_layout
 
 \begin_layout Enumerate
@@ -1471,8 +1571,8 @@ PATH
 \family default
  variable by adding the path to the main Irfanview folder.
  Of course the path depends on your system (i.e.
- on the location where you installed the IrfanView library).
- As an example, if you installed the Irfanview library in the 
+ on the location where you installed IrfanView).
+ As an example, if you installed Irfanview in 
 \family typewriter
 C:
 \backslash
@@ -1497,11 +1597,11 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-C:
+"C:
 \backslash
 Program Files (x86)
 \backslash
-IrfanView;
+IrfanView";
 \end_layout
 
 \begin_layout Plain Layout
@@ -1516,13 +1616,30 @@ end{lstlisting}
 
 \end_layout
 
+\begin_layout Standard
+Remember to use the 
+\family typewriter
+
+\begin_inset Quotes eld
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+
+\family default
+ symbols if your path contains empty spaces.
+ 
+\end_layout
+
 \end_deeper
 \begin_layout Section
 Linux
 \end_layout
 
 \begin_layout Subsubsection*
-Prerequisites for OpenSMOKE++ Suite Solvers:
+Pre-requisites for OpenSMOKE++ Suite Solvers:
 \end_layout
 
 \begin_layout Itemize
@@ -1541,7 +1658,7 @@ https://gcc.gnu.org/wiki/GFortran
 \end_layout
 
 \begin_layout Subsubsection*
-Prerequisites for the graphical post-processor:
+Pre-requisites for the graphical post-processor:
 \end_layout
 
 \begin_layout Itemize
@@ -1584,8 +1701,8 @@ Be sure that
 gfortran
 \family default
  libraries are available on your machine.
- If not, you can easily find precompiled packages for most Linux distributions
- (see paragraph 
+ If not, you can easily find precompiled packages for the most common Linux
+ distributions (see paragraph 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sub:Notes-about-shared-libraries"
@@ -1598,9 +1715,9 @@ reference "sub:Notes-about-shared-libraries"
 \begin_layout Enumerate
 Unpack the 
 \family typewriter
-opensmoke++suite-0.1.tar.gz
+opensmoke++suite-0.2.tar.gz
 \family default
- file using the following command:
+ file in the location you prefer using the following command:
 \end_layout
 
 \begin_deeper
@@ -1617,7 +1734,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-tar -xzf opensmoke++suite-0.1.tar.gz
+tar -xzf opensmoke++suite-0.2.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
@@ -1660,7 +1777,7 @@ edit your
 \family typewriter
 $HOME/.bashrc
 \family default
- file by adding the following line:
+ file by adding the following lines:
 \end_layout
 
 \begin_layout Standard
@@ -1713,7 +1830,7 @@ edit your
 \family typewriter
 $HOME/.cshrc
 \family default
- file by adding the following line:
+ file by adding the following lines:
 \end_layout
 
 \begin_layout Standard
@@ -1757,10 +1874,13 @@ end{lstlisting}
 \begin_layout Standard
 As an example, if you unpacked the 
 \family typewriter
-opensmoke++suite-0.1.tar.gz
+opensmoke++suite-0.2.tar.gz
 \family default
- file directly in your home folder, the following line has to be added (in
- case of bash):
+ file directly in your home folder (
+\family typewriter
+$HOME
+\family default
+), the following lines have to be added (in case of bash):
 \end_layout
 
 \begin_layout Standard
@@ -1776,7 +1896,12 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-export PATH=$PATH:$HOME/opensmoke++suite-0.1/bin
+export PATH=$PATH:$HOME/opensmoke++suite-0.2/bin
+\end_layout
+
+\begin_layout Plain Layout
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opensmoke++suite-0.2/lib
 \end_layout
 
 \begin_layout Plain Layout
@@ -1793,13 +1918,15 @@ end{lstlisting}
 
 \end_deeper
 \begin_layout Enumerate
-Close the terminal and open a new terminal or source the updated 
+Close the terminal and open a new terminal (or source the updated 
 \family typewriter
 $HOME/.bashrc
 \family default
  or 
 \family typewriter
 $HOME/.cshrc
+\family default
+).
 \end_layout
 
 \begin_layout Subsection
@@ -1834,11 +1961,11 @@ Notes about the OpenSMOKE++ Graphical Post-Processor
 \begin_layout Standard
 In order to use all the features of the graphical post-processor, the QT4
  libraries are needed.
- Moreover, the installation of the Graphviz library (even if not strictly
- needed) is strongly recommended.
+ Moreover, the installation of Graphviz (even if not strictly needed) is
+ strongly recommended.
  Without it, you cannot perform automatic generation of flux diagrams.
- However, all the other features of graphical post-processor work correctly
- even without the Graphviz library.
+ However, all the other features of graphical post-processor work correctly,
+ even without Graphviz.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1851,8 +1978,7 @@ Precompiled Qt4 libraries are already available in most Linux distributions
  Ubuntu, Xubuntu, Debian, Mandriva), which means that you do not have to
  install them.
  Thus, the instructions below refer to Linux distributions which are distributed
- without Qt4 libraries (e.g.
- OpenSuse).
+ without Qt4 libraries.
 \end_layout
 
 \begin_layout Enumerate
@@ -1875,7 +2001,7 @@ Compilation from source code
 \begin_layout Standard
 If no pre-compiled libraries are available for your Linux distribution,
  you need to compile the source code.
- It can be download it from 
+ You can download it from 
 \begin_inset Flex URL
 status open
 
@@ -1906,14 +2032,14 @@ Instructions to install the Graphviz library
 \end_layout
 
 \begin_layout Standard
-In order to create the flux analysis plots, the Graphviz software must be
- installed on your machine.
+In order to create the flux analysis plots, Graphviz must be installed on
+ your machine.
  Two options are possible: installation of pre-compiled binaries (if available
  for your Linux distribution) or compilation from source code.
 \end_layout
 
 \begin_layout Enumerate
-Installation of pre-compiled binaries
+Installation of pre-compiled binaries (recommended)
 \end_layout
 
 \begin_deeper
@@ -1929,8 +2055,16 @@ Fedora
 \end_layout
 
 \begin_layout Standard
-The easiest way to install and maintain graphviz on Fedora is to use yum.
- To set up yum, download the 
+The easiest way to install and maintain Graphviz on Fedora is to use 
+\family typewriter
+yum
+\family default
+.
+ To set up 
+\family typewriter
+yum
+\family default
+, download the 
 \family typewriter
 graphviz-fedora.repo
 \family default
@@ -1946,11 +2080,19 @@ http://www.graphviz.org/graphviz-fedora.repo
 \end_inset
 
  .
- Save it (as root) in 
+ Save it (as 
+\family typewriter
+root
+\family default
+) in 
 \family typewriter
 /etc/yum.repos.d/
 \family default
- Then you can (as root) type:
+ Then you can (as 
+\family typewriter
+root
+\family default
+) type:
 \end_layout
 
 \begin_layout Standard
@@ -2007,7 +2149,7 @@ Ubuntu and Xubuntu
 \end_layout
 
 \begin_layout Standard
-type the following command in a terminal:
+Type the following command in a terminal:
 \end_layout
 
 \begin_layout Standard
@@ -2047,7 +2189,7 @@ Compilation from source code
 \begin_layout Standard
 If no pre-compiled binaries are avialble for your Linux distribution, you
  need to compile the source code.
- It can be download it from 
+ You can download it from 
 \begin_inset Flex URL
 status open
 
@@ -2069,7 +2211,7 @@ PATH
 \family typewriter
 bin
 \family default
- folder of installed GraphViz library.
+ folder of installed GraphViz.
 \end_layout
 
 \end_deeper
@@ -2078,7 +2220,12 @@ Check your installation
 \end_layout
 
 \begin_layout Enumerate
-Check if installation of solvers was done properly: go to the 
+Check if installation of solvers was done properly
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+go to the 
 \family typewriter
 quick-start
 \backslash
@@ -2087,7 +2234,6 @@ quick-start
  folder and run the simulation by typing 
 \end_layout
 
-\begin_deeper
 \begin_layout Standard
 \begin_inset ERT
 status open
@@ -2169,8 +2315,9 @@ name "sub:Notes-about-shared-libraries"
 \end_layout
 
 \begin_layout Standard
-You may experience some in running OpenSMOKE++ Suite solvers and/or graphical
- post processor, especially if you use are not using a Ubuntu Linux distribution.
+You may experience some issues in running OpenSMOKE++ Suite solvers and/or
+ graphical post processor, especially if you use are not using Ubuntu or
+ Xubuntu.
  In most cases, the typical errors are about missing shared libraries:
 \end_layout
 
@@ -2182,8 +2329,15 @@ error while loading shared libraries: name_of_library.so
 
 \begin_layout Standard
 In that cases you need to install the missing library/libraries.
- In particular, be sure to have the Qt4 and fortran libraries properly installed
- on your machine.
+ In particular, be sure to have the 
+\family typewriter
+Qt4
+\family default
+ and 
+\family typewriter
+gfortran
+\family default
+ libraries properly installed on your machine.
 \end_layout
 
 \begin_layout Standard
@@ -2277,7 +2431,7 @@ Mac OS X
 \end_layout
 
 \begin_layout Subsubsection*
-Prerequisites for OpenSMOKE++ Suite Solvers:
+Pre-requisites for OpenSMOKE++ Suite Solvers:
 \end_layout
 
 \begin_layout Itemize
@@ -2296,22 +2450,7 @@ https://gcc.gnu.org/wiki/GFortranBinaries#MacOS
 \end_layout
 
 \begin_layout Subsubsection*
-Prerequisites for the graphical post-processor:
-\end_layout
-
-\begin_layout Itemize
-Qt5 libraries: 
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-https://www.qt.io/download-open-source/
-\end_layout
-
-\end_inset
-
-
+Pre-requisites for the graphical post-processor:
 \end_layout
 
 \begin_layout Itemize
@@ -2334,7 +2473,11 @@ Installation of solvers
 \end_layout
 
 \begin_layout Enumerate
-Be sure that gfortran libraries are available on your machine.
+Be sure that 
+\family typewriter
+gfortran
+\family default
+ libraries are available on your machine.
  If not, you can download and installed precompiled libraries for your Mac
  OS X at the following web-address: 
 \end_layout
@@ -2358,9 +2501,9 @@ https://gcc.gnu.org/wiki/GFortranBinaries#MacOS
 \begin_layout Enumerate
 Unpack the 
 \family typewriter
-opensmoke++suite-0.1-macos.tar.gz
+opensmoke++suite-0.2-macos.tar.gz
 \family default
- file using the following command:
+ file in the location you prefer using the following command:
 \end_layout
 
 \begin_deeper
@@ -2377,7 +2520,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-tar -xzf opensmoke++suite-0.1-macos.tar.gz
+tar -xzf opensmoke++suite-0.2-macos.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
@@ -2401,9 +2544,13 @@ Update the environment variable settings:
 \begin_layout Standard
 edit your 
 \family typewriter
+$HOME/.bashrc_profile
+\family default
+ file (or your 
+\family typewriter
 $HOME/.profile
 \family default
- file by adding the following line:
+ file, depending on your settings) by adding the following line:
 \end_layout
 
 \begin_layout Standard
@@ -2437,16 +2584,35 @@ end{lstlisting}
 \begin_layout Standard
 As an example, if you unpacked the 
 \family typewriter
-opensmoke++suite-0.1-macos.tar.gz
+opensmoke++suite-0.2-macos.tar.gz
 \family default
- file directly in your home folder, the following line has to be added.
+ file directly in your home folder (
+\family typewriter
+$HOME
+\family default
+), the following line has to be added:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\color black
+export PATH=$PATH:$HOME/opensmoke++suite-0.2-macos/bin
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-Close the terminal and open a new terminal or source the updated 
+Close the terminal and open a new terminal (or source the updated 
+\family typewriter
+$HOME/.bashrc_profile 
+\family default
+or your 
 \family typewriter
 $HOME/.profile
+\family default
+, depending on your settings
+\family typewriter
+)
 \end_layout
 
 \begin_layout Subsection
@@ -2479,90 +2645,24 @@ Notes about the OpenSMOKE++ Graphical Post-Processor
 \end_layout
 
 \begin_layout Standard
-In order to use all the features of the graphical post-processor, the Qt5
- libraries are needed.
- Moreover, the installation of the Graphviz library (even if not strictly
- needed) is strongly recommended.
+In order to use all the features of the graphical post-processor, the installati
+on of Graphviz (even if not strictly needed) is strongly recommended.
  Without it, you cannot perform automatic generation of flux diagrams.
- However, all the other features of graphical post-processor work correctly
- even without the Graphviz library.
+ However, all the remaining features of graphical post-processor work correctly
+ even without Graphviz.
 \end_layout
 
 \begin_layout Subsubsection*
-Instructions to install the Qt5 libraries
+Instructions to install Graphviz
 \end_layout
 
 \begin_layout Standard
-Precompiled Qt5 libraries are available at the following address: 
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-https://www.qt.io/download-open-source/
-\end_layout
-
-\end_inset
-
-.
- After installation, remember to update the environment variables, in order
- to properly use the shared variables which are contained in the 
-\family typewriter
-lib
-\family default
- folder of your Qt5 installation.
- As an example, if the Qt5 libraries were installed in the 
-\family typewriter
-$HOME/Qt5.4.1
-\family default
- folder, update the environment variable settings, by editing your 
-\family typewriter
-$HOME/.profile
-\family default
-:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{lstlisting}[style=codesingleline]
-\end_layout
-
-\begin_layout Plain Layout
-
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/Qt5.4.1/5.4/clang_64/lib
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{lstlisting}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection*
-Instructions to install the Graphviz library
-\end_layout
-
-\begin_layout Standard
-In order to create the flux analysis plots, the Graphviz software must be
- installed on your machine.
- Two options are possible: installation of pre-compiled binaries (recommended)
+Two options are possible: installation of pre-compiled binaries (recommended)
  or compilation from source code.
 \end_layout
 
 \begin_layout Enumerate
-Installation of pre-compiled binaries
+Installation of pre-compiled binaries (recommended)
 \end_layout
 
 \begin_deeper
@@ -2578,7 +2678,8 @@ http://www.graphviz.org/Download_macos.php
 
 \end_inset
 
-
+.
+ You can install it using the usual installation procedure for Mac OSX.
 \end_layout
 
 \end_deeper
@@ -2588,7 +2689,7 @@ Compilation from source code
 
 \begin_deeper
 \begin_layout Standard
-The source code can be download it from 
+The source code can be downloaded from 
 \begin_inset Flex URL
 status open
 
@@ -2610,7 +2711,7 @@ PATH
 \family typewriter
 bin
 \family default
- folder of installed GraphViz library.
+ folder of installed GraphViz.
 \end_layout
 
 \end_deeper
@@ -2619,7 +2720,12 @@ Check your installation
 \end_layout
 
 \begin_layout Enumerate
-Check if installation of solvers was done properly: go to the 
+Check if installation of solvers was done properly
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+go to the 
 \family typewriter
 quick-start
 \backslash
@@ -2628,7 +2734,6 @@ quick-start
  folder and run the simulation by typing 
 \end_layout
 
-\begin_deeper
 \begin_layout Standard
 \begin_inset ERT
 status open
@@ -2659,11 +2764,14 @@ end{lstlisting}
 
 \end_deeper
 \begin_layout Enumerate
-Check if installation of graphical post-processor was done properly: from
- the same folder, type
+Check if installation of graphical post-processor was done properly
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+from the same folder, type:
+\end_layout
+
 \begin_layout Standard
 \begin_inset ERT
 status open
@@ -2677,7 +2785,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-OpenSMOKE_PostProcessor.sh
+open /path_to_opensmoke_suite/bin/OpenSMOKE_PostProcessor.sh.app
 \end_layout
 
 \begin_layout Plain Layout
@@ -2690,6 +2798,25 @@ end{lstlisting}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+As an example, if you installed OpenSMOKE++ in your home directory (
+\family typewriter
+\color black
+$HOME
+\family default
+\color inherit
+), you can type:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\color black
+$HOME/opensmoke++suite-0.2-macos/
+\color inherit
+bin/OpenSMOKE_PostProcessor.sh.app
 \end_layout
 
 \end_deeper
@@ -2728,17 +2855,31 @@ In order to run simulations with
 OpenSMOKE++ Suite
 \family default
  solvers, the user needs a kinetic scheme describing the homogeneous (gas-phase)
- and, optionally, also the heterogeneous (surface) reactions, and the thermodyna
-mic properties for each species included in the kinetic mechanism.
+ (and, optionally, also the heterogeneous or surface reactions), and the
+ thermodynamic properties for each species included in the kinetic mechanism.
  The current version of 
 \family typewriter
 OpenSMOKE++
 \family default
  requires that the kinetic scheme, together with the thermodynamic and (optional
-ly) transport properties, is provided in the CHEMKIN format.
+ly) transport properties, is provided according to the CHEMKIN rules 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CHEMKINPRO2008"
+
+\end_inset
+
+.
  Kinetic mechanisms and thermodynamic and transport data in CHEMKIN-compatible
  format are available from several research groups.
- In particular, a non exaustive list is reported in the following:
+ In particular, a non exaustive list (adapted from
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CHEMKINPRO2008"
+
+\end_inset
+
+) is reported in the following:
 \end_layout
 
 \begin_layout Itemize
@@ -2764,7 +2905,7 @@ http://creckmodeling.chem.polimi.it/
 
 \end_deeper
 \begin_layout Itemize
-Lawrence Livermore National Laboratory has posted combustion mechanisms,
+Lawrence Livermore National Laboratory (LLNL) has posted combustion mechanisms,
  including thermodynamic data, transport data, and reaction sets for flame
  simulations with hydrogen and various hydrocarbon fuels.
 \end_layout
@@ -2788,8 +2929,8 @@ ms
 \end_deeper
 \begin_layout Itemize
 The Combustion Division of the Center for Energy Research at the University
- of California-San Diego has posted Chemical-kinetic Mechanisms for Combustion
- Applications, including nitrogen, JP10 and heptane chemistry.
+ of California-San Diego has posted kinetic mechanisms for combustion qpplicatio
+ns, including nitrogen, JP10, and heptane chemistry.
 \end_layout
 
 \begin_deeper
@@ -2839,9 +2980,9 @@ Professor Alexander Burcat of Technion Israeli Institute of Technology has
 \family typewriter
 BURCAT.THR
 \family default
- file is in CHEMKIN format but contains comments and descriptive text about
+ file is in CHEMKIN format, but contains comments and descriptive text about
  each species, so that file would require some user manipulation (commenting
- out text lines) in order to use directly in CHEMKIN programs.
+ out text lines) in order to be used directly in OpenSMOKE++.
 \end_layout
 
 \begin_deeper
@@ -2885,9 +3026,15 @@ http://combustion.berkeley.edu/gri-mech/
 
 \end_deeper
 \begin_layout Standard
-Please, look at the CHEMKIN user's guide to find the syntax rules to correctly
- write and modify the files describing the kinetic mechanism and the thermodynam
-ic and transport properties.
+Please, look at the CHEMKIN user's guide 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CHEMKINPRO2008"
+
+\end_inset
+
+to find the syntax rules to correctly write and modify the files describing
+ the kinetic mechanism and the thermodynamic and transport properties.
 \end_layout
 
 \begin_layout Standard
@@ -2966,11 +3113,11 @@ reference "sec:Sub-Dictionary-Rapid-Kinetics"
  operation as an independent step.
  The pre-processing of a kinetic mechanism (together with thermodynamic
  and transport data, if needed) must be performed only once, using a particular
- 
+ solver of 
 \family typewriter
 OpenSMOKE++ Suite
 \family default
- solver, which is called 
+, which is called 
 \family typewriter
 OpenSMOKE_CHEMKIN_PreProcessor
 \family default
@@ -3022,9 +3169,9 @@ Create a new input file (
 \family typewriter
 kinetics.dic
 \family default
- inthe following, but in principle the user is free to choose the name he
- prefers) in which you specify the the thermodynamic and kinetic files and
- the destination folder:
+ in the following, but in principle the user is free to choose the name
+ he prefers) in which you specify the the thermodynamic and kinetic files
+ and the destination folder:
 \end_layout
 
 \begin_deeper
@@ -3119,7 +3266,7 @@ end{lstlisting}
 \end_layout
 
 \begin_layout Standard
-or (in Linux):
+or (in Linux and Mac OSX):
 \end_layout
 
 \begin_layout Standard
@@ -3388,7 +3535,7 @@ end{lstlisting}
 \end_layout
 
 \begin_layout Standard
-or (in Linux):
+or (in Linux and Mac OSX):
 \end_layout
 
 \begin_layout Standard
@@ -3587,9 +3734,13 @@ name "fig:Adiabatic-batch-reactor-example"
 
 \end_inset
 
-Adiabatic batch reactor:Adiabatic batch reactor: examples of profiles of
- temperature and pressure (left) and main species (right).
- The plots have been obtained from the Output.out file, using gnuplot.
+Adiabatic batch reactor: profiles of temperature and pressure (left) and
+ main species (right).
+ The plots have been obtained from the 
+\family typewriter
+Output.out
+\family default
+ file, using gnuplot.
 \end_layout
 
 \end_inset
@@ -3711,8 +3862,8 @@ name "fig:Adiabatic-batch-reactor-example-opp"
 
 \end_inset
 
-Adiabatic batch reactor: examples of profiles of main species (left) and
- OH radical and NO (right).
+Adiabatic batch reactor: profiles of main species (left) and OH radical
+ and NO (right).
  The profiles have been obtained directly using the 
 \family typewriter
 OpenSMOKE++ PostProcessor
@@ -3732,7 +3883,7 @@ OpenSMOKE++ PostProcessor
 
 \end_deeper
 \begin_layout Enumerate
-If you want to perform more interesting post-processing analysis, you have
+If you want to perform more interesting post-processing analyses, you have
  to load also the pre-processed kinetic scheme.
  In order to do this, you should close the 
 \family typewriter
@@ -3743,12 +3894,12 @@ Profiles
 Select Mechanism…
 \family default
  button.
- Then you have to select the folder containing the 
+ Then, select the folder containing the 
 \family typewriter
 kinetics.xml
 \family default
  file generated by the kinetic pre-processor.
- Once you did this, the 
+ The 
 \family typewriter
 Rate of Production
 \family default
@@ -3825,8 +3976,8 @@ name "fig:Adiabatic-batch-reactor-reaction-rates"
 
 \end_inset
 
-Adiabatic batch reactor: Examples of profiles of reaction rates (left) and
- formation rates of selected species (right).
+Adiabatic batch reactor: profiles of reaction rates (left) and formation
+ rates of selected species (right).
  The profiles have been obtained directly using the 
 \family typewriter
 OpenSMOKE++ PostProcessor
@@ -3919,8 +4070,8 @@ name "fig:Adiabatic-batch-reactor-ropa"
 
 \end_inset
 
-Adiabatic batch reactor: Examples of rate of production analyses for H2O
- and NO as calculated by suing the 
+Adiabatic batch reactor: rate of production analyses for H2O and NO as calculate
+d by suing the 
 \family typewriter
 OpenSMOKE++ PostProcessor
 \family default
@@ -3939,13 +4090,12 @@ OpenSMOKE++ PostProcessor
 
 \end_deeper
 \begin_layout Enumerate
-Eventually, you can also draw directly path diagrams through the 
+Eventually, you can also draw path diagrams through the 
 \family typewriter
 Flux Analysis
 \family default
- button (this feature is only available if you correctly installed the Graphviz
- library and the Irfanview solver as described at the beginning of this
- User’s Guide).
+ button (this feature is only available if you correctly installed Graphviz
+ and Irfanview, as described in the previous Chapter).
  As an example, in the 
 \family typewriter
 Type
@@ -4046,8 +4196,8 @@ name "fig:Adiabatic-batch-reactor-flux-analysis"
 
 \end_inset
 
-Adiabatic batch reactor: Example of flux analysis (NO production, Element
- N, Depth 1, Width 4)
+Adiabatic batch reactor: flux analysis (NO production, Element N, Depth
+ 1, Width 4)
 \end_layout
 
 \end_inset
@@ -4084,12 +4234,11 @@ provides several useful tools to perform sensitivity analysis, both for
 Since the calculation of first-order sensitivity coefficient is very time
  consuming, the user has to request explicitly the sensitivity analysis
  before running the simulation.
- Thus, in order to perform the sensitivity analysis we have to modify the
- 
+ Thus, in order to perform the sensitivity analysis, we modify the 
 \family typewriter
 batch.dic
 \family default
- file, by adding a new dictionary:
+ file by adding a new dictionary:
 \end_layout
 
 \begin_layout Standard
@@ -4156,11 +4305,11 @@ end{lstlisting}
 \end_layout
 
 \begin_layout Standard
-and enabling the sensitivity analysis calculation in the main 
+and by enabling the sensitivity analysis calculation in the main 
 \family typewriter
 BatchReactor
 \family default
- dictionary, by adding the following command:
+ dictionary, through the addition of the following command:
 \end_layout
 
 \begin_layout Standard
@@ -4227,7 +4376,7 @@ end{lstlisting}
 \end_layout
 
 \begin_layout Standard
-or (in Linux):
+or (in Linux amd Mac OSX):
 \end_layout
 
 \begin_layout Standard
@@ -4343,7 +4492,7 @@ name "fig:Adiabatic-batch-reactor-sensitivity"
 
 \end_inset
 
-Adiabatic batch reactor: Example of sensitivity analysis of NO.
+Adiabatic batch reactor: sensitivity analysis of NO.
 \end_layout
 
 \end_inset
@@ -18517,6 +18666,314 @@ Temperature (left) and H2O mole fraction (right) of outlet mixture as a
 \end_inset
 
 
+\end_layout
+
+\begin_layout Chapter
+Publications using OpenSMOKE++
+\end_layout
+
+\begin_layout Standard
+These are most recent publications in which the OpenSMOKE++ framework was
+ adopted.
+ Please send us information about your publications using OpenSMOKE++ (alberto.cu
+oci@polimi.it).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Salenbauch, S., Cuoci, A., Frassoldati, A., Saggese, C., Faravelli, T., Hasse,
+ C., 
+\series default
+\shape italic
+Modeling soot formation in premixed flames using an Extended Conditional
+ Quadrature Method of Moments
+\shape default
+ (2015) Combustion and Flame, Article in Press, DOI: 10.1016/j.combustflame.2015.03.0
+02
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Matera, S., Maestri, M., Cuoci, A., Reuter, K.,
+\series default
+ 
+\shape italic
+Predictive-quality surface reaction chemistry in real reactor models: Integratin
+g first-principles kinetic monte carlo simulations into computational fluid
+ dynamics
+\shape default
+ (2014) ACS Catalysis, 4 (11), pp.
+ 4081-4092, DOI: 10.1021/cs501154e
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Jin, H., Frassoldati, A., Wang, Y., Zhang, X., Zeng, M., Li, Y., Qi, F., Cuoci,
+ A., Faravelli, T.,
+\series default
+ 
+\shape italic
+Kinetic modeling study of benzene and PAH formation in laminar methane flame
+\shape default
+s (2015) Combustion and Flame, Article in Press, DOI: 10.1016/j.combustflame.2014.11.
+031
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Ranzi, E., Cavallotti, C., Cuoci, A., Frassoldati, A., Pelucchi, M., Faravelli,
+ T.,
+\series default
+ 
+\shape italic
+New reaction classes in the kinetic modeling of low temperature oxidation
+ of n-alkanes
+\shape default
+ (2014) Combustion and Flame, Article in Press, DOI: 10.1016/j.combustflame.2014.11.0
+30
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Cuoci, A., Frassoldati, A., Faravelli, T., Ranzi, E.,
+\series default
+ 
+\shape italic
+Numerical modeling of auto-ignition of isolated fuel droplets in microgravity
+\shape default
+ (2014) Proceedings of the Combustion Institute, Article in Press, DOI:
+ 10.1016/j.proci.2014.06.035
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Jin, H., Yuan, W., Wang, Y., Li, Y., Qi, F., Cuoci, A., Frassoldati, A., Faravelli,
+ T.,
+\series default
+ 
+\shape italic
+Experimental and kinetic modeling study of laminar coflow diffusion methane
+ flames doped with 2-butanol
+\shape default
+ (2014), Proceedings of the Combustion Institute, Article in Press, DOI:
+ 10.1016/j.proci.2014.05.128
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Stagni, A., Cuoci, A., Frassoldati, A., Faravelli, T., Ranzi, E.,
+\series default
+ 
+\shape italic
+Lumping and reduction of detailed kinetic schemes: An effective coupling
+\shape default
+ (2014) Industrial and Engineering Chemistry Research, 53 (22), pp.
+ 9004-9016, DOI: 10.1021/ie403272f
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Jin, H., Cuoci, A., Frassoldati, A., Faravelli, T., Wang, Y., Li, Y., Qi, F.,
+\series default
+ 
+\shape italic
+Experimental and kinetic modeling study of PAH formation in methane coflow
+ diffusion flames doped with n-butanol
+\shape default
+ (2014) Combustion and Flame, 161 (3), pp.
+ 657-670, DOI: 10.1016/j.combustflame.2013.10.020
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Saggese, C., Sánchez, N.E., Frassoldati, A., Cuoci, A., Faravelli, T., Alzueta,
+ M.U., Ranzi, E.,
+\series default
+ 
+\shape italic
+Kinetic modeling study of polycyclic aromatic hydrocarbons and soot formation
+ in acetylene pyrolysis
+\shape default
+ (2014) Energy and Fuels, 28 (2), pp.
+ 1489-1501, DOI: 10.1021/ef402048q
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Stagni, A., Cuoci, A., Frassoldati, A., Faravelli, T., Ranzi, E.,
+\series default
+ 
+\shape italic
+A fully coupled, parallel approach for the post-processing of CFD data through
+ reactor network analysis
+\shape default
+ (2014) Computers and Chemical Engineering, 60, pp.
+ 197-212, DOI: 10.1016/j.compchemeng.2013.09.002
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Pelucchi, M., Bissoli, M., Cavallotti, C., Cuoci, A., Faravelli, T., Frassoldati,
+ A., Ranzi, E., Stagni, A.,
+\series default
+ 
+\shape italic
+Improved kinetic model of the low-temperature oxidation of n-heptane
+\shape default
+ (2014) Energy and Fuels, 28 (11), pp.
+ 7178-7193, DOI: 10.1021/ef501483f
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Ranzi, E., Frassoldati, A., Stagni, A., Pelucchi, M., Cuoci, A., Faravelli, T.,
+\series default
+ 
+\shape italic
+Reduced kinetic schemes of complex reaction systems: Fossil and biomass-derived
+ transportation fuels
+\shape default
+ (2014) International Journal of Chemical Kinetics, 46 (9), pp.
+ 512-542, DOI: 10.1002/kin.20867
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Cuoci, A., Frassoldati, A., Faravelli, T., Ranzi, E.,
+\series default
+ 
+\shape italic
+Numerical modeling of laminar flames with detailed kinetics based on the
+ operator-splitting method
+\shape default
+ (2013) Energy and Fuels, 27 (12), pp.
+ 7730-7753, DOI: 10.1021/ef4016334
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bissoli, M., Cuoci, A., Frassoldati, A., Faravelli, T., Ranzi, E., Lucchini,
+ T., D'Errico, G., Contino, F.,
+\series default
+ 
+\shape italic
+Detailed Kinetic Analysis of HCCI Combustion Using a New Multi-Zone Model
+ and CFD Simulations
+\shape default
+ (2013) SAE International Journal of Engines, 6 (3), pp.
+ 1594-1609, DOI: 10.4271/2013-24-0021
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Saggese, C., Frassoldati, A., Cuoci, A., Faravelli, T., Ranzi, E.,
+\series default
+ 
+\shape italic
+A wide range kinetic modeling study of pyrolysis and oxidation of benzene
+\shape default
+ (2013) Combustion and Flame, 160 (7), pp.
+ 1168-1190, DOI: 10.1016/j.combustflame.2013.02.013
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Maestri, M., Cuoci, A.,
+\series default
+ 
+\shape italic
+Coupling CFD with detailed microkinetic modeling in heterogeneous catalysis
+\shape default
+ (2013) Chemical Engineering Science, 96, pp.
+ 106-117, DOI: 10.1016/j.ces.2013.03.048
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Cuoci, A., Frassoldati, A., Faravelli, T., Jin, H., Wang, Y., Zhang, K., Glarborg,
+ P., Qi, F.,
+\series default
+ 
+\shape italic
+Experimental and detailed kinetic modeling study of PAH formation in laminar
+ co-flow methane diffusion flames
+\shape default
+ (2013) Proceedings of the Combustion Institute, 34 (1), pp.
+ 1811-1818, DOI: 10.1016/j.proci.2012.05.085
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Cuoci, A., Frassoldati, A., Faravelli, T., Ranzi, E.,
+\series default
+ 
+\shape italic
+A computational tool for the detailed kinetic modeling of laminar flames:
+ Application to C2H4/CH4 coflow flames
+\shape default
+ (2013) Combustion and Flame, 160 (5), pp.
+ 870-886, DOI: 10.1016/j.combustflame.2013.01.011
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Cuoci, A., Frassoldati, A., Faravelli, T., Ranzi, E.,
+\series default
+ 
+\shape italic
+Extinction of laminar, premixed, counter-flow methane/air flames under unsteady
+ conditions: Effect of H2 addition
+\shape default
+ (2013) Chemical Engineering Science, 93, pp.
+ 266-276, DOI: 10.1016/j.ces.2013.02.009
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Cuoci, A., Frassoldati, A., Stagni, A., Faravelli, T., Ranzi, E., Buzzi-Ferraris,
+ G.,
+\series default
+ 
+\shape italic
+Numerical modeling of NOx formation in turbulent flames using a kinetic
+ post-processing techniqu
+\shape default
+e (2013) Energy and Fuels, 27 (2), pp.
+ 1104-1122, DOI: 10.1021/ef3016987
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Saggese, C., Frassoldati, A., Cuoci, A., Faravelli, T., Ranzi, E.,
+\series default
+ 
+\shape italic
+A lumped approach to the kinetic modeling of pyrolysis and combustion of
+ biodiesel fuels
+\shape default
+ (2013) Proceedings of the Combustion Institute, 34 (1), pp.
+ 427-434, DOI: 10.1016/j.proci.2012.05.020
 \end_layout
 
 \begin_layout Standard
