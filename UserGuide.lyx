@@ -94,7 +94,7 @@ The OpenSMOKE++ Suite
 \begin_inset Newline newline
 \end_inset
 
-Version 0.2
+Version 0.3
 \end_layout
 
 \begin_layout Standard
@@ -4981,7 +4981,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="12" columns="3">
+<lyxtabular version="3" rows="13" columns="3">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3cm">
@@ -5315,11 +5315,41 @@ Additional data (author name, comments, etc.) can be added to the pre-processed
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 @SparsityPatternAnalysis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Additional analyses about the sparsity pattern of stoichiometric matrix
+ and associated Jacobian matrix
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@RewriteCHEMKIN
 \end_layout
 
 \end_inset
@@ -5337,8 +5367,9 @@ BOOL
 \begin_inset Text
 
 \begin_layout Plain Layout
-Additional analyses about the sparsity pattern of stoichiometric matrix
- and associated Jacobian matrix
+The kinetic mechanism is rewritten in CHEMKIN format by accounting for the
+ corrections on atomic balances carried out during the pre-processing phase
+ (default: true)
 \end_layout
 
 \end_inset
@@ -5450,9 +5481,9 @@ Thermodynamics_Status.out
  file reports a summary of the analysis of the thermodynamic data.
  In addition, a new file, containing new thermodynamic data, called 
 \family typewriter
-Thermodynamics_Reformulated.out
+thermo.CHEMKIN.CK
 \family default
-, will be provided.
+T, will be provided.
  This new thermodynamic file is generated on the basis of the original thermodyn
 amic data, which are made perfectly consistent at the transition temperature
  between low and high temperature correlations.
@@ -5523,6 +5554,55 @@ Reaction_FittedKinetics.out
 \color none
 Additional analyses about the sparsity pattern of stoichiometric matrix
  and associated Jacobian matrix
+\end_layout
+
+\begin_layout Subsection*
+
+\size normal
+@RewriteCHEMKIN
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+The kinetic mechanism is rewritten in CHEMKIN format by accounting for the
+ corrections on atomic balances carried out during the pre-processing phase
+ (default: true).
+ At the end of this operation a new kinetic file (
+\family typewriter
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+kinetics.CHEMKIN.CKI
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+) is available in the Output folder.
 \end_layout
 
 \begin_layout Section
