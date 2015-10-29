@@ -1238,9 +1238,17 @@ OpenSMOKE++ Suite
 \family default
  in 
 \family typewriter
+
+\begin_inset Quotes eld
+\end_inset
+
 C:
 \backslash
 OpenSMOKE++ Suite
+\begin_inset Quotes erd
+\end_inset
+
+
 \family default
  folder, the following string should be assigned to the 
 \family typewriter
@@ -1261,11 +1269,11 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-"C:
+C:
 \backslash
 OpenSMOKE++ Suite
 \backslash
-bin"
+bin
 \end_layout
 
 \begin_layout Plain Layout
@@ -1278,23 +1286,6 @@ end{lstlisting}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Remember to use the 
-\family typewriter
-
-\begin_inset Quotes eld
-\end_inset
-
- 
-\begin_inset Quotes eld
-\end_inset
-
-
-\family default
- symbols if your path contains empty spaces.
- 
 \end_layout
 
 \end_deeper
@@ -1424,11 +1415,19 @@ PATH
  on the location where you installed the Graphviz library).
  As an example, if you installed the GraphViz library in 
 \family typewriter
+
+\begin_inset Quotes eld
+\end_inset
+
 C:
 \backslash
 Program Files (x86)
 \backslash
 Graphviz2.38
+\begin_inset Quotes erd
+\end_inset
+
+
 \family default
  folder, the following string should be appended to the PATH variable:
 \end_layout
@@ -1447,13 +1446,13 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-"C:
+C:
 \backslash
 Program Files (x86)
 \backslash
 Graphviz2.38
 \backslash
-bin";
+bin;
 \end_layout
 
 \begin_layout Plain Layout
@@ -1466,23 +1465,6 @@ end{lstlisting}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Remember to use the 
-\family typewriter
-
-\begin_inset Quotes eld
-\end_inset
-
- 
-\begin_inset Quotes eld
-\end_inset
-
-
-\family default
- symbols if your path contains empty spaces.
- 
 \end_layout
 
 \end_deeper
@@ -1574,11 +1556,19 @@ PATH
  on the location where you installed IrfanView).
  As an example, if you installed Irfanview in 
 \family typewriter
+
+\begin_inset Quotes eld
+\end_inset
+
 C:
 \backslash
 Program Files (x86)
 \backslash
 IrfanView
+\begin_inset Quotes erd
+\end_inset
+
+
 \family default
  folder, the following string should be appended to the PATH variable:
 \end_layout
@@ -1597,11 +1587,11 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-"C:
+C:
 \backslash
 Program Files (x86)
 \backslash
-IrfanView";
+IrfanView;
 \end_layout
 
 \begin_layout Plain Layout
@@ -1614,23 +1604,6 @@ end{lstlisting}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Remember to use the 
-\family typewriter
-
-\begin_inset Quotes eld
-\end_inset
-
- 
-\begin_inset Quotes eld
-\end_inset
-
-
-\family default
- symbols if your path contains empty spaces.
- 
 \end_layout
 
 \end_deeper
