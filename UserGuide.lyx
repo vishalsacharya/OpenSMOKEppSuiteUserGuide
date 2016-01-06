@@ -4954,7 +4954,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="13" columns="3">
+<lyxtabular version="3" rows="14" columns="3">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3cm">
@@ -5318,11 +5318,42 @@ Additional analyses about the sparsity pattern of stoichiometric matrix
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 @RewriteCHEMKIN
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The kinetic mechanism is rewritten in CHEMKIN format by accounting for the
+ corrections on atomic balances carried out during the pre-processing phase
+ (default: true)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@SpeciesBundling
 \end_layout
 
 \end_inset
@@ -5340,9 +5371,8 @@ BOOL
 \begin_inset Text
 
 \begin_layout Plain Layout
-The kinetic mechanism is rewritten in CHEMKIN format by accounting for the
- corrections on atomic balances carried out during the pre-processing phase
- (default: true)
+Enables the species bundling technique for the fast estimation of mass diffusion
+ coefficients (default: false)
 \end_layout
 
 \end_inset
@@ -5506,7 +5536,7 @@ Reaction_FittedKinetics.out
  file.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsubsection*
 
 \size normal
 @SparsityPatternAnalysis
@@ -5529,7 +5559,7 @@ Additional analyses about the sparsity pattern of stoichiometric matrix
  and associated Jacobian matrix
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsubsection*
 
 \size normal
 @RewriteCHEMKIN
@@ -5576,6 +5606,79 @@ kinetics.CHEMKIN.CKI
 \noun off
 \color none
 ) is available in the Output folder.
+\end_layout
+
+\begin_layout Subsubsection*
+
+\size normal
+@SpeciesBundling	
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Enables the species bundling technique for the fast estimation of mass diffusion
+ coefficients (default: false).
+ The technique is described in the following paper: 
+\family default
+\series bold
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+Lu and Law
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+, 
+\family default
+\series default
+\shape italic
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+Diffusion coefficient reduction through species bundling
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+, Combustion and Flame, 148(3), p.
+ 117-126 (2007)
 \end_layout
 
 \begin_layout Section
@@ -9499,7 +9602,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="14" columns="3">
+<lyxtabular version="3" rows="15" columns="3">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
@@ -9947,7 +10050,7 @@ Force non-negative mass fractions (default: false)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -9956,7 +10059,7 @@ Force non-negative mass fractions (default: false)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -9965,12 +10068,46 @@ BOOL
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 Use DAE solver (instead of NL solver) to solve the steady-state problems
  (default: true)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size normal
+@SpeciesBundling
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Enables the species bundling technique for the fast evaluation of mass diffusion
+ coefficients.
+ The double parameter is the maximum relative error which can be accepted
+ (suggestion: 0.05)
 \end_layout
 
 \end_inset
@@ -10246,6 +10383,81 @@ Force non-negative mass fractions (default: false).
 \color none
 Use DAE solver (instead of NL solver) to solve the steady-state problems
  (default: true)
+\end_layout
+
+\begin_layout Subsubsection*
+
+\size normal
+@SpeciesBundling	
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Enables the species bundling technique for the fast evaluation of mass diffusion
+ coefficients.
+ The double parameter is the maximum relative error which can be accepted
+ (suggestion: 0.05).
+ The technique is described in the following paper: 
+\family default
+\series bold
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+Lu and Law
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+, 
+\family default
+\series default
+\shape italic
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+Diffusion coefficient reduction through species bundling
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+, Combustion and Flame, 148(3), p.
+ 117-126 (2007).
 \end_layout
 
 \begin_layout Chapter
