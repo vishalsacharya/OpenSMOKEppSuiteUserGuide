@@ -95,7 +95,7 @@ The OpenSMOKE++ Suite
 \begin_inset Newline newline
 \end_inset
 
-Version 0.3
+Version 0.4
 \end_layout
 
 \begin_layout Standard
@@ -363,7 +363,7 @@ Mattia Bissoli
 Alessandro Stagni
 \series default
 : analysis and reduction of kinetic mechansims, portability to Mac OSX and
- Linux
+ Linux, microgravity droplet
 \end_layout
 
 \begin_layout Standard
@@ -1028,6 +1028,10 @@ Microsoft Windows family
 \end_layout
 
 \begin_layout Itemize
+Microsoft Windows 10 (32/64 bit)
+\end_layout
+
+\begin_layout Itemize
 Microsoft Windows 8 (32/64 bit)
 \end_layout
 
@@ -1064,7 +1068,7 @@ Mac OS X
 \end_layout
 
 \begin_layout Itemize
-Mac OS X 10.7 (64 bit) and higher
+Mac OS X 10.8 (64 bit) and higher
 \end_layout
 
 \begin_layout Standard
@@ -1080,7 +1084,7 @@ https://www.virtualbox.org/
 
 \end_inset
 
-) running Ubuntu 14.04 or 15.04 (
+) running Ubuntu 14.04 or higher (
 \begin_inset Flex URL
 status open
 
@@ -1156,12 +1160,17 @@ OpenSMOKE++ Suite
 Control Panel -> Add/Remove Programs
 \family default
  utility available in Microsoft Windows.
- 
+\end_layout
+
+\begin_layout Subsubsection
+Manually setting the environment variables
 \end_layout
 
 \begin_layout Standard
-Once you installed the software, the environment variables have to be updated
- using the following procedure:
+Once you installed the software, the environment variables should be automatical
+ly updated.
+ In case you experience problems in running the code, you have to manually
+ update the environment variables according to the following procedure:
 \end_layout
 
 \begin_layout Enumerate
@@ -1218,7 +1227,9 @@ User variables
 Edit
 \family default
  button.
- This variable has to point to the 
+ 
+\bar under
+This variable has to point to the 
 \family typewriter
 bin
 \family default
@@ -1226,7 +1237,9 @@ bin
 \family typewriter
 OpenSMOKE++ Suite
 \family default
- installation.
+ installation
+\bar default
+.
  Of course the path depends on your system (i.e.
  on the location where you installed the 
 \family typewriter
@@ -1239,17 +1252,9 @@ OpenSMOKE++ Suite
 \family default
  in 
 \family typewriter
-
-\begin_inset Quotes eld
-\end_inset
-
 C:
 \backslash
 OpenSMOKE++ Suite
-\begin_inset Quotes erd
-\end_inset
-
-
 \family default
  folder, the following string should be assigned to the 
 \family typewriter
@@ -1274,7 +1279,7 @@ C:
 \backslash
 OpenSMOKE++ Suite
 \backslash
-bin
+bin;
 \end_layout
 
 \begin_layout Plain Layout
@@ -1689,7 +1694,7 @@ reference "sub:Notes-about-shared-libraries"
 \begin_layout Enumerate
 Unpack the 
 \family typewriter
-opensmoke++suite-0.2.tar.gz
+opensmoke++suite-0.4.tar.gz
 \family default
  file in the location you prefer using the following command:
 \end_layout
@@ -1708,7 +1713,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-tar -xzf opensmoke++suite-0.2.tar.gz
+tar -xzf opensmoke++suite-0.4.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
@@ -1848,7 +1853,7 @@ end{lstlisting}
 \begin_layout Standard
 As an example, if you unpacked the 
 \family typewriter
-opensmoke++suite-0.2.tar.gz
+opensmoke++suite-0.4.tar.gz
 \family default
  file directly in your home folder (
 \family typewriter
@@ -1870,12 +1875,12 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-export PATH=$PATH:$HOME/opensmoke++suite-0.2/bin
+export PATH=$PATH:$HOME/opensmoke++suite-0.4/bin
 \end_layout
 
 \begin_layout Plain Layout
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opensmoke++suite-0.2/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opensmoke++suite-0.4/lib
 \end_layout
 
 \begin_layout Plain Layout
@@ -2475,7 +2480,7 @@ https://gcc.gnu.org/wiki/GFortranBinaries#MacOS
 \begin_layout Enumerate
 Unpack the 
 \family typewriter
-opensmoke++suite-0.2-macos.tar.gz
+opensmoke++suite-0.4-macos.tar.gz
 \family default
  file in the location you prefer using the following command:
 \end_layout
@@ -2494,7 +2499,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-tar -xzf opensmoke++suite-0.2-macos.tar.gz
+tar -xzf opensmoke++suite-0.4-macos.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
@@ -2558,7 +2563,7 @@ end{lstlisting}
 \begin_layout Standard
 As an example, if you unpacked the 
 \family typewriter
-opensmoke++suite-0.2-macos.tar.gz
+opensmoke++suite-0.4-macos.tar.gz
 \family default
  file directly in your home folder (
 \family typewriter
@@ -2571,7 +2576,7 @@ $HOME
 
 \family typewriter
 \color black
-export PATH=$PATH:$HOME/opensmoke++suite-0.2-macos/bin
+export PATH=$PATH:$HOME/opensmoke++suite-0.4-macos/bin
 \end_layout
 
 \end_deeper
@@ -2788,7 +2793,7 @@ $HOME
 
 \family typewriter
 \color black
-$HOME/opensmoke++suite-0.2-macos/
+$HOME/opensmoke++suite-0.4-macos/
 \color inherit
 bin/OpenSMOKE_PostProcessor.sh.app
 \end_layout
@@ -4900,7 +4905,23 @@ Plug-Flow-Reactor
 \end_layout
 
 \begin_layout Enumerate
-PremixedLaminarFlame1D (under development)
+PremixedLaminarFlame1D
+\end_layout
+
+\begin_layout Enumerate
+Thermodynamic-Equilibrium
+\end_layout
+
+\begin_layout Enumerate
+Laminar-Flamelet
+\end_layout
+
+\begin_layout Enumerate
+LookUp-Tables
+\end_layout
+
+\begin_layout Enumerate
+Microgravity-Droplet (under development)
 \end_layout
 
 \begin_layout Standard
@@ -9583,15 +9604,12 @@ reference "sec:Sub-Dictionary-Parametric-Analysis"
 \end_layout
 
 \begin_layout Section
-Dictionary: PremixedLaminarFlame1D (under development)
+Dictionary: PremixedLaminarFlame1D
 \end_layout
 
 \begin_layout Standard
 This dictionary is used for setting the simulation for calculating laminar
  flame speeds.
- Please, consider that the current version of OpenSMOKE_PremixedLaminarFlame1D
- tool is only preliminary.
- The tool is under development.
 \end_layout
 
 \begin_layout Standard
@@ -10459,6 +10477,1974 @@ Diffusion coefficient reduction through species bundling
 \color none
 , Combustion and Flame, 148(3), p.
  117-126 (2007).
+\end_layout
+
+\begin_layout Section
+Dictionary: Thermodynamic Equilibrium
+\end_layout
+
+\begin_layout Standard
+This dictionary is used for setting the simulation for thermodynamic equilibrium
+ calculations.
+ In the current version of 
+\family typewriter
+OpenSMOKE++ Suite
+\family default
+ the user can calculating equilibrium conditions of a homogeneous mixture
+ of gases, under two different constraints: fixed enthalpy and pressure
+ or fixed temperature and pressure.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="3.5cm">
+<column alignment="center" valignment="top" width="13cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none" width="6cm">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Option
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Meaning
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@KineticsFolder
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PATH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Name of the folder containing the kinetic scheme (XML Version) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@KineticsPreProcessor 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICTIONARY [Rapid-Kinetics]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary containing the list of kinetic files to be interpreted (see Section
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Rapid-Kinetics"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Type 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STRING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type of simulation to be carried out (fixed enthalpy and pressure or fixed
+ temperature and pressure): 
+\family typewriter
+Fixed_H_P | Fixed_T_P
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@InitialStatus
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICTIONARY [Gas-Status]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary defining the initial gas composition, temperature and pressure
+ (see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Gas-Status"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Output
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PATH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Path to the folder where the results have to be written
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@OutputSpecies
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STRINGS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+List of species which will be written on ASCII file
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@VerbosityLevel 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MEASURE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Verbosity level: default is 0 (basically no details are written on the screen),
+ maximum level is 5 (every detail about the calculations is reported on
+ the screen)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Thermodynamic Equilibrium dictionary
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Additional comments
+\end_layout
+
+\begin_layout Subsubsection*
+@KineticsFolder 
+\end_layout
+
+\begin_layout Standard
+This option is used to specify the name of the folder containing the kinetic
+ scheme in XML Version (
+\family typewriter
+kinetics.xml
+\family default
+).
+ This file has to be generated using the 
+\family typewriter
+OpenSMOKE_CHEMKIN_Preprocessor
+\family default
+.
+ Instead of using this option, the user has the possibility to pre-process
+ the kinetic scheme on the fly using the 
+\family typewriter
+@KineticsPreProcessor
+\family default
+ option (see below).
+\end_layout
+
+\begin_layout Subsubsection*
+@KineticsPreProcessor 
+\end_layout
+
+\begin_layout Standard
+The user can pre-process a kinetic scheme available in CHEMKIN format on
+ the fly, when the reactor simulation is performed (instead of pre-processing
+ the kinetics in a previous step).
+ This option is very useful when the kinetic mechanism is under construction
+ and/or tuning and the user has the need to change often the reactions and
+ the kinetic parameters.
+ Please consider that the pre-processing operation can be quite long for
+ very detailed kinetic schemes (thousands of species).
+ The 
+\family typewriter
+@KineticsPreProcessor
+\family default
+ option requires that the user specify the name of the sub-dictionary containing
+ all the information needed to pre-process kinetic mechanisms on the fly.
+ Please look at Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Rapid-Kinetics"
+
+\end_inset
+
+ to have more details.
+\end_layout
+
+\begin_layout Subsubsection*
+@Type 
+\end_layout
+
+\begin_layout Standard
+In the current version of 
+\family typewriter
+OpenSMOKE++ Suite
+\family default
+ the user can calculating equilibrium conditions of a homogeneous mixture
+ of gases, under two different constraints: fixed enthalpy and pressure
+ (
+\family typewriter
+Fixed_H_P
+\family default
+) or fixed temperature and pressure (
+\family typewriter
+Fixed_T_P
+\family default
+).
+\end_layout
+
+\begin_layout Subsubsection*
+@InitialStatus 
+\end_layout
+
+\begin_layout Standard
+This option is used to specify the features (temperature, pressure and compositi
+on) of the initial mixture.
+ The 
+\family typewriter
+@InitialStatus
+\family default
+ option requires that the user specify the name of the corresponding sub-diction
+ary.
+ Please look at Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Gas-Status"
+
+\end_inset
+
+ to have more details.
+\end_layout
+
+\begin_layout Subsubsection*
+@Output
+\end_layout
+
+\begin_layout Standard
+Path to the folder where the results have to be written.
+\end_layout
+
+\begin_layout Subsubsection*
+@OutputSpecies
+\end_layout
+
+\begin_layout Standard
+List of species which will be written on ASCII file.
+ 
+\family typewriter
+ALL
+\family default
+ means that every species contained in the kinetic mechanism is written
+ on the file.
+\end_layout
+
+\begin_layout Subsubsection*
+@Verbosity Level 
+\end_layout
+
+\begin_layout Standard
+Verbosity level: default is 0 (basically no details are written on the screen),
+ maximum level is 5 (every detail about the calculations is reported on
+ the screen).
+\end_layout
+
+\begin_layout Section
+Dictionary: LaminarFlamelet
+\end_layout
+
+\begin_layout Standard
+This dictionary is used for setting the simulation for calculating laminar
+ flame speeds.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="19" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="3.5cm">
+<column alignment="center" valignment="top" width="13cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none" width="6cm">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Option
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Meaning
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@KineticsFolder
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PATH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Name of the folder containing the kinetic scheme (XML Version) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@KineticsPreProcessor 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [Rapid-Kinetics]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary containing the list of kinetic files to be interpreted (see Section
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Rapid-Kinetics"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Backup
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PATH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Name (local or full path) of backup file (in xml format) to be used to restart
+ the simulation
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Grid 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [AdaptiveGrid-1D]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary defining the computational 1D grid (see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Adaptive-Grid1D-dictionary"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@FuelSide
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [Gas-Status]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary defining the composition, temperature, and pressure of fuel stream
+ (see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Gas-Status"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@OxidizerSide
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [Gas-Status] 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary defining the composition, temperature, and pressure of oxidizer
+ stream.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Gas-Status"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@StoichiometricScalarDissipationRates
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+VECTOR_MEASURE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+List of stoichiometric scalar dissipation rates to be simulated.
+ The equilibrium flamelet (i.e.
+ at scalar dissipation rate equal to 0) is always automatically calculated.
+ Example: 
+\family typewriter
+@StoichiometricScalarDissipationRates 1e-3 1e-1 10.
+ Hz;
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@EnthalpyDefects
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+VECTOR_MEASURE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+List of enthalpy defects to be simulated.
+ The adiabatic flamelet (i.e.
+ at enthalpy defect equal to 0) is always automatically calculated.
+ Example: 
+\family typewriter
+@EnthalpyDefects 250 500 750 1000 kJ/kg;
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@SensitivityAnalysis 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [Sensitivity-Analysis]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary containing additional options for sensitivity analysis (see Section
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Sensitivity-Analysis"
+
+\end_inset
+
+) [Not yet available]
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@OdeParameters
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [ODE-TridiagonalBlock-Solver]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary containing the numerical parameters for solving the Triadiagonal
+ Block ODE system (see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:ODE-TridiagonalBlock-Parameters"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@NlsParameters
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [NLS-TridiagonalBlock-Solver]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary containing the numerical parameters for solving the Triadiagonal
+ Block non-linear system (see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:NLS-TridiagonalBlock-Parameters"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@FalseTransientParameters
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [FalseTransient-Solver]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary containing the numerical parameters governing the false-transient
+ approach (see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:FalseTransient-Parameters-dictio"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@CheckMassFractions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Force non-negative mass fractions (default: false)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@UseOdeSolver
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Use ODE solver (instead of NLS solver) to solve the steady-state problems
+ (default: true)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@UseNlsSolver
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Use NLS solver (in addition to the ODE solver) to solve the steady-state
+ problems (default: true)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@DensityCorrectionOnScalarDissipationRate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Applies a correction to the scalar dissipation rate to account for variations
+ of densities along the flamelet (default: false)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MinimumTemperature
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MEASURE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Minimum temperature which can be accepted for non-adiabatic flamelets (default:
+ 280 K)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@ExtinguishmentTemperature
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MEASURE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Temperature below which the flame can be considered extinguished (default:
+ 1000 K)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+LaminarFlamelet dictionary
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Additional comments
+\end_layout
+
+\begin_layout Subsubsection*
+@KineticsFolder 
+\end_layout
+
+\begin_layout Standard
+This option is used to specify the name of the folder containing the kinetic
+ scheme in XML Version (
+\family typewriter
+kinetics.xml
+\family default
+).
+ This file has to be generated using the 
+\family typewriter
+OpenSMOKE_CHEMKIN_Preprocessor
+\family default
+.
+ Instead of using this option, the user has the possibility to pre-process
+ the kinetic scheme on the fly using the 
+\family typewriter
+@KineticsPreProcessor
+\family default
+ option (see below).
+\end_layout
+
+\begin_layout Subsubsection*
+@KineticsPreProcessor 
+\end_layout
+
+\begin_layout Standard
+The user can pre-process a kinetic scheme available in CHEMKIN format on
+ the fly, when the reactor simulation is performed (instead of pre-processing
+ the kinetics in a previous step).
+ This option is very useful when the kinetic mechanism is under construction
+ and/or tuning and the user has the need to change often the reactions and
+ the kinetic parameters.
+ Please consider that the pre-processing operation can be quite long for
+ very detailed kinetic schemes (thousands of species).
+ The 
+\family typewriter
+@KineticsPreProcessor
+\family default
+ option requires that the user specify the name of the sub-dictionary containing
+ all the information needed to pre-process kinetic mechanisms on the fly.
+ Please look at Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Rapid-Kinetics"
+
+\end_inset
+
+ to have more details.
+\end_layout
+
+\begin_layout Subsubsection*
+@Backup
+\end_layout
+
+\begin_layout Standard
+Name (local or full path) of backup file (in xml format) to be used to restart
+ the simulation.
+\end_layout
+
+\begin_layout Subsubsection*
+@Grid
+\end_layout
+
+\begin_layout Standard
+Dictionary defining the computational 1D grid (see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Adaptive-Grid1D-dictionary"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Subsubsection*
+@FuelStream
+\end_layout
+
+\begin_layout Standard
+This option is used to specify the features (temperature, pressure and compositi
+on) of the inlet stream.
+ The 
+\family typewriter
+@InletStatus
+\family default
+ option requires that the user specify the name of the corresponding sub-diction
+ary.
+ Please look at Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Gas-Status"
+
+\end_inset
+
+ to have more details.
+\end_layout
+
+\begin_layout Subsubsection*
+@OxidizerStream
+\end_layout
+
+\begin_layout Standard
+Dictionary defining the composition, temperature, and pressure of fuel stream
+ (see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Gas-Status"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsubsection*
+@OutletStream
+\end_layout
+
+\begin_layout Standard
+Dictionary defining the composition, temperature, and pressure of oxidizer
+ stream (see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Gas-Status"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsubsection*
+@StoichiometricScalarDissipationRates
+\end_layout
+
+\begin_layout Standard
+List of stoichiometric scalar dissipation rates to be simulated.
+ The equilibrium flamelet (i.e.
+ at scalar dissipation rate equal to 0) is always automatically calculated.
+ Example: 
+\family typewriter
+@StoichiometricScalarDissipationRates 1e-3 1e-1 10.
+ Hz;
+\end_layout
+
+\begin_layout Subsubsection*
+@EnthalpyDefects
+\end_layout
+
+\begin_layout Standard
+List of enthalpy defects to be simulated.
+ The adiabatic flamelet (i.e.
+ at enthalpy defect equal to 0) is always automatically calculated.
+ Example: 
+\family typewriter
+@EnthalpyDefects 250 500 750 1000 kJ/kg;
+\end_layout
+
+\begin_layout Subsubsection*
+@Output
+\end_layout
+
+\begin_layout Standard
+Folder where to write the results of the simulation 
+\end_layout
+
+\begin_layout Subsubsection*
+@SensitivityAnalysis 
+\end_layout
+
+\begin_layout Standard
+The user has to specify the name of the sub-dictionary in which the options
+ for performing the sensitivity analysis are reported.
+ Please look at Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Sensitivity-Analysis"
+
+\end_inset
+
+ to have more details.
+\end_layout
+
+\begin_layout Subsubsection*
+@OdeParameters 
+\end_layout
+
+\begin_layout Standard
+The user has to specify the name of the sub-dictionary in which the options
+ about the tridiagonal-block ODE solver adopted for the solution of transport
+ equations.
+ Please look at Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:ODE-TridiagonalBlock-Parameters"
+
+\end_inset
+
+ to have more details.
+\end_layout
+
+\begin_layout Subsubsection*
+@NlsParameters 
+\end_layout
+
+\begin_layout Standard
+The user has to specify the name of the sub-dictionary in which the options
+ about the tridiagonal-block non-linear (NL) solver adopted for the solution
+ of transport equations.
+ Please look at Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:NLS-TridiagonalBlock-Parameters"
+
+\end_inset
+
+ to have more details.
+\end_layout
+
+\begin_layout Subsubsection*
+@FalseTransientParameters 
+\end_layout
+
+\begin_layout Standard
+The user has to specify the name of the sub-dictionary in which the options
+ about the false-transient method adopted for the solution of transport
+ equations.
+ Please look at Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:FalseTransient-Parameters-dictio"
+
+\end_inset
+
+ to have more details.
+\end_layout
+
+\begin_layout Subsubsection*
+@CheckMassFractions
+\end_layout
+
+\begin_layout Standard
+Force non-negative mass fractions (default: false).
+\end_layout
+
+\begin_layout Subsubsection*
+@UseOdeSolver
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Use ODE solver (instead of NLS solver) to solve the steady-state problems
+ (default: true)
+\end_layout
+
+\begin_layout Subsubsection*
+@UseNlsSolver
+\end_layout
+
+\begin_layout Standard
+Use NLS solver (in addition to the ODE solver) to solve the steady-state
+ problems (default: true)
+\end_layout
+
+\begin_layout Subsubsection*
+@DensityCorrectionOnScalarDissipationRate
+\size normal
+	
+\end_layout
+
+\begin_layout Standard
+Applies a correction to the scalar dissipation rate to account for variations
+ of densities along the flamelet (default: false).
+ The correction factor is: 
+\begin_inset Formula $\frac{3}{8}\frac{\left(\sqrt{\frac{\rho_{ox}}{\rho_{fuel}}}+1\right)^{2}}{\sqrt{\frac{\rho_{ox}}{\rho_{fuel}}}+1}$
+\end_inset
+
+.
+ Thus, the resulting scalar diffispation rate is given by: 
+\begin_inset Formula $\chi=\frac{a_{s}}{\pi}exp\left(-2\left(erfc^{-1}\left(2z_{st}\right)\right)^{2}\right)\frac{3}{8}\frac{\left(\sqrt{\frac{\rho_{ox}}{\rho_{fuel}}}+1\right)^{2}}{\sqrt{\frac{\rho_{ox}}{\rho_{fuel}}}+1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+@MinimumTemperature
+\size normal
+	
+\end_layout
+
+\begin_layout Standard
+Minimum temperature which can be accepted for non-adiabatic flamelets (default:
+ 280 K).
+\end_layout
+
+\begin_layout Subsubsection*
+@ExtinguishmentTemperatur
+\size normal
+e	
+\end_layout
+
+\begin_layout Standard
+Temperature below which the flame can be considered extinguished (default:
+ 1000 K).
+\end_layout
+
+\begin_layout Section
+Dictionary: LookUpTables
+\end_layout
+
+\begin_layout Standard
+This dictionary is used for setting the simulation for calculating laminar
+ flame speeds.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="3.5cm">
+<column alignment="center" valignment="top" width="13cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none" width="6cm">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Option
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Meaning
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@KineticsFolder
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PATH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Name of the folder containing the kinetic scheme (XML Version) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@KineticsPreProcessor 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [Rapid-Kinetics]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary containing the list of kinetic files to be interpreted (see Section
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Rapid-Kinetics"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Input
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PATH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Name (local or full path) of folder containing the XML files corresponding
+ to the different laminar flamelets to be post-processed
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@OutputASCII
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PATH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Name of the folder where to write the output ASCII files
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@OutputLookUpTable
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PATH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Name of the folder where to write the pre-processed lookup table (in XML
+ format)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@VarianceSlices
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Number of slices in the mixture fraction variance space (default: 32)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@VarianceStretchingFactor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Stretching factor for building the mixture fraction variance space (default:
+ 1.17)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MaximumAllowedNormalizedVariance
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maximum allowed normalized variance (default: 0.98)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@PDFType
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STRING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type of PDF: 
+\family typewriter
+Beta
+\family default
+ | 
+\family typewriter
+ClippedGaussian
+\family default
+ (default: 
+\family typewriter
+Beta
+\family default
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Overwrite
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Force overwriting of previous (if existing) output folder (default: false)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+LookUpTables dictionary
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Additional comments
+\end_layout
+
+\begin_layout Subsubsection*
+@KineticsFolder 
+\end_layout
+
+\begin_layout Standard
+This option is used to specify the name of the folder containing the kinetic
+ scheme in XML Version (
+\family typewriter
+kinetics.xml
+\family default
+).
+ This file has to be generated using the 
+\family typewriter
+OpenSMOKE_CHEMKIN_Preprocessor
+\family default
+.
+ Instead of using this option, the user has the possibility to pre-process
+ the kinetic scheme on the fly using the 
+\family typewriter
+@KineticsPreProcessor
+\family default
+ option (see below).
+\end_layout
+
+\begin_layout Subsubsection*
+@KineticsPreProcessor 
+\end_layout
+
+\begin_layout Standard
+The user can pre-process a kinetic scheme available in CHEMKIN format on
+ the fly, when the reactor simulation is performed (instead of pre-processing
+ the kinetics in a previous step).
+ This option is very useful when the kinetic mechanism is under construction
+ and/or tuning and the user has the need to change often the reactions and
+ the kinetic parameters.
+ Please consider that the pre-processing operation can be quite long for
+ very detailed kinetic schemes (thousands of species).
+ The 
+\family typewriter
+@KineticsPreProcessor
+\family default
+ option requires that the user specify the name of the sub-dictionary containing
+ all the information needed to pre-process kinetic mechanisms on the fly.
+ Please look at Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Rapid-Kinetics"
+
+\end_inset
+
+ to have more details.
+\end_layout
+
+\begin_layout Subsubsection*
+@Input
+\end_layout
+
+\begin_layout Standard
+Name (local or full path) of folder containing the XML files corresponding
+ to the different laminar flamelets to be post-processed
+\end_layout
+
+\begin_layout Subsubsection*
+@OutputASCII
+\end_layout
+
+\begin_layout Standard
+Name of the folder where to write the output ASCII files
+\end_layout
+
+\begin_layout Subsubsection*
+@OutputLookUpTable
+\end_layout
+
+\begin_layout Standard
+Name of the folder where to write the pre-processed lookup table (in XML
+ format)
+\end_layout
+
+\begin_layout Subsubsection*
+@VarianceSlices
+\end_layout
+
+\begin_layout Standard
+Number of slices in the mixture fraction variance space (default: 32)
+\end_layout
+
+\begin_layout Subsubsection*
+@VarianceStretchingFactor
+\end_layout
+
+\begin_layout Standard
+Stretching factor for building the mixture fraction variance space (default:
+ 1.17)
+\end_layout
+
+\begin_layout Subsubsection*
+@MaximumAllowedNormalizedVariance
+\end_layout
+
+\begin_layout Standard
+Maximum allowed normalized variance (default: 0.98)
+\end_layout
+
+\begin_layout Subsubsection*
+@PDFType
+\end_layout
+
+\begin_layout Standard
+Type of PDF: 
+\family typewriter
+Beta
+\family default
+ | 
+\family typewriter
+ClippedGaussian
+\family default
+ (default: 
+\family typewriter
+Beta
+\family default
+)
+\end_layout
+
+\begin_layout Subsubsection*
+@Overwrite
+\end_layout
+
+\begin_layout Standard
+Force overwriting of previous (if existing) output folder (default: false)
 \end_layout
 
 \begin_layout Section
@@ -12901,6 +14887,10 @@ Parametric Analysis
 
 \begin_layout Enumerate
 Adaptive-Grid1D
+\end_layout
+
+\begin_layout Enumerate
+Ode-TridiagonalBlock-Parameters
 \end_layout
 
 \begin_layout Enumerate
@@ -17190,6 +19180,936 @@ Dictionary grid
 \begin_layout Plain Layout
 
 	@RegridPoints           20;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Sub-Dictionary: ODE-TridiagonalBlock-Parameters 
+\end_layout
+
+\begin_layout Standard
+This dictionary is used for setting the options for the stiff tridiagonal-block
+ ODE solvers available in 
+\family typewriter
+OpenSMOKE++ Suite
+\family default
+ (see Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:ODE-TridiagonalBlock-Parameters"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="17" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="3cm">
+<column alignment="center" valignment="top" width="14cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Option
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Meaning
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@OdeSolver
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STRING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DAE Solver: OpenSMOKE++ | BzzOde | CVODE | DASPK (default: OpenSMOKE++)
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Jacobian
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STRING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Jacobian sparsity pattern treatment: 
+\family typewriter
+TridiagonalBlock | Band | Sparse
+\family default
+ (default: 
+\family typewriter
+TridiagonalBlock
+\family default
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@SparseSolver
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STRING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sparse solver: 
+\family typewriter
+EigenSparseLU | EigenBiCGSTAB | EigenGMRES | EigenDGMRES | Pardiso | SuperLUSeri
+al | UMFPack
+\family default
+ (default: 
+\family typewriter
+EigenSparseLU
+\family default
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Preconditioner
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STRING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Preconditioner to be used by iterative solvers: 
+\family typewriter
+ILUT | diagonal
+\family default
+ (default: 
+\family typewriter
+ILUT
+\family default
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@RelativeTolerance
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Relative tolerance (default 1.e-6)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@AbsoluteTolerance
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Absolute tolerance (default 1.e-10)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MaximumNumberOfSteps
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maximum number of steps (default 500000)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MaximumStep
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maximum step (default: automatically chosen by the solver)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MinimumStep
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Minimum step (default: automatically chosen by the solver)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@InitialStep
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Initial step (default: automatically chosen by the solver)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MaximumOrder
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maximum order of the method (default 5)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MeanResidualThreshold
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Stop the integration when the mean residual is below this threshold (default:
+ 0.)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@VerbosityLevel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Verbosity level: 0=no output, 3 maximum level of output
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MinimumConstraints
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Constraints on minimum values (available only for OpenSMOKE++ and BzzOde
+ solvers, default true)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MaximumConstraints
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Constraints on maximum values (available only for OpenSMOKE++ and BzzOde
+ solvers, default false)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@NonNegativeVariables
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Constraints on minimum values (available only for CVODE and DASPK solvers,
+ default false)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:ODE-TridiagonalBlock-Parameters"
+
+\end_inset
+
+ODE-TridiagonalBlock-Parameters dictionary
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Additional comments
+\end_layout
+
+\begin_layout Subsubsection*
+@OdeSolver
+\end_layout
+
+\begin_layout Standard
+The user can choose among four different DAE solvers: 
+\family typewriter
+OpenSMOKE++
+\family default
+, 
+\family typewriter
+BzzOde
+\family default
+ (from the BzzMath library), 
+\family typewriter
+CVODE
+\family default
+ (from the Sundials Suite) or 
+\family typewriter
+DASPK
+\end_layout
+
+\begin_layout Subsubsection*
+@Jacobian
+\end_layout
+
+\begin_layout Standard
+The user to treat the Jacobian as a tridiagonal-block matrix (
+\family typewriter
+TridiagonalBlock
+\family default
+), band matrix (
+\family typewriter
+Band
+\family default
+) or as a sparse matrix (
+\family typewriter
+Sparse
+\family default
+).
+ The latter option is particular useful in case of limitations of available
+ RAM.
+\end_layout
+
+\begin_layout Subsubsection*
+@SparseSolver
+\end_layout
+
+\begin_layout Standard
+Sparse solver to be used in case the 
+\family typewriter
+Sparse
+\family default
+ option was chosen in 
+\family typewriter
+@Jacobian
+\family default
+ option.
+\end_layout
+
+\begin_layout Subsubsection*
+@Preconditioner
+\end_layout
+
+\begin_layout Standard
+Preconditioner to be used in case the 
+\family typewriter
+Sparse
+\family default
+ option was chosen in 
+\family typewriter
+@Jacobian
+\family default
+ option.
+\end_layout
+
+\begin_layout Subsubsection*
+@RelativeTolerance
+\end_layout
+
+\begin_layout Standard
+Relative tolerance (default 1.e-6).
+\end_layout
+
+\begin_layout Subsubsection*
+@AbsoluteTolerance
+\end_layout
+
+\begin_layout Standard
+Absolute tolerance (default 1.e-10).
+ For 
+\family typewriter
+IDA
+\family default
+ solver we suggest to use stricter absolute tolerance (i.e.
+ at least 1e-12).
+\end_layout
+
+\begin_layout Subsubsection*
+@MaximumNumberOfSteps
+\end_layout
+
+\begin_layout Standard
+Maximum number of steps (default 500000)
+\end_layout
+
+\begin_layout Subsubsection*
+@MaximumStep
+\end_layout
+
+\begin_layout Standard
+Maximum step (default: automatically chosen by the solver)
+\end_layout
+
+\begin_layout Subsubsection*
+@MinimumStep
+\end_layout
+
+\begin_layout Standard
+Minimum step (default: automatically chosen by the solver)
+\end_layout
+
+\begin_layout Subsubsection*
+@InitialStep
+\end_layout
+
+\begin_layout Standard
+Initial step (default: automatically chosen by the solver)
+\end_layout
+
+\begin_layout Subsubsection*
+@MaximumOrder
+\end_layout
+
+\begin_layout Standard
+Maximum order of the method (default 5)
+\end_layout
+
+\begin_layout Subsubsection*
+@MeanResidualThreshold
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Stop the integration when the mean residual is below this threshold (default:
+ 0.)
+\end_layout
+
+\begin_layout Subsubsection*
+@VerbosityLevel
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Verbosity level: 0=no output, 3 maximum level of output
+\end_layout
+
+\begin_layout Subsubsection*
+@MinimumConstraints
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Constraints on minimum values (available only for OpenSMOKE++ and BzzOde
+ solvers, default true)
+\end_layout
+
+\begin_layout Subsubsection*
+@MaximumConstraints
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Constraints on maximum values (available only for OpenSMOKE++ and BzzOde
+ solvers, default false)
+\end_layout
+
+\begin_layout Subsubsection*
+@NonNegativeVariables
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Constraints on minimum values (available only for CVODE and DASPK solvers,
+ default false)
+\end_layout
+
+\begin_layout Subsection
+Example
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[style=codefragment]
+\end_layout
+
+\begin_layout Plain Layout
+
+Dictionary dae-parameters
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+	@OdeSolver              OpenSMOKE++; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@Jacobian	           TridiagonalBlock; 
+\end_layout
+
+\begin_layout Plain Layout
+
+	@RelativeTolerance      1e-6;
+\end_layout
+
+\begin_layout Plain Layout
+
+	@AbsoluteTolerance      1e-10;
+\end_layout
+
+\begin_layout Plain Layout
+
+	@MaximumNumberOfSteps   100000; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@MaximumStep            1e3;
+\end_layout
+
+\begin_layout Plain Layout
+
+	@MinimumStep            1e-9;
+\end_layout
+
+\begin_layout Plain Layout
+
+	@InitialStep            1e-9;
+\end_layout
+
+\begin_layout Plain Layout
+
+	@MaximumOrder           5; 
+\end_layout
+
+\begin_layout Plain Layout
+
+	@MeanResidualThreshold  1e-5;
+\end_layout
+
+\begin_layout Plain Layout
+
+	@VerbosityLevel         0;
 \end_layout
 
 \begin_layout Plain Layout
@@ -22562,309 +25482,202 @@ oci@polimi.it).
 \begin_layout Itemize
 
 \series bold
+Jin, H., Cai, J., Wang, G., Wang, Y., Li, Y., Yang, J., Cheng, Z., Yuan, W., Qi,
+ F.
+
+\series default
+ A comprehensive experimental and kinetic modeling study of tert-butanol
+ combustion (2016) Combustion and Flame, 169, pp.
+ 154-170, DOI: 10.1016/j.combustflame.2016.03.026
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Li, S., Yang, B., Qi, F.
+
+\series default
+ Accelerate global sensitivity analysis using artificial neural network
+ algorithm: Case studies for combustion kinetic model (2016) Combustion
+ and Flame, 168, pp.
+ 53-64, DOI: 10.1016/j.combustflame.2016.03.028
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bernardi, M.S., Pelucchi, M., Stagni, A., Sangalli, L.M., Cuoci, A., Frassoldati,
+ A., Secchi, P., Faravelli, T.
+
+\series default
+ Curve matching, a generalized framework for models/experiments comparison:
+ An application to n-heptane combustion kinetic mechanisms (2016) Combustion
+ and Flame, 168, pp.
+ 186-203, DOI: 10.1016/j.combustflame.2016.03.019
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Saggese, C., Cuoci, A., Frassoldati, A., Ferrario, S., Camacho, J., Wang, H.,
+ Faravelli, T.
+
+\series default
+ Probe effects in soot sampling from a burner-stabilized stagnation flame
+ (2016) Combustion and Flame, 167, pp.
+ 184-197, DOI: 10.1016/j.combustflame.2016.02.013
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Rebughini, S., Cuoci, A., Maestri, M.
+
+\series default
+ Hierarchical analysis of the gas-to-particle heat and mass transfer in
+ micro packed bed reactors (2016) Chemical Engineering Journal, 289, pp.
+ 471-478, DOI: 10.1016/j.cej.2015.12.089
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Nativel, D., Pelucchi, M., Frassoldati, A., Comandini, A., Cuoci, A., Ranzi,
+ E., Chaumeix, N., Faravelli, T.
+ 
+\series default
+Laminar flame speeds of pentanol isomers: An experimental and modeling study
+ (2016) Combustion and Flame, 166, pp.
+ 1-18, DOI: 10.1016/j.combustflame.2015.11.012
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Rebughini, S., Cuoci, A., Maestri, M.
+
+\series default
+ Handling contact points in reactive CFD simulations of heterogeneous catalytic
+ fixed bed reactors (2016) Chemical Engineering Science, 141, pp.
+ 240-249, DOI: 10.1016/j.ces.2015.11.013
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Rodriguez, A., Herbinet, O., Battin-Leclerc, F., Frassoldati, A., Faravelli,
+ T., Ranzi, E.
+
+\series default
+ Experimental and modeling investigation of the effect of the unsaturation
+ degree on the gas-phase oxidation of fatty acid methyl esters found in
+ biodiesel fuels (2016) Combustion and Flame, 164, pp.
+ 346-362, DOI: 10.1016/j.combustflame.2015.11.032
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Maffei, T., Gentile, G., Rebughini, S., Bracconi, M., Manelli, F., Lipp, S., Cuoci,
+ A., Maestri, M.
+
+\series default
+ A multiregion operator-splitting CFD approach for coupling microkinetic
+ modeling with internal porous transport in heterogeneous catalytic reactors
+ (2016) Chemical Engineering Journal, 283, pp.
+ 1392-1404, DOI: 10.1016/j.cej.2015.08.080
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Stagni, A., Frassoldati, A., Cuoci, A., Faravelli, T., Ranzi, E.
+
+\series default
+ Skeletal mechanism reduction through species-targeted sensitivity analysis
+ (2016) Combustion and Flame, 163, pp.
+ 382-393, DOI: 10.1016/j.combustflame.2015.10.013
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Saggese, C., Ferrario, S., Camacho, J., Cuoci, A., Frassoldati, A., Ranzi, E.,
+ Wang, H., Faravelli, T.
+
+\series default
+ Kinetic modeling of particle size distribution of soot in a premixed burner-sta
+bilized stagnation ethylene flame (2015) Combustion and Flame, 162 (9),
+ pp.
+ 3356-3369, DOI: 10.1016/j.combustflame.2015.06.002
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Pelucchi, M., Frassoldati, A., Faravelli, T., Ruscic, B., Glarborg, P.
+
+\series default
+ High-temperature chemistry of HCl and Cl<inf>2</inf> (2015) Combustion
+ and Flame, 162 (6), pp.
+ 2693-2704, DOI: 10.1016/j.combustflame.2015.04.002
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
 Salenbauch, S., Cuoci, A., Frassoldati, A., Saggese, C., Faravelli, T., Hasse,
- C., 
+ C.
+
 \series default
-\shape italic
-Modeling soot formation in premixed flames using an Extended Conditional
- Quadrature Method of Moments
-\shape default
- (2015) Combustion and Flame, Article in Press, DOI: 10.1016/j.combustflame.2015.03.0
-02
+ Modeling soot formation in premixed flames using an Extended Conditional
+ Quadrature Method of Moments (2015) Combustion and Flame, 162 (6), pp.
+ 2529-2543, DOI: 10.1016/j.combustflame.2015.03.002
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-Matera, S., Maestri, M., Cuoci, A., Reuter, K.,
+Frassoldati, A., D'Errico, G., Lucchini, T., Stagni, A., Cuoci, A., Faravelli,
+ T., Onorati, A., Ranzi, E.
+
 \series default
- 
-\shape italic
-Predictive-quality surface reaction chemistry in real reactor models: Integratin
-g first-principles kinetic monte carlo simulations into computational fluid
- dynamics
-\shape default
- (2014) ACS Catalysis, 4 (11), pp.
- 4081-4092, DOI: 10.1021/cs501154e
+ Reduced kinetic mechanisms of diesel fuel surrogate for engine CFD simulations
+ (2015) Combustion and Flame, 162 (10), pp.
+ 3991-4007, DOI: 10.1016/j.combustflame.2015.07.039
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-Jin, H., Frassoldati, A., Wang, Y., Zhang, X., Zeng, M., Li, Y., Qi, F., Cuoci,
- A., Faravelli, T.,
+De Bruycker, R., Pyl, S.P., Reyniers, M.-F., Van Geem, K.M., Marin, G.B.
+
 \series default
- 
-\shape italic
-Kinetic modeling study of benzene and PAH formation in laminar methane flame
-\shape default
-s (2015) Combustion and Flame, Article in Press, DOI: 10.1016/j.combustflame.2014.11.
-031
+ Microkinetic model for the pyrolysis of methyl esters: From model compound
+ to industrial biodiesel (2015) AIChE Journal, 61 (12), pp.
+ 4309-4322, DOI: 10.1002/aic.14953
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-Ranzi, E., Cavallotti, C., Cuoci, A., Frassoldati, A., Pelucchi, M., Faravelli,
- T.,
-\series default
+Evans, M.J., Medwell, P.R., Tian, Z.F., Frassoldati, A., Cuoci, A., Stagni, A.
  
-\shape italic
-New reaction classes in the kinetic modeling of low temperature oxidation
- of n-alkanes
-\shape default
- (2014) Combustion and Flame, Article in Press, DOI: 10.1016/j.combustflame.2014.11.0
-30
+\series default
+Ignition characteristics in spatially zero-, one- and two-dimensional laminar
+ ethylene flames (2015) 22nd AIAA Computational Fluid Dynamics Conference,
+ 15 p.
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-Cuoci, A., Frassoldati, A., Faravelli, T., Ranzi, E.,
+Galletti, C., Ferrarotti, M., Parente, A., Tognotti, L.
+
 \series default
- 
-\shape italic
-Numerical modeling of auto-ignition of isolated fuel droplets in microgravity
-\shape default
- (2014) Proceedings of the Combustion Institute, Article in Press, DOI:
- 10.1016/j.proci.2014.06.035
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Jin, H., Yuan, W., Wang, Y., Li, Y., Qi, F., Cuoci, A., Frassoldati, A., Faravelli,
- T.,
-\series default
- 
-\shape italic
-Experimental and kinetic modeling study of laminar coflow diffusion methane
- flames doped with 2-butanol
-\shape default
- (2014), Proceedings of the Combustion Institute, Article in Press, DOI:
- 10.1016/j.proci.2014.05.128
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Stagni, A., Cuoci, A., Frassoldati, A., Faravelli, T., Ranzi, E.,
-\series default
- 
-\shape italic
-Lumping and reduction of detailed kinetic schemes: An effective coupling
-\shape default
- (2014) Industrial and Engineering Chemistry Research, 53 (22), pp.
- 9004-9016, DOI: 10.1021/ie403272f
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Jin, H., Cuoci, A., Frassoldati, A., Faravelli, T., Wang, Y., Li, Y., Qi, F.,
-\series default
- 
-\shape italic
-Experimental and kinetic modeling study of PAH formation in methane coflow
- diffusion flames doped with n-butanol
-\shape default
- (2014) Combustion and Flame, 161 (3), pp.
- 657-670, DOI: 10.1016/j.combustflame.2013.10.020
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Saggese, C., Sánchez, N.E., Frassoldati, A., Cuoci, A., Faravelli, T., Alzueta,
- M.U., Ranzi, E.,
-\series default
- 
-\shape italic
-Kinetic modeling study of polycyclic aromatic hydrocarbons and soot formation
- in acetylene pyrolysis
-\shape default
- (2014) Energy and Fuels, 28 (2), pp.
- 1489-1501, DOI: 10.1021/ef402048q
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Stagni, A., Cuoci, A., Frassoldati, A., Faravelli, T., Ranzi, E.,
-\series default
- 
-\shape italic
-A fully coupled, parallel approach for the post-processing of CFD data through
- reactor network analysis
-\shape default
- (2014) Computers and Chemical Engineering, 60, pp.
- 197-212, DOI: 10.1016/j.compchemeng.2013.09.002
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Pelucchi, M., Bissoli, M., Cavallotti, C., Cuoci, A., Faravelli, T., Frassoldati,
- A., Ranzi, E., Stagni, A.,
-\series default
- 
-\shape italic
-Improved kinetic model of the low-temperature oxidation of n-heptane
-\shape default
- (2014) Energy and Fuels, 28 (11), pp.
- 7178-7193, DOI: 10.1021/ef501483f
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Ranzi, E., Frassoldati, A., Stagni, A., Pelucchi, M., Cuoci, A., Faravelli, T.,
-\series default
- 
-\shape italic
-Reduced kinetic schemes of complex reaction systems: Fossil and biomass-derived
- transportation fuels
-\shape default
- (2014) International Journal of Chemical Kinetics, 46 (9), pp.
- 512-542, DOI: 10.1002/kin.20867
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Cuoci, A., Frassoldati, A., Faravelli, T., Ranzi, E.,
-\series default
- 
-\shape italic
-Numerical modeling of laminar flames with detailed kinetics based on the
- operator-splitting method
-\shape default
- (2013) Energy and Fuels, 27 (12), pp.
- 7730-7753, DOI: 10.1021/ef4016334
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Bissoli, M., Cuoci, A., Frassoldati, A., Faravelli, T., Ranzi, E., Lucchini,
- T., D'Errico, G., Contino, F.,
-\series default
- 
-\shape italic
-Detailed Kinetic Analysis of HCCI Combustion Using a New Multi-Zone Model
- and CFD Simulations
-\shape default
- (2013) SAE International Journal of Engines, 6 (3), pp.
- 1594-1609, DOI: 10.4271/2013-24-0021
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Saggese, C., Frassoldati, A., Cuoci, A., Faravelli, T., Ranzi, E.,
-\series default
- 
-\shape italic
-A wide range kinetic modeling study of pyrolysis and oxidation of benzene
-\shape default
- (2013) Combustion and Flame, 160 (7), pp.
- 1168-1190, DOI: 10.1016/j.combustflame.2013.02.013
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Maestri, M., Cuoci, A.,
-\series default
- 
-\shape italic
-Coupling CFD with detailed microkinetic modeling in heterogeneous catalysis
-\shape default
- (2013) Chemical Engineering Science, 96, pp.
- 106-117, DOI: 10.1016/j.ces.2013.03.048
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Cuoci, A., Frassoldati, A., Faravelli, T., Jin, H., Wang, Y., Zhang, K., Glarborg,
- P., Qi, F.,
-\series default
- 
-\shape italic
-Experimental and detailed kinetic modeling study of PAH formation in laminar
- co-flow methane diffusion flames
-\shape default
- (2013) Proceedings of the Combustion Institute, 34 (1), pp.
- 1811-1818, DOI: 10.1016/j.proci.2012.05.085
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Cuoci, A., Frassoldati, A., Faravelli, T., Ranzi, E.,
-\series default
- 
-\shape italic
-A computational tool for the detailed kinetic modeling of laminar flames:
- Application to C2H4/CH4 coflow flames
-\shape default
- (2013) Combustion and Flame, 160 (5), pp.
- 870-886, DOI: 10.1016/j.combustflame.2013.01.011
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Cuoci, A., Frassoldati, A., Faravelli, T., Ranzi, E.,
-\series default
- 
-\shape italic
-Extinction of laminar, premixed, counter-flow methane/air flames under unsteady
- conditions: Effect of H2 addition
-\shape default
- (2013) Chemical Engineering Science, 93, pp.
- 266-276, DOI: 10.1016/j.ces.2013.02.009
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Cuoci, A., Frassoldati, A., Stagni, A., Faravelli, T., Ranzi, E., Buzzi-Ferraris,
- G.,
-\series default
- 
-\shape italic
-Numerical modeling of NOx formation in turbulent flames using a kinetic
- post-processing techniqu
-\shape default
-e (2013) Energy and Fuels, 27 (2), pp.
- 1104-1122, DOI: 10.1021/ef3016987
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Saggese, C., Frassoldati, A., Cuoci, A., Faravelli, T., Ranzi, E.,
-\series default
- 
-\shape italic
-A lumped approach to the kinetic modeling of pyrolysis and combustion of
- biodiesel fuels
-\shape default
- (2013) Proceedings of the Combustion Institute, 34 (1), pp.
- 427-434, DOI: 10.1016/j.proci.2012.05.020
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset bibtex
-LatexCommand bibtex
-bibfiles "C:/Research/MyPapers/OpenSMOKE_Paper/Manuscript/Lyx/References"
-options "plain"
-
-\end_inset
-
-
+ Reduced NO formation models for CFD simulations of MILD combustion (2015)
+ International Journal of Hydrogen Energy, 40 (14), pp.
+ 4884-4897, DOI: 10.1016/j.ijhydene.2015.01.172
 \end_layout
 
 \end_body
