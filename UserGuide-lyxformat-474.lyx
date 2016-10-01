@@ -1,9 +1,7 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
 \begin_document
 \begin_header
-\save_transient_properties true
-\origin unavailable
 \textclass memoir
 \begin_preamble
 \usepackage{hyperref}
@@ -26,16 +24,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "default" "default"
-\font_sans "default" "default"
-\font_typewriter "default" "default"
-\font_math "auto" "auto"
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100 100
-\font_tt_scale 100 100
+\font_sf_scale 100
+\font_tt_scale 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -97,7 +95,7 @@ The OpenSMOKE++ Suite
 \begin_inset Newline newline
 \end_inset
 
-Version 0.5
+Version 0.4
 \end_layout
 
 \begin_layout Standard
@@ -365,7 +363,7 @@ Mattia Bissoli
 Alessandro Stagni
 \series default
 : analysis and reduction of kinetic mechansims, portability to Mac OSX and
- Linux, microgravity droplet, thermodynamics of liquid mixtures
+ Linux, microgravity droplet
 \end_layout
 
 \begin_layout Standard
@@ -479,10 +477,6 @@ a graphical post-processor, to easily post-process the simulation results.
 OpenSMOKE++ Suite
 \family default
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -504,11 +498,6 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
@@ -1270,12 +1259,6 @@ OpenSMOKE++ Suite
  folder, the following string should be assigned to the 
 \family typewriter
 OPENSMOKEPP_EXE_FOLDER:
-\family default
-
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1453,10 +1436,6 @@ Graphviz2.38
 
 \family default
  folder, the following string should be appended to the PATH variable:
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1598,10 +1577,6 @@ IrfanView
 
 \family default
  folder, the following string should be appended to the PATH variable:
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1709,7 +1684,7 @@ gfortran
  distributions (see paragraph 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "subsec:Notes-about-shared-libraries"
+reference "sub:Notes-about-shared-libraries"
 
 \end_inset
 
@@ -1719,13 +1694,9 @@ reference "subsec:Notes-about-shared-libraries"
 \begin_layout Enumerate
 Unpack the 
 \family typewriter
-opensmoke++suite-0.5.tar.gz
+opensmoke++suite-0.4.tar.gz
 \family default
  file in the location you prefer using the following command:
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1742,7 +1713,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-tar -xzf opensmoke++suite-0.5.tar.gz
+tar -xzf opensmoke++suite-0.4.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
@@ -1760,10 +1731,6 @@ end{lstlisting}
 \end_deeper
 \begin_layout Enumerate
 Update the environment variable settings:
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1781,10 +1748,6 @@ ksh
 echo $SHELL
 \family default
 ):
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1838,12 +1801,6 @@ tcsh
  or 
 \family typewriter
 csh:
-\family default
-
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -1896,7 +1853,7 @@ end{lstlisting}
 \begin_layout Standard
 As an example, if you unpacked the 
 \family typewriter
-opensmoke++suite-0.5.tar.gz
+opensmoke++suite-0.4.tar.gz
 \family default
  file directly in your home folder (
 \family typewriter
@@ -1918,12 +1875,12 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-export PATH=$PATH:$HOME/opensmoke++suite-0.5/bin
+export PATH=$PATH:$HOME/opensmoke++suite-0.4/bin
 \end_layout
 
 \begin_layout Plain Layout
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opensmoke++suite-0.5/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opensmoke++suite-0.4/lib
 \end_layout
 
 \begin_layout Plain Layout
@@ -2005,10 +1962,6 @@ Precompiled Qt4 libraries are already available in most Linux distributions
 
 \begin_layout Enumerate
 Installation of pre-compiled libraries (recommended)
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2021,10 +1974,6 @@ Even if not available in the basic distribution, precompiled Qt4 libraries
 \end_deeper
 \begin_layout Enumerate
 Compilation from source code
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2070,10 +2019,6 @@ In order to create the flux analysis plots, Graphviz must be installed on
 
 \begin_layout Enumerate
 Installation of pre-compiled binaries (recommended)
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2217,10 +2162,6 @@ end{lstlisting}
 \end_deeper
 \begin_layout Enumerate
 Compilation from source code
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2259,10 +2200,6 @@ Check your installation
 
 \begin_layout Enumerate
 Check if installation of solvers was done properly
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2308,10 +2245,6 @@ end{lstlisting}
 \begin_layout Enumerate
 Check if installation of graphical post-processor was done properly: from
  the same folder, type
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2353,7 +2286,7 @@ If error messages about missing shared libraries appear, have a look at
 Notes about shared libraries
 \begin_inset CommandInset label
 LatexCommand label
-name "subsec:Notes-about-shared-libraries"
+name "sub:Notes-about-shared-libraries"
 
 \end_inset
 
@@ -2394,12 +2327,6 @@ Here below we reported a list of known issues, together with possible solutions:
 
 \series bold
 Fedora
-\series default
-
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2420,12 +2347,6 @@ su -c 'yum install gcc-gfortran'
 
 \series bold
 OpenSuse
-\series default
-
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2448,12 +2369,6 @@ libqt4
 
 \series bold
 Ubuntu and Xubuntu
-\series default
-
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2474,12 +2389,6 @@ sudo apt-get install libgfortran
 
 \series bold
 Xubuntu
-\series default
-
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2550,10 +2459,6 @@ gfortran
  libraries are available on your machine.
  If not, you can download and installed precompiled libraries for your Mac
  OS X at the following web-address: 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2575,13 +2480,9 @@ https://gcc.gnu.org/wiki/GFortranBinaries#MacOS
 \begin_layout Enumerate
 Unpack the 
 \family typewriter
-opensmoke++suite-0.5-macos.tar.gz
+opensmoke++suite-0.4-macos.tar.gz
 \family default
  file in the location you prefer using the following command:
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2598,7 +2499,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-tar -xzf opensmoke++suite-0.5-macos.tar.gz
+tar -xzf opensmoke++suite-0.4-macos.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
@@ -2616,10 +2517,6 @@ end{lstlisting}
 \end_deeper
 \begin_layout Enumerate
 Update the environment variable settings:
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2666,7 +2563,7 @@ end{lstlisting}
 \begin_layout Standard
 As an example, if you unpacked the 
 \family typewriter
-opensmoke++suite-0.5-macos.tar.gz
+opensmoke++suite-0.4-macos.tar.gz
 \family default
  file directly in your home folder (
 \family typewriter
@@ -2679,7 +2576,7 @@ $HOME
 
 \family typewriter
 \color black
-export PATH=$PATH:$HOME/opensmoke++suite-0.5-macos/bin
+export PATH=$PATH:$HOME/opensmoke++suite-0.4-macos/bin
 \end_layout
 
 \end_deeper
@@ -2745,10 +2642,6 @@ Two options are possible: installation of pre-compiled binaries (recommended)
 
 \begin_layout Enumerate
 Installation of pre-compiled binaries (recommended)
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2771,10 +2664,6 @@ http://www.graphviz.org/Download_macos.php
 \end_deeper
 \begin_layout Enumerate
 Compilation from source code
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2811,10 +2700,6 @@ Check your installation
 
 \begin_layout Enumerate
 Check if installation of solvers was done properly
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2859,10 +2744,6 @@ end{lstlisting}
 \end_deeper
 \begin_layout Enumerate
 Check if installation of graphical post-processor was done properly
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -2912,7 +2793,7 @@ $HOME
 
 \family typewriter
 \color black
-$HOME/opensmoke++suite-0.5-macos/
+$HOME/opensmoke++suite-0.4-macos/
 \color inherit
 bin/OpenSMOKE_PostProcessor.sh.app
 \end_layout
@@ -2984,10 +2865,6 @@ key "CHEMKINPRO2008"
 The CRECK Modeling group at Politecnico di Milano provides detailed kinetic
  mechanisms describing pyrolysis, combustion, and oxidation of several fuels:
  hydrogen, methane, propane, PRF, diesels, jet-fuels, biofuels, etc.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3010,10 +2887,6 @@ http://creckmodeling.chem.polimi.it/
 Lawrence Livermore National Laboratory (LLNL) has posted combustion mechanisms,
  including thermodynamic data, transport data, and reaction sets for flame
  simulations with hydrogen and various hydrocarbon fuels.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3037,10 +2910,6 @@ ms
 The Combustion Division of the Center for Energy Research at the University
  of California-San Diego has posted kinetic mechanisms for combustion qpplicatio
 ns, including nitrogen, JP10, and heptane chemistry.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3063,10 +2932,6 @@ http://web.eng.ucsd.edu/mae/groups/combustion/mechanism.html
 The Combustion Group at Princeton University provides mechanisms for combustion
  of chlorinated and fluorinated compound mixtures with methane, and for
  high-pressure methane and propane flames.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3097,10 +2962,6 @@ BURCAT.THR
  file is in CHEMKIN format, but contains comments and descriptive text about
  each species, so that file would require some user manipulation (commenting
  out text lines) in order to be used directly in OpenSMOKE++.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3125,10 +2986,6 @@ The Gas Research Institute (GRI) funded development of the GRI-mech, which
  properties and rates.
  You can download the most recent version of GRI-mech from the GRI-mech
  website.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3294,10 +3151,6 @@ kinetics.dic
  in the following, but in principle the user is free to choose the name
  he prefers) in which you specify the the thermodynamic and kinetic files
  and the destination folder:
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3358,10 +3211,6 @@ end{lstlisting}
 \begin_layout Enumerate
 Run the kinetic pre-processor using the following command (in Microsoft
  Windows):
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3460,10 +3309,6 @@ In the same folder where the kinetic mechanism has been pre-processed, create
 batch.dic
 \family default
 :
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3635,10 +3480,6 @@ OpenSMOKE++ Suite
 OpenSMOKE_BatchReactor
 \family default
 ) using the following command (in Microsoft Windows):
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3837,11 +3678,6 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
@@ -3949,10 +3785,6 @@ reference "fig:Adiabatic-batch-reactor-example-opp"
 \end_inset
 
  profiles of selected species are reported.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -3974,11 +3806,6 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
@@ -4072,10 +3899,6 @@ reference "fig:Adiabatic-batch-reactor-reaction-rates"
 Analyze Characteristic Times
 \family default
  button.
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4097,11 +3920,6 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
@@ -4171,10 +3989,6 @@ reference "fig:Adiabatic-batch-reactor-ropa"
 \end_inset
 
 ).
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4196,11 +4010,6 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
@@ -4317,10 +4126,6 @@ reference "fig:Adiabatic-batch-reactor-flux-analysis"
 \end_inset
 
 .
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4342,11 +4147,6 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
@@ -4632,11 +4432,6 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
@@ -4751,10 +4546,6 @@ mydictionary
 
 \begin_layout Enumerate
 in Microsoft Windows
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4802,10 +4593,6 @@ Please, consider that the instruction reported above must be written in
 \end_deeper
 \begin_layout Enumerate
 in Linux
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4921,10 +4708,6 @@ myinput.dic
 
 \begin_layout Enumerate
 in Microsoft Windows
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -4972,10 +4755,6 @@ Please, consider that the instruction reported above must be written in
 \end_deeper
 \begin_layout Enumerate
 in Linux
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -5013,7 +4792,7 @@ Notes
 \end_layout
 
 \begin_layout Enumerate
-The –input option can be omitted.
+The --input option can be omitted.
  In this case the 
 \family typewriter
 OpenSMOKE_SolverName
@@ -5036,10 +4815,6 @@ reference "chap:Main-dictionaries"
 
 \begin_layout Enumerate
 The kinetic scheme can be provided in 2 different ways: 
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
@@ -5202,7 +4977,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="14" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3cm">
 <column alignment="center" valignment="top" width="14cm">
@@ -5952,7 +5727,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="17" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
 <column alignment="center" valignment="top" width="13cm">
@@ -6972,7 +6747,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="17" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
 <column alignment="center" valignment="top" width="13cm">
@@ -7965,7 +7740,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="16" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
 <column alignment="center" valignment="top" width="14cm">
@@ -8732,7 +8507,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="21" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
 <column alignment="center" valignment="top" width="13cm">
@@ -9847,7 +9622,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="15" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
 <column alignment="center" valignment="top" width="13cm">
@@ -10730,7 +10505,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="8" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
 <column alignment="center" valignment="top" width="13cm">
@@ -11164,7 +10939,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="19" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
 <column alignment="center" valignment="top" width="13cm">
@@ -12166,7 +11941,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="11" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
 <column alignment="center" valignment="top" width="13cm">
@@ -12694,7 +12469,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="21" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
 <column alignment="center" valignment="top" width="13cm">
@@ -13379,7 +13154,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="17" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
 <column alignment="center" valignment="top" width="13cm">
@@ -13933,7 +13708,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="17" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
 <column alignment="center" valignment="top" width="13cm">
@@ -14488,7 +14263,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="16" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
 <column alignment="center" valignment="top" width="13cm">
@@ -15055,219 +14830,6 @@ MicrogravityDroplet options (Part 4)
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways true
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="5cm">
-<column alignment="center" valignment="top" width="3.5cm">
-<column alignment="center" valignment="top" width="13cm">
-<row>
-<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none" width="6cm">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Option
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Type
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Meaning
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@CustomGasGrid
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-PATH
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Enable custom (user-defined) grid (provided through a file)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@BandSize
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-INT
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Number of blocks in the Jacobian matrix for solving the DAE system (default:
- NPL+1)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@LiquidMixture
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-SUBDICT [LiquidMixture]
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Name of dictionary defining the properties of liquid mixture
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@GasMixture
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-SUBDICT [GasMixture]
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Name of dictionary defining the properties of gas mixture
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@Combustion
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-BOOL
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Reactions in the gaseous phase (default: true)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-MicrogravityDroplet options (Part 5)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 Sub-Dictionaries
 \begin_inset CommandInset label
@@ -15355,22 +14917,6 @@ PolimiSoot
 OnTheFlyROPA
 \end_layout
 
-\begin_layout Enumerate
-OnTheFlyPostProcessing
-\end_layout
-
-\begin_layout Enumerate
-OnTheFlyCEMA
-\end_layout
-
-\begin_layout Enumerate
-LiquidMixture
-\end_layout
-
-\begin_layout Enumerate
-GasMixture
-\end_layout
-
 \begin_layout Section
 Sub-Dictionary: Comments
 \end_layout
@@ -15401,7 +14947,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3cm">
 <column alignment="center" valignment="top" width="14cm">
@@ -15679,7 +15225,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="8" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3cm">
 <column alignment="center" valignment="top" width="14cm">
@@ -16121,7 +15667,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="8" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3cm">
 <column alignment="center" valignment="top" width="14cm">
@@ -16540,7 +16086,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3cm">
 <column alignment="center" valignment="top" width="14cm">
@@ -16917,7 +16463,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="17" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3cm">
 <column alignment="center" valignment="top" width="14cm">
@@ -17865,7 +17411,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3cm">
 <column alignment="center" valignment="top" width="14cm">
@@ -18167,7 +17713,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3cm">
 <column alignment="center" valignment="top" width="14cm">
@@ -18564,7 +18110,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3cm">
 <column alignment="center" valignment="top" width="14cm">
@@ -19055,7 +18601,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="13" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3cm">
 <column alignment="center" valignment="top" width="14cm">
@@ -19687,7 +19233,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="17" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3cm">
 <column alignment="center" valignment="top" width="14cm">
@@ -20617,7 +20163,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="14" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3cm">
 <column alignment="center" valignment="top" width="14cm">
@@ -21389,7 +20935,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="14" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3cm">
 <column alignment="center" valignment="top" width="14cm">
@@ -22143,7 +21689,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="22" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3cm">
 <column alignment="center" valignment="top" width="14cm">
@@ -23345,7 +22891,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="9" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3cm">
 <column alignment="center" valignment="top" width="14cm">
@@ -23673,7 +23219,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="14" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3cm">
 <column alignment="center" valignment="top" width="14cm">
@@ -24169,7 +23715,7 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="9" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3cm">
 <column alignment="center" valignment="top" width="14cm">
@@ -24456,976 +24002,6 @@ name "tab:OnTheFlyROPA-dictionary"
 \end_inset
 
 OnTheFlyROPA dictionary
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Sub-Dictionary: OnTheFlyPostProcessing
-\end_layout
-
-\begin_layout Standard
-This dictionary can be used to set the option governing the Post Processing
- options, when carried out on the fly in ideal reactors (see Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:OnTheFlyPostProcessing-dictionary"
-
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways true
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="5cm">
-<column alignment="center" valignment="top" width="3cm">
-<column alignment="center" valignment="top" width="14cm">
-<row>
-<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Option
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Type
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Meaning
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@FormationRates
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-STRINGS
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-List of species for which the fromation rates have to be written on the
- output file
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@FormationRatesUnits
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-STRING
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Units for writing the formation rates: 
-\family typewriter
-moles
-\family default
- | 
-\family typewriter
-mass
-\end_layout
-
-\begin_layout Plain Layout
-The default units are in 
-\begin_inset Formula $kmol/m^{3}/s$
-\end_inset
-
- (
-\family typewriter
-moles
-\family default
-).
- The 
-\family typewriter
-mass
-\family default
- units are in 
-\begin_inset Formula $kg/m^{3}/s$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@Reaction Rates
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-INTS
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-List of reaction indices (starting from 1) for which the reaction rates
- have to be written on the output file (units: 
-\begin_inset Formula $kmol/m^{3}/s$
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:OnTheFlyPostProcessing-dictionary"
-
-\end_inset
-
-OnTheFlyPostProcessing dictionary
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Sub-Dictionary: OnTheFlyCEMA
-\end_layout
-
-\begin_layout Standard
-This dictionary can be used to set the option governing the Chemical Explosive
- Mode Analysis (CEMA), when carried out on the fly in ideal, non-isothermal
- batch reactors (see Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:OnTheFlyCEMA-dictionary"
-
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways true
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="5cm">
-<column alignment="center" valignment="top" width="3cm">
-<column alignment="center" valignment="top" width="14cm">
-<row>
-<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Option
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Type
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Meaning
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@Species
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-STRINGS
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Species for which the Explosive Index (EI) is required (default: 
-\family typewriter
-ALL
-\family default
-)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@Reactions
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-INTS
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Reactions for which the Participation Index (PI) is required (default:
-\family typewriter
- ALL
-\family default
-, reactions start from 1)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@Print
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-BOOL
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Print on file Explosive Indices (EI) and Participation Indices (PI) (default:
- 
-\family typewriter
-true
-\family default
-)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@AdditionalConservativeModes
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-INT
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Force the inclusion of additional, user-defined conservative modes (default:
- 
-\family typewriter
-0
-\family default
-)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@LapackMode
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-BOOL
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Uses LAPACK for eigenvaues/eigenvectors calculations instead of Eigen++
- (default: 
-\family typewriter
-true
-\family default
-)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:OnTheFlyCEMA-dictionary"
-
-\end_inset
-
-OnTheFlyCEMA dictionary
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Sub-Dictionary: LiquidMixture
-\end_layout
-
-\begin_layout Standard
-This dictionary can be used to set the option governing the Chemical Explosive
- Mode Analysis (CEMA), when carried out on the fly in ideal, non-isothermal
- batch reactors (see Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:LiquidMixture-dictionary"
-
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways true
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="10" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="5cm">
-<column alignment="center" valignment="top" width="3cm">
-<column alignment="center" valignment="top" width="14cm">
-<row>
-<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Option
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Type
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Meaning
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@Density
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-STRING
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Rule for calculating the density.
- Available options: 
-\family typewriter
-Peng-Robinson
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@HeatCapacity
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-STRING
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Rule for calculating the heat capacity.
- Available options: 
-\family typewriter
-Ideal
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@Viscosity
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-STRING
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Rule for calculating the dynamic viscosity.
- Available options: 
-\family typewriter
-GrunbergNissanIdeal
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@Conductivity
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-STRING
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Rule for calculating the thermal conductivity.
- Available options: 
-\family typewriter
-Vredeveld
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@Dinf
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-STRING
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Correlation for infinite dilution diffusion coefficients.
- Available options: 
-\family typewriter
-Siddiqi-Lucas
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@Activity
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-STRING
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Method for calculating the activity.
- Available options: 
-\family typewriter
-Ideal | Unifac
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@Fugacity
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-STRING
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Rule for calculating the fugacity.
- Available options: 
-\family typewriter
-Raoult | PengRobinsonIndirect | PengRobinsonDirect
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@DiffusionCorrection
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-DOUBLE
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Correction coefficient for infinite dilution diffusion coefficients (default:
- 
-\family typewriter
-1
-\family default
-)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@ConductivityCorrection
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-DOUBLE
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Correction coefficient for liquid thermal conductivity (default: 
-\family typewriter
-1
-\family default
-)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:LiquidMixture-dictionary"
-
-\end_inset
-
-LiquidMixture dictionary
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Sub-Dictionary: GasMixture
-\end_layout
-
-\begin_layout Standard
-This dictionary can be used to set the option governing the Chemical Explosive
- Mode Analysis (CEMA), when carried out on the fly in ideal, non-isothermal
- batch reactors (see Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:GasMixture-dictionary"
-
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways true
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="2" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="5cm">
-<column alignment="center" valignment="top" width="3cm">
-<column alignment="center" valignment="top" width="14cm">
-<row>
-<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Option
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Type
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Meaning
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@Fugacity
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-STRING
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Rule for calculating fugacity.
- Available options: 
-\family typewriter
-Raoult | PengRobinson
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:GasMixture-dictionary"
-
-\end_inset
-
-GasMixture dictionary
 \end_layout
 
 \end_inset
