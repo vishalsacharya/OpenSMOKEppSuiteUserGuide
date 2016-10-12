@@ -97,7 +97,7 @@ The OpenSMOKE++ Suite
 \begin_inset Newline newline
 \end_inset
 
-Version 0.5
+Version 0.6
 \end_layout
 
 \begin_layout Standard
@@ -1719,7 +1719,7 @@ reference "subsec:Notes-about-shared-libraries"
 \begin_layout Enumerate
 Unpack the 
 \family typewriter
-opensmoke++suite-0.5.tar.gz
+opensmoke++suite-0.6.tar.gz
 \family default
  file in the location you prefer using the following command:
 \begin_inset Separator latexpar
@@ -1742,7 +1742,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-tar -xzf opensmoke++suite-0.5.tar.gz
+tar -xzf opensmoke++suite-0.6.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
@@ -1896,7 +1896,7 @@ end{lstlisting}
 \begin_layout Standard
 As an example, if you unpacked the 
 \family typewriter
-opensmoke++suite-0.5.tar.gz
+opensmoke++suite-0.6.tar.gz
 \family default
  file directly in your home folder (
 \family typewriter
@@ -1918,12 +1918,12 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-export PATH=$PATH:$HOME/opensmoke++suite-0.5/bin
+export PATH=$PATH:$HOME/opensmoke++suite-0.6/bin
 \end_layout
 
 \begin_layout Plain Layout
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opensmoke++suite-0.5/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opensmoke++suite-0.6/lib
 \end_layout
 
 \begin_layout Plain Layout
@@ -2575,7 +2575,7 @@ https://gcc.gnu.org/wiki/GFortranBinaries#MacOS
 \begin_layout Enumerate
 Unpack the 
 \family typewriter
-opensmoke++suite-0.5-macos.tar.gz
+opensmoke++suite-0.6-macos.tar.gz
 \family default
  file in the location you prefer using the following command:
 \begin_inset Separator latexpar
@@ -2598,7 +2598,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-tar -xzf opensmoke++suite-0.5-macos.tar.gz
+tar -xzf opensmoke++suite-0.6-macos.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
@@ -2666,7 +2666,7 @@ end{lstlisting}
 \begin_layout Standard
 As an example, if you unpacked the 
 \family typewriter
-opensmoke++suite-0.5-macos.tar.gz
+opensmoke++suite-0.6-macos.tar.gz
 \family default
  file directly in your home folder (
 \family typewriter
@@ -2679,7 +2679,7 @@ $HOME
 
 \family typewriter
 \color black
-export PATH=$PATH:$HOME/opensmoke++suite-0.5-macos/bin
+export PATH=$PATH:$HOME/opensmoke++suite-0.6-macos/bin
 \end_layout
 
 \end_deeper
@@ -2912,7 +2912,7 @@ $HOME
 
 \family typewriter
 \color black
-$HOME/opensmoke++suite-0.5-macos/
+$HOME/opensmoke++suite-0.6-macos/
 \color inherit
 bin/OpenSMOKE_PostProcessor.sh.app
 \end_layout
@@ -5146,7 +5146,7 @@ LookUp-Tables
 \end_layout
 
 \begin_layout Enumerate
-Microgravity-Droplet (under development)
+Microgravity-Droplet
 \end_layout
 
 \begin_layout Standard
@@ -12673,15 +12673,12 @@ Force overwriting of previous (if existing) output folder (default: false)
 \end_layout
 
 \begin_layout Section
-Dictionary: MicrogravityDroplet (under development)
+Dictionary: MicrogravityDroplet
 \end_layout
 
 \begin_layout Standard
 This dictionary is used for setting the simulation for simulating evaporation
  and combustion of isolated fuel droplets in microgravity conditions.
- Please, consider that the current version of OpenSMOKE_MicrogravityDroplet
- tool is only preliminary.
- The solver is under development.
 \end_layout
 
 \begin_layout Standard
@@ -12693,7 +12690,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="21" columns="3">
+<lyxtabular version="3" rows="22" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
@@ -13224,6 +13221,40 @@ false
 \begin_inset Text
 
 \begin_layout Plain Layout
+@SoretSmoothingTime
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MEASURE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The Soret contribution can be smoothed according to a hyperbolic tangent
+ profile.
+ The user can specify the time at which the (smooth) transition of weight
+ of Soret contribution occurs from 0 to 1.
+ By default the smoothing time is set to 0 (i.e.
+ no smoothing of Soret effect is applied).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 @SpeciesBundling
 \end_layout
 
@@ -13378,7 +13409,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="17" columns="3">
+<lyxtabular version="3" rows="18" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
@@ -13699,6 +13730,36 @@ First guess velocity (gas side) of the liquid/gas interface at time
 \begin_inset Text
 
 \begin_layout Plain Layout
+@NumberOfNLS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Number of attempts to solve the NLS system describing the vapor-liquid equilibri
+um at interface
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -13932,7 +13993,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="17" columns="3">
+<lyxtabular version="3" rows="18" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
@@ -13971,7 +14032,7 @@ Meaning
 \begin_inset Text
 
 \begin_layout Plain Layout
-@NLSAbsoluteTolerance
+@DaeParameters
 \end_layout
 
 \end_inset
@@ -13980,7 +14041,7 @@ Meaning
 \begin_inset Text
 
 \begin_layout Plain Layout
-DOUBLE
+
 \end_layout
 
 \end_inset
@@ -13989,7 +14050,8 @@ DOUBLE
 \begin_inset Text
 
 \begin_layout Plain Layout
-Absolute tolerance for the solution of NLS
+Dictionary containing the numerical parameters for solving the stiff DAE
+ system
 \end_layout
 
 \end_inset
@@ -14000,7 +14062,7 @@ Absolute tolerance for the solution of NLS
 \begin_inset Text
 
 \begin_layout Plain Layout
-@NLSRelativeTolerance
+@NlsParameters
 \end_layout
 
 \end_inset
@@ -14009,7 +14071,7 @@ Absolute tolerance for the solution of NLS
 \begin_inset Text
 
 \begin_layout Plain Layout
-DOUBLE
+
 \end_layout
 
 \end_inset
@@ -14018,7 +14080,7 @@ DOUBLE
 \begin_inset Text
 
 \begin_layout Plain Layout
-Relative tolerance for the solution of NLS
+Dictionary containing the numerical parameters for solving the NL system
 \end_layout
 
 \end_inset
@@ -14029,7 +14091,7 @@ Relative tolerance for the solution of NLS
 \begin_inset Text
 
 \begin_layout Plain Layout
-@DAEAbsoluteTolerance
+
 \end_layout
 
 \end_inset
@@ -14038,7 +14100,7 @@ Relative tolerance for the solution of NLS
 \begin_inset Text
 
 \begin_layout Plain Layout
-DOUBLE
+
 \end_layout
 
 \end_inset
@@ -14047,7 +14109,7 @@ DOUBLE
 \begin_inset Text
 
 \begin_layout Plain Layout
-Absolute tolerance for the solution of DAE systems
+
 \end_layout
 
 \end_inset
@@ -14058,36 +14120,7 @@ Absolute tolerance for the solution of DAE systems
 \begin_inset Text
 
 \begin_layout Plain Layout
-@DAERelativeTolerance
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-DOUBLE
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Relative tolerance for the solution of DAE systems
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@NumberOfNLS
+@ContinuityEquationType
 \end_layout
 
 \end_inset
@@ -14105,8 +14138,7 @@ INT
 \begin_inset Text
 
 \begin_layout Plain Layout
-Number of attempts to solve the NLS system describing the vapor-liquid equilibri
-um at interface
+Continuity equation type: 1=non-conservative, 2=conservative, 3=semi-explicit
 \end_layout
 
 \end_inset
@@ -14117,7 +14149,7 @@ um at interface
 \begin_inset Text
 
 \begin_layout Plain Layout
-@IncreasingFactorOfNLS
+@DensityTimeDerivativeSmoothingTime
 \end_layout
 
 \end_inset
@@ -14126,7 +14158,7 @@ um at interface
 \begin_inset Text
 
 \begin_layout Plain Layout
-DOUBLE
+MEASURE
 \end_layout
 
 \end_inset
@@ -14135,8 +14167,70 @@ DOUBLE
 \begin_inset Text
 
 \begin_layout Plain Layout
-Coefficient measuring the increase of default tolerances to be applied to
- the successive attempts of solutions of NLS
+The time density derivative in the continuity equation can be smoothed according
+ to a hyperbolic tangent profile.
+ The user can specify the time at which the (smooth) transition of weight
+ of this time derivative occurs from 0 to 1.
+ By default the smoothing time is set to 0 (i.e.
+ no smoothing is applied).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@GasGridVelocitiesInEquations
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Inclusion of gas grid velocities in transport equations (default: false)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@LiquidGridVelocitiesInEquations
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Inclusion of liquid grid velocities in transport equations (default: false)
 \end_layout
 
 \end_inset
@@ -15064,7 +15158,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="3">
+<lyxtabular version="3" rows="5" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
@@ -15122,36 +15216,6 @@ PATH
 
 \begin_layout Plain Layout
 Enable custom (user-defined) grid (provided through a file)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-@BandSize
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-INT
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Number of blocks in the Jacobian matrix for solving the DAE system (default:
- NPL+1)
 \end_layout
 
 \end_inset
@@ -15220,7 +15284,7 @@ Name of dictionary defining the properties of gas mixture
 \begin_inset Text
 
 \begin_layout Plain Layout
-@Combustion
+@GasPhaseReactions
 \end_layout
 
 \end_inset
@@ -22553,7 +22617,7 @@ INT
 \begin_layout Plain Layout
 Numerical methodology: 
 \family typewriter
-NewtonBasic | NewtonGlobalization
+NewtonBasic | NewtonGlobalization | FixedPoint | Picard
 \family default
  (default: 
 \family typewriter
