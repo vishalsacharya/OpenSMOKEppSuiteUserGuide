@@ -97,7 +97,7 @@ The OpenSMOKE++ Suite
 \begin_inset Newline newline
 \end_inset
 
-Version 0.6
+Version 0.7
 \end_layout
 
 \begin_layout Standard
@@ -1719,7 +1719,7 @@ reference "subsec:Notes-about-shared-libraries"
 \begin_layout Enumerate
 Unpack the 
 \family typewriter
-opensmoke++suite-0.6.tar.gz
+opensmoke++suite-0.7.0.tar.gz
 \family default
  file in the location you prefer using the following command:
 \begin_inset Separator latexpar
@@ -1742,7 +1742,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-tar -xzf opensmoke++suite-0.6.tar.gz
+tar -xzf opensmoke++suite-0.7.0.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
@@ -1896,7 +1896,7 @@ end{lstlisting}
 \begin_layout Standard
 As an example, if you unpacked the 
 \family typewriter
-opensmoke++suite-0.6.tar.gz
+opensmoke++suite-0.7.0.tar.gz
 \family default
  file directly in your home folder (
 \family typewriter
@@ -1918,12 +1918,12 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-export PATH=$PATH:$HOME/opensmoke++suite-0.6/bin
+export PATH=$PATH:$HOME/opensmoke++suite-0.7.0/bin
 \end_layout
 
 \begin_layout Plain Layout
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opensmoke++suite-0.6/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opensmoke++suite-0.7.0/lib
 \end_layout
 
 \begin_layout Plain Layout
@@ -2575,7 +2575,7 @@ https://gcc.gnu.org/wiki/GFortranBinaries#MacOS
 \begin_layout Enumerate
 Unpack the 
 \family typewriter
-opensmoke++suite-0.6-macos.tar.gz
+opensmoke++suite-0.7.0-macos.tar.gz
 \family default
  file in the location you prefer using the following command:
 \begin_inset Separator latexpar
@@ -2598,7 +2598,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-tar -xzf opensmoke++suite-0.6-macos.tar.gz
+tar -xzf opensmoke++suite-0.7.0-macos.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
@@ -2666,7 +2666,7 @@ end{lstlisting}
 \begin_layout Standard
 As an example, if you unpacked the 
 \family typewriter
-opensmoke++suite-0.6-macos.tar.gz
+opensmoke++suite-0.7.0-macos.tar.gz
 \family default
  file directly in your home folder (
 \family typewriter
@@ -2679,7 +2679,7 @@ $HOME
 
 \family typewriter
 \color black
-export PATH=$PATH:$HOME/opensmoke++suite-0.6-macos/bin
+export PATH=$PATH:$HOME/opensmoke++suite-0.7.0-macos/bin
 \end_layout
 
 \end_deeper
@@ -2912,7 +2912,7 @@ $HOME
 
 \family typewriter
 \color black
-$HOME/opensmoke++suite-0.6-macos/
+$HOME/opensmoke++suite-0.7.0-macos/
 \color inherit
 bin/OpenSMOKE_PostProcessor.sh.app
 \end_layout
@@ -27300,6 +27300,97 @@ oci@polimi.it).
 \begin_layout Itemize
 
 \series bold
+Evans, M.J., Medwell, P.R., Tian, Z.F., Ye, J., Frassoldati, A., Cuoci, A.
+
+\series default
+ Effects of oxidant stream composition on non-premixed laminar flames with
+ heated and diluted coflows (2017) Combustion and Flame, 178, pp.
+ 297-310, DOI: 10.1016/j.combustflame.2016.12.023
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Rebughini, S., Cuoci, A., Dixon, A.G., Maestri, M.
+ 
+\series default
+Cell agglomeration algorithm for coupling microkinetic modeling and steady-state
+ CFD simulations of catalytic reactors (2017) Computers and Chemical Engineering
+, 97, pp.
+ 175-182, DOI: 10.1016/j.compchemeng.2016.11.033
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Mairinger, G., Frassoldati, A., Gehmlich, R., Niemann, U., Stagni, A., Ranzi,
+ E., Seshadri, K.
+
+\series default
+ Autoignition of condensed hydrocarbon fuels in non-premixed flows at elevated
+ pressures (2016) Combustion Theory and Modelling, 20 (6), pp.
+ 995-1009, DOI: 10.1080/13647830.2016.1232437
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Pelucchi, M., Cavallotti, C., Ranzi, E., Frassoldati, A., Faravelli, T.
+ 
+\series default
+Relative Reactivity of Oxygenated Fuels: Alcohols, Aldehydes, Ketones, and
+ Methyl Esters (2016) Energy and Fuels, 30 (10), pp.
+ 8665-8679, DOI: 10.1021/acs.energyfuels.6b01171
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Bissoli, M., Frassoldati, A., Cuoci, A., Ranzi, E., Mehl, M., Faravelli, T.
+
+\series default
+ A new predictive multi-zone model for HCCI engine combustion (2016) Applied
+ Energy, 178, pp.
+ 826-843, DOI: 10.1016/j.apenergy.2016.06.062
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Vin, N., Herbinet, O., Battin-Leclerc, F.
+
+\series default
+ Diethyl ether pyrolysis study in a jet-stirred reactor (2016) Journal of
+ Analytical and Applied Pyrolysis, 121, pp.
+ 173-176, DOI: 10.1016/j.jaap.2016.07.018
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Xin, X., Li, Z., Zeng, X., Liu, X., Yang, Z., Xie, S.
+
+\series default
+ Framework based universal simulation for satellite project (2016) Chinese
+ Control Conference, CCC, 2016 August, Article Number 7554898, pp.
+ 9718-9723, DOI: 10.1109/ChiCC.2016.7554898
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+De Paepe, W., Sayad, P., Bram, S., Klingmann, J., Contino, F.
+
+\series default
+ Experimental Investigation of the Effect of Steam Dilution on the Combustion
+ of Methane for Humidified Micro Gas Turbine Applications (2016) Combustion
+ Science and Technology, 188 (8), pp.
+ 1199-1219, DOI: 10.1080/00102202.2016.1174116
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
 Jin, H., Cai, J., Wang, G., Wang, Y., Li, Y., Yang, J., Cheng, Z., Yuan, W., Qi,
  F.
 
@@ -27436,8 +27527,8 @@ bilized stagnation ethylene flame (2015) Combustion and Flame, 162 (9),
 Pelucchi, M., Frassoldati, A., Faravelli, T., Ruscic, B., Glarborg, P.
 
 \series default
- High-temperature chemistry of HCl and Cl<inf>2</inf> (2015) Combustion
- and Flame, 162 (6), pp.
+ High-temperature chemistry of HCl and Cl2 (2015) Combustion and Flame,
+ 162 (6), pp.
  2693-2704, DOI: 10.1016/j.combustflame.2015.04.002
 \end_layout
 
@@ -27483,8 +27574,7 @@ Evans, M.J., Medwell, P.R., Tian, Z.F., Frassoldati, A., Cuoci, A., Stagni, A.
  
 \series default
 Ignition characteristics in spatially zero-, one- and two-dimensional laminar
- ethylene flames (2015) 22nd AIAA Computational Fluid Dynamics Conference,
- 15 p.
+ ethylene flames (2015) 22nd AIAA Computational Fluid Dynamics Conference
 \end_layout
 
 \begin_layout Itemize
