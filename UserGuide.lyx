@@ -32138,6 +32138,459 @@ Temperature (left) and H2O mole fraction (right) of outlet mixture as a
 \end_layout
 
 \begin_layout Chapter
+Extended reactions
+\end_layout
+
+\begin_layout Section
+Extended Fall-off reactions 
+\end_layout
+
+\begin_layout Standard
+This is a first example in which only 1 bath species is specified (please
+ consider that the numbers are completely random):
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[style=codefragment]
+\end_layout
+
+\begin_layout Plain Layout
+
+H2O2 (+M) = 2OH (+M)    2.00E12   0.9   48749.
+ ! High-pr kinf 
+\end_layout
+
+\begin_layout Plain Layout
+
+LOWMX  / 2.49E24   -2.3    48749.
+ /            ! Low-pr klow 
+\end_layout
+
+\begin_layout Plain Layout
+
+TROEMX /  0.43    1.E-30   1.E+30 /            ! Troe parameters 
+\end_layout
+
+\begin_layout Plain Layout
+
+LOWSP  / H2O  1.86E25   -2.3   48749.
+ /        ! klow for (+H2O) 
+\end_layout
+
+\begin_layout Plain Layout
+
+TROESP / H2O   0.51  1.E-30  1.E+30   /        ! Troe for (+H2O) 
+\end_layout
+
+\begin_layout Plain Layout
+
+H2O/1.0/  CO2/ 1.60/ N2/ 1.50/ O2/ 1.20/       ! Other 3rd body eff.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here we explicitly specify 
+\family typewriter
+H2O
+\family default
+ as a bath species, by providing the low-pressure kinetic parameters (
+\family typewriter
+LOWSP
+\family default
+) and the Troe coefficients (
+\family typewriter
+TROESP
+\family default
+).
+ The 
+\family typewriter
+LOWMX
+\family default
+ and 
+\family typewriter
+LOWMX
+\family default
+ keywords are used to specified the low-pressure kinetic parameters and
+ the Troe parameters for all the remaining species (
+\family typewriter
+MX
+\family default
+ stands for mixture).
+ The overall reaction rate is calculates as the weighted sum of 2 reaction
+ rates: one associated to the mixture parameters (
+\family typewriter
+MX
+\family default
+) and one associated to the H2O species.
+ The weights are represented by the mole fractions:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+r=r_{mx}\left(1-x_{H2O}\right)+r_{H2O}x_{H2O}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the following example, we specify two bath species, in addition to the
+ mixture (please consider that the numbers are completely random):
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[style=codefragment]
+\end_layout
+
+\begin_layout Plain Layout
+
+H2O2 (+M) = 2OH (+M)    2.00E12   0.9   48749.
+ ! High-pr kinf 
+\end_layout
+
+\begin_layout Plain Layout
+
+LOWMX  / 2.49E24   -2.3    48749.
+ /            ! Low-pr klow 
+\end_layout
+
+\begin_layout Plain Layout
+
+TROEMX /  0.43    1.E-30   1.E+30 /            ! Troe parameters 
+\end_layout
+
+\begin_layout Plain Layout
+
+LOWSP  / H2O  1.86E25   -2.3   48749.
+ /        ! klow for (+H2O) 
+\end_layout
+
+\begin_layout Plain Layout
+
+TROESP / H2O   0.51  1.E-30  1.E+30   /        ! Troe for (+H2O) 
+\end_layout
+
+\begin_layout Plain Layout
+
+LOWSP  / CO2  1.86E21   -1.3   38649.
+ /        ! klow for (+CO2) 
+\end_layout
+
+\begin_layout Plain Layout
+
+TROESP / CO2   0.71  1.E-20  1.E+29   /        ! Troe for (+CO2) 
+\end_layout
+
+\begin_layout Plain Layout
+
+H2O/1/  CO2/1/ N2/ 1.50/ O2/ 1.20/             ! Other 3rd body eff.
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this case, the overall reaction rate would be:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+r=r_{mx}\left(1-x_{H2O}-x_{CO2}\right)+r_{H2O}x_{H2O}+r_{CO2}x_{CO2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+More in general, if you specify 
+\begin_inset Formula $N$
+\end_inset
+
+ bath species (through the 
+\family typewriter
+SP
+\family default
+ suffix), in addition to the mixture, which is always mandatory, through
+ the 
+\family typewriter
+MX
+\family default
+ suffix, the overall reaction rate would be:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+r=r_{mx}\left(1-\sum_{i=1}^{N}x_{i}\right)+\sum_{i=1}^{N}r_{i}x_{i}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Please remember that 3rd body efficiencies for all the bath species must
+ be necessarily equal to 1.
+ OpenSMOKE++ checks for this.
+\end_layout
+
+\begin_layout Section
+Extended PLOG Reactions 
+\end_layout
+
+\begin_layout Standard
+Same ideas are applied to 
+\family typewriter
+PLOG
+\family default
+ reactions with multiple bath species.
+ This is an example with only 1 bath species (please consider that the numbers
+ are completely random):
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[style=codefragment]
+\end_layout
+
+\begin_layout Plain Layout
+
+H2O2 = 2OH             1.0    0.
+   0.
+       ! Dummy k 
+\end_layout
+
+\begin_layout Plain Layout
+
+PLOGMX / 1.
+     1.0e14   0.
+  50000./        ! k at 1 atm for [M] 
+\end_layout
+
+\begin_layout Plain Layout
+
+PLOGMX / 100.
+  1.0e15   0.
+  51000./         ! k at 100 atm for [M] 
+\end_layout
+
+\begin_layout Plain Layout
+
+PLOGSP / H2O  1.
+    1.0e14   0.
+  50000./    ! k at 1 atm for [H2O] 
+\end_layout
+
+\begin_layout Plain Layout
+
+PLOGSP / H2O  10.
+  1.0e14   0.
+  50000./     ! k at 10 atm for [H2O] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The reaction rate is given by: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+r=r_{mx}\left(1-x_{H2O}\right)+r_{H2O}x_{H2O}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Of course, it is possible to specify any number of pressures for the mixture
+ and for each bath species.
+ The pressure levels do not necessarily have to be the same for all the
+ species and mixture.
+ This is a more complex example, with 2 bath species and different pressure
+ levels (please consider that the numbers are completely random):
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[style=codefragment]
+\end_layout
+
+\begin_layout Plain Layout
+
+H2O2 = 2OH             1.0    0.
+   0.
+         ! Dummy k 
+\end_layout
+
+\begin_layout Plain Layout
+
+PLOGMX / 1.
+     1.0e10   2.
+  53000./          ! k at 1 atm for [M] 
+\end_layout
+
+\begin_layout Plain Layout
+
+PLOGMX / 10.
+  1.0e11   -1.
+  51000./           ! k at 10 atm for [M] 
+\end_layout
+
+\begin_layout Plain Layout
+
+PLOGSP / H2O  1.
+    1.0e12   0.1  72000./     ! k at 1 atm for [H2O] 
+\end_layout
+
+\begin_layout Plain Layout
+
+PLOGSP / H2O  10.
+  1.0e13   0.3  45000./      ! k at 10 atm for [H2O] 
+\end_layout
+
+\begin_layout Plain Layout
+
+PLOGSP / H2O  100.
+  1.0e14   0.2  25000./     ! k at 100 atm for [H2O] 
+\end_layout
+
+\begin_layout Plain Layout
+
+PLOGSP / CO2  1.
+    1.0e12   0.5  34000./     ! k at 1 atm for [CO2] 
+\end_layout
+
+\begin_layout Plain Layout
+
+PLOGSP / CO2  20.
+   1.0e13   0.4  47000./     ! k at 20 atm for [CO2] 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this case, the overall reaction rate would be:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+r=r_{mx}\left(1-x_{H2O}-x_{CO2}\right)+r_{H2O}x_{H2O}+r_{CO2}x_{CO2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+More in general, if you specify 
+\begin_inset Formula $N$
+\end_inset
+
+ bath species (through the 
+\family typewriter
+SP
+\family default
+ suffix), in addition to the mixture, which is always mandatory, through
+ the 
+\family typewriter
+MX
+\family default
+ suffix, the overall reaction rate would be:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+r=r_{mx}\left(1-\sum_{i=1}^{N}x_{i}\right)+\sum_{i=1}^{N}r_{i}x_{i}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
 Publications using OpenSMOKE++
 \end_layout
 
