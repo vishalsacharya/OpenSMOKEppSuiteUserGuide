@@ -97,7 +97,7 @@ The OpenSMOKE++ Suite
 \begin_inset Newline newline
 \end_inset
 
-Version 0.7
+Version 0.9.0
 \end_layout
 
 \begin_layout Standard
@@ -147,7 +147,7 @@ Copyrights
 \end_layout
 
 \begin_layout Standard
-OpenSMOKE++ Suite© Copyright 2006-2016 by Alberto Cuoci
+OpenSMOKE++ Suite© Copyright 2008-2017 by Alberto Cuoci
 \begin_inset Newline newline
 \end_inset
 
@@ -280,15 +280,15 @@ OpenSMOKE++: An object-oriented framework for the numerical modeling of
 \begin_layout Enumerate
 
 \series bold
-Cuoci, A., Frassoldati, A., Faravelli, T., Ranzi E.,
+Cuoci, A., Frassoldati, A., Faravelli, T., Ranzi, E.,
 \series default
  
-\emph on
-A computational tool for the detailed kinetic modeling of laminar flames:
- Application to C2H4/CH4 coflow flames
-\emph default
-, Combustion and Flame, 160(5), p.
- 870-887 (2013), DOI: 10.1016/j.combustflame.2013.01.011
+\shape italic
+Numerical Modeling of Laminar Flames with Detailed Kinetics Based on the
+ Operator-Splitting Method
+\shape default
+, Energy and Fuels, 27 (12), pp.
+ 7730-7753 (2013), DOI: 10.1021/ef4016334
 \end_layout
 
 \begin_layout Standard
@@ -338,7 +338,7 @@ bigskip
 \end_layout
 
 \begin_layout Subsection*
-Main developers 
+Main contributions
 \end_layout
 
 \begin_layout Itemize
@@ -353,19 +353,36 @@ Alberto Cuoci
 \begin_layout Itemize
 
 \series bold
-Mattia Bissoli
+Alessandro Stagni
 \series default
-: interfaces with third-party ODE and DAE solvers, internal combustion enegines,
- sensitivity analysis
+: analysis and reduction of kinetic mechansims, portability to Mac OSX and
+ Linux, microgravity droplet, thermodynamics of liquid mixtures
 \end_layout
 
 \begin_layout Itemize
 
 \series bold
-Alessandro Stagni
+Mauro Bracconi
 \series default
-: analysis and reduction of kinetic mechansims, portability to Mac OSX and
- Linux, microgravity droplet, thermodynamics of liquid mixtures
+: heterogeneous catalytic chemistry, ISAT (In Situ Adaptive Tabulation),
+ portability to Linux
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Stefano Rebughini
+\series default
+: heterogeneous catalytic chemistry, portability to Linux
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Mattia Bissoli
+\series default
+: interfaces with third-party ODE and DAE solvers, internal combustion enegines,
+ sensitivity analysis
 \end_layout
 
 \begin_layout Standard
@@ -416,12 +433,19 @@ The
 \family typewriter
 OpenSMOKE++ Suite
 \family default
- is a collection of "standard solvers" for performing kinetic analyses with
- detailed kinetic mechanisms, with hundreds of species and thousands of
- reactions.
- The word "solver" has to be intended as an independent program, built with
- the aim to perform a specific task (for example to simulate a batch reactor,
- or to model a shock-wave, etc.
+ is a collection of 
+\series bold
+standard solvers
+\series default
+ for performing kinetic analyses with detailed kinetic mechanisms, with
+ hundreds of species and thousands of reactions.
+ The word 
+\series bold
+solver
+\series default
+ has to be intended as an independent program, built with the aim to perform
+ a specific task (for example to simulate a batch reactor, or to model a
+ shock-wave, etc.
  ).
  Thus, in the following, the 
 \family typewriter
@@ -1050,20 +1074,16 @@ Microsoft Windows 8 (32/64 bit)
 Microsoft Windows 7 (32/64 bit)
 \end_layout
 
-\begin_layout Itemize
-Microsoft Windows XP (32/64 bit)
-\end_layout
-
 \begin_layout Subsection*
 Linux family
 \end_layout
 
 \begin_layout Itemize
-OpenSuse 13 (64 bit)
+OpenSuse 13 (64 bit) and higher
 \end_layout
 
 \begin_layout Itemize
-Fedora 21 (64 bit)
+Fedora 21 (64 bit) and higher
 \end_layout
 
 \begin_layout Itemize
@@ -1335,6 +1355,9 @@ license.dat
 bin
 \family default
  folder.
+ At present, only academic users from recognised institutional email addresses
+ will be provided with the license file and have free access to the software.
+ Users from commercial organisations should contact the OpenSMOKE++ Team.
 \end_layout
 
 \begin_layout Subsection
@@ -1343,10 +1366,26 @@ Notes about the OpenSMOKE++ Graphical Post-Processor
 
 \begin_layout Standard
 In order to use all the features of the graphical post-processor, the installati
-on of Graphviz and Irfanview is strongly recommended.
+on of 
+\family typewriter
+Graphviz
+\family default
+ and 
+\family typewriter
+Irfanview
+\family default
+ is strongly recommended.
  Without them, you cannot perform automatic generation of flux diagrams.
  However, all the other features of graphical post-processor work correctly
- even without Graphviz and Irfanview.
+ even without 
+\family typewriter
+Graphviz
+\family default
+ and 
+\family typewriter
+Irfanview
+\family default
+.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1354,8 +1393,11 @@ Instructions to install Graphviz
 \end_layout
 
 \begin_layout Standard
-In order to create the flux analysis plots, Graphviz must be installed on
- your machine.
+In order to create the flux analysis plots, 
+\family typewriter
+Graphviz
+\family default
+ must be installed on your machine.
  You can download it from 
 \begin_inset Flex URL
 status open
@@ -1432,11 +1474,22 @@ Edit
 \family typewriter
 PATH
 \family default
- variable by adding the path to the bin folder contained in the main Graphviz
+ variable by adding the path to the bin folder contained in the main 
+\family typewriter
+Graphviz
+\family default
  folder.
  Of course the path depends on your system (i.e.
- on the location where you installed the Graphviz library).
- As an example, if you installed the GraphViz library in 
+ on the location where you installed the 
+\family typewriter
+Graphviz
+\family default
+ library).
+ As an example, if you installed the 
+\family typewriter
+GraphViz
+\family default
+ library in 
 \family typewriter
 
 \begin_inset Quotes eld
@@ -1452,7 +1505,11 @@ Graphviz2.38
 
 
 \family default
- folder, the following string should be appended to the PATH variable:
+ folder, the following string should be appended to the 
+\family typewriter
+PATH
+\family default
+ variable:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -1500,7 +1557,10 @@ Instructions to install Irfanview
 \end_layout
 
 \begin_layout Standard
-In order to automatically visualize the flux analysis plots, the Irfanview
+In order to automatically visualize the flux analysis plots, the 
+\family typewriter
+Irfanview
+\family default
  viewer must be installed on your machine.
  You can download it from 
 \begin_inset Flex URL
@@ -1581,7 +1641,11 @@ PATH
  variable by adding the path to the main Irfanview folder.
  Of course the path depends on your system (i.e.
  on the location where you installed IrfanView).
- As an example, if you installed Irfanview in 
+ As an example, if you installed 
+\family typewriter
+Irfanview
+\family default
+ in 
 \family typewriter
 
 \begin_inset Quotes eld
@@ -1597,7 +1661,11 @@ IrfanView
 
 
 \family default
- folder, the following string should be appended to the PATH variable:
+ folder, the following string should be appended to the 
+\family typewriter
+PATH
+\family default
+ variable:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -1666,7 +1734,7 @@ Pre-requisites for the graphical post-processor:
 \end_layout
 
 \begin_layout Itemize
-Qt4 libraries: 
+QT4 (or QT5) libraries: 
 \begin_inset Flex URL
 status open
 
@@ -1719,7 +1787,7 @@ reference "subsec:Notes-about-shared-libraries"
 \begin_layout Enumerate
 Unpack the 
 \family typewriter
-opensmoke++suite-0.7.0.tar.gz
+opensmoke++suite-0.9.0.tar.gz
 \family default
  file in the location you prefer using the following command:
 \begin_inset Separator latexpar
@@ -1742,7 +1810,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-tar -xzf opensmoke++suite-0.7.0.tar.gz
+tar -xzf opensmoke++suite-0.9.0.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
@@ -1896,7 +1964,7 @@ end{lstlisting}
 \begin_layout Standard
 As an example, if you unpacked the 
 \family typewriter
-opensmoke++suite-0.7.0.tar.gz
+opensmoke++suite-0.9.0.tar.gz
 \family default
  file directly in your home folder (
 \family typewriter
@@ -1918,12 +1986,12 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-export PATH=$PATH:$HOME/opensmoke++suite-0.7.0/bin
+export PATH=$PATH:$HOME/opensmoke++suite-0.9.0/bin
 \end_layout
 
 \begin_layout Plain Layout
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opensmoke++suite-0.7.0/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opensmoke++suite-0.9.0/lib
 \end_layout
 
 \begin_layout Plain Layout
@@ -1974,6 +2042,9 @@ license.dat
 bin
 \family default
  folder.
+ At present, only academic users from recognised institutional email addresses
+ will be provided with the license file and have free access to the software.
+ Users from commercial organisations should contact the OpenSMOKE++ Team.
 \end_layout
 
 \begin_layout Subsection
@@ -1982,25 +2053,32 @@ Notes about the OpenSMOKE++ Graphical Post-Processor
 
 \begin_layout Standard
 In order to use all the features of the graphical post-processor, the QT4
- libraries are needed.
- Moreover, the installation of Graphviz (even if not strictly needed) is
- strongly recommended.
+ (or QT5) libraries are needed.
+ Moreover, the installation of 
+\family typewriter
+Graphviz
+\family default
+ (even if not strictly needed) is strongly recommended.
  Without it, you cannot perform automatic generation of flux diagrams.
  However, all the other features of graphical post-processor work correctly,
- even without Graphviz.
+ even without 
+\family typewriter
+Graphviz
+\family default
+.
 \end_layout
 
 \begin_layout Subsubsection*
-Instructions to install the Qt4 libraries
+Instructions to install the QT4 libraries
 \end_layout
 
 \begin_layout Standard
-Precompiled Qt4 libraries are already available in most Linux distributions
+Precompiled QT4 libraries are already available in most Linux distributions
  (e.g.
  Ubuntu, Xubuntu, Debian, Mandriva), which means that you do not have to
  install them.
  Thus, the instructions below refer to Linux distributions which are distributed
- without Qt4 libraries.
+ without QT4 libraries.
 \end_layout
 
 \begin_layout Enumerate
@@ -2013,7 +2091,7 @@ Installation of pre-compiled libraries (recommended)
 
 \begin_deeper
 \begin_layout Standard
-Even if not available in the basic distribution, precompiled Qt4 libraries
+Even if not available in the basic distribution, precompiled QT4 libraries
  available for most Linux distributions.
  Please, follow the instructions specific to the distribution you are using.
 \end_layout
@@ -2053,7 +2131,7 @@ LD_LIBRARY_PATH
 \family typewriter
 lib
 \family default
- folder of installed Qt4 library.
+ folder of installed QT4 library.
 \end_layout
 
 \end_deeper
@@ -2062,8 +2140,11 @@ Instructions to install the Graphviz library
 \end_layout
 
 \begin_layout Standard
-In order to create the flux analysis plots, Graphviz must be installed on
- your machine.
+In order to create the flux analysis plots, 
+\family typewriter
+Graphviz
+\family default
+ must be installed on your machine.
  Two options are possible: installation of pre-compiled binaries (if available
  for your Linux distribution) or compilation from source code.
 \end_layout
@@ -2078,7 +2159,10 @@ Installation of pre-compiled binaries (recommended)
 
 \begin_deeper
 \begin_layout Standard
-If available for your Linux distribution, you can simply install the Graphviz
+If available for your Linux distribution, you can simply install the 
+\family typewriter
+Graphviz
+\family default
  library directly from the pre-compiled binaries.
 \end_layout
 
@@ -2249,7 +2333,11 @@ PATH
 \family typewriter
 bin
 \family default
- folder of installed GraphViz.
+ folder of installed 
+\family typewriter
+Graphviz
+\family default
+.
 \end_layout
 
 \end_deeper
@@ -2328,7 +2416,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-OpenSMOKE_PostProcessor.sh
+OpenSMOKEpp_PostProcessor.sh
 \end_layout
 
 \begin_layout Plain Layout
@@ -2361,9 +2449,12 @@ name "subsec:Notes-about-shared-libraries"
 \end_layout
 
 \begin_layout Standard
-You may experience some issues in running OpenSMOKE++ Suite solvers and/or
- graphical post processor, especially if you use are not using Ubuntu or
- Xubuntu.
+You may experience some issues in running 
+\family typewriter
+OpenSMOKE++ Suite
+\family default
+ solvers and/or graphical post processor, especially if you use are not
+ using Ubuntu or Xubuntu.
  In most cases, the typical errors are about missing shared libraries:
 \end_layout
 
@@ -2377,7 +2468,7 @@ error while loading shared libraries: name_of_library.so
 In that cases you need to install the missing library/libraries.
  In particular, be sure to have the 
 \family typewriter
-Qt4
+QT4
 \family default
  and 
 \family typewriter
@@ -2575,7 +2666,7 @@ https://gcc.gnu.org/wiki/GFortranBinaries#MacOS
 \begin_layout Enumerate
 Unpack the 
 \family typewriter
-opensmoke++suite-0.7.0-macos.tar.gz
+opensmoke++suite-0.9.0-macos.tar.gz
 \family default
  file in the location you prefer using the following command:
 \begin_inset Separator latexpar
@@ -2598,7 +2689,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-tar -xzf opensmoke++suite-0.7.0-macos.tar.gz
+tar -xzf opensmoke++suite-0.9.0-macos.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
@@ -2666,7 +2757,7 @@ end{lstlisting}
 \begin_layout Standard
 As an example, if you unpacked the 
 \family typewriter
-opensmoke++suite-0.7.0-macos.tar.gz
+opensmoke++suite-0.9.0-macos.tar.gz
 \family default
  file directly in your home folder (
 \family typewriter
@@ -2679,7 +2770,7 @@ $HOME
 
 \family typewriter
 \color black
-export PATH=$PATH:$HOME/opensmoke++suite-0.7.0-macos/bin
+export PATH=$PATH:$HOME/opensmoke++suite-0.9.0-macos/bin
 \end_layout
 
 \end_deeper
@@ -2720,6 +2811,9 @@ license.dat
 bin
 \family default
  folder.
+ At present, only academic users from recognised institutional email addresses
+ will be provided with the license file and have free access to the software.
+ Users from commercial organisations should contact the OpenSMOKE++ Team.
 \end_layout
 
 \begin_layout Subsection
@@ -2728,10 +2822,18 @@ Notes about the OpenSMOKE++ Graphical Post-Processor
 
 \begin_layout Standard
 In order to use all the features of the graphical post-processor, the installati
-on of Graphviz (even if not strictly needed) is strongly recommended.
+on of 
+\family typewriter
+Graphviz
+\family default
+ (even if not strictly needed) is strongly recommended.
  Without it, you cannot perform automatic generation of flux diagrams.
  However, all the remaining features of graphical post-processor work correctly
- even without Graphviz.
+ even without 
+\family typewriter
+Graphviz
+\family default
+.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -2753,7 +2855,11 @@ Installation of pre-compiled binaries (recommended)
 
 \begin_deeper
 \begin_layout Standard
-Precompiled Graphviz is available at the following web address: 
+Precompiled 
+\family typewriter
+Graphviz
+\family default
+ is available at the following web address: 
 \begin_inset Flex URL
 status open
 
@@ -2801,7 +2907,11 @@ PATH
 \family typewriter
 bin
 \family default
- folder of installed GraphViz.
+ folder of installed 
+\family typewriter
+Graphviz
+\family default
+.
 \end_layout
 
 \end_deeper
@@ -2883,7 +2993,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-open /path_to_opensmoke_suite/bin/OpenSMOKE_PostProcessor.sh.app
+open /path_to_opensmoke_suite/bin/OpenSMOKEpp_PostProcessor.sh.app
 \end_layout
 
 \begin_layout Plain Layout
@@ -2912,9 +3022,9 @@ $HOME
 
 \family typewriter
 \color black
-$HOME/opensmoke++suite-0.7.0-macos/
+$HOME/opensmoke++suite-0.9.0-macos/
 \color inherit
-bin/OpenSMOKE_PostProcessor.sh.app
+bin/OpenSMOKEpp_PostProcessor.sh.app
 \end_layout
 
 \end_deeper
@@ -2960,7 +3070,11 @@ OpenSMOKE++ Suite
 OpenSMOKE++
 \family default
  requires that the kinetic scheme, together with the thermodynamic and (optional
-ly) transport properties, is provided according to the CHEMKIN rules 
+ly) transport properties, is provided according to the 
+\family typewriter
+CHEMKIN
+\family default
+ rules 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "CHEMKINPRO2008"
@@ -2968,8 +3082,11 @@ key "CHEMKINPRO2008"
 \end_inset
 
 .
- Kinetic mechanisms and thermodynamic and transport data in CHEMKIN-compatible
- format are available from several research groups.
+ Kinetic mechanisms and thermodynamic and transport data in 
+\family typewriter
+CHEMKIN
+\family default
+ compatible format are available from several research groups.
  In particular, a non exaustive list (adapted from
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -3148,7 +3265,11 @@ http://combustion.berkeley.edu/gri-mech/
 
 \end_deeper
 \begin_layout Standard
-Please, look at the CHEMKIN user's guide 
+Please, look at the 
+\family typewriter
+CHEMKIN
+\family default
+ user's guide 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "CHEMKINPRO2008"
@@ -3241,7 +3362,7 @@ OpenSMOKE++ Suite
 \family default
 , which is called 
 \family typewriter
-OpenSMOKE_CHEMKIN_PreProcessor
+OpenSMOKEpp_CHEMKIN_PreProcessor
 \family default
 .
  
@@ -3380,7 +3501,7 @@ begin{lstlisting}[style=codesingleline]
 
 %OPENSMOKEPP_EXE_FOLDER%
 \backslash
-OpenSMOKE_CHEMKIN_PreProcessor.exe --input kinetics.dic
+OpenSMOKEpp_CHEMKIN_PreProcessor.exe --input kinetics.dic
 \end_layout
 
 \begin_layout Plain Layout
@@ -3412,7 +3533,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-OpenSMOKE_CHEMKIN_PreProcessor.sh --input kinetics.dic
+OpenSMOKEpp_CHEMKIN_PreProcessor.sh --input kinetics.dic
 \end_layout
 
 \begin_layout Plain Layout
@@ -3632,7 +3753,7 @@ OpenSMOKE++ Suite
 \family default
  solver for batch reactors (
 \family typewriter
-OpenSMOKE_BatchReactor
+OpenSMOKEpp_BatchReactor
 \family default
 ) using the following command (in Microsoft Windows):
 \begin_inset Separator latexpar
@@ -3657,7 +3778,7 @@ begin{lstlisting}[style=codesingleline]
 
 %OPENSMOKEPP_EXE_FOLDER%
 \backslash
-OpenSMOKE_BatchReactor.exe --input batch.dic
+OpenSMOKEpp_BatchReactor.exe --input batch.dic
 \end_layout
 
 \begin_layout Plain Layout
@@ -3689,7 +3810,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-OpenSMOKE_BatchReactor.sh --input batch.dic
+OpenSMOKEpp_BatchReactor.sh --input batch.dic
 \end_layout
 
 \begin_layout Plain Layout
@@ -3897,7 +4018,7 @@ Output.out
 \end_layout
 
 \begin_layout Section
-Analysis of results with OpenSMOKE++ graphical post-processor
+Analysis of results with OpenSMOKE++ Graphical PostProcessor
 \end_layout
 
 \begin_layout Standard
@@ -3909,9 +4030,9 @@ OpenSMOKE++
 \end_layout
 
 \begin_layout Enumerate
-In order to graphically post-process the results you have to run the O
+In order to graphically post-process the results you have to run the 
 \family typewriter
-penSMOKE_PostProcessor
+OpenSMOKEpp_PostProcessor
 \family default
  file (contained in the 
 \family typewriter
@@ -4018,7 +4139,7 @@ Adiabatic batch reactor: profiles of main species (left) and OH radical
  and NO (right).
  The profiles have been obtained directly using the 
 \family typewriter
-OpenSMOKE++ PostProcessor
+OpenSMOKE++ Graphical PostProcessor
 \family default
 .
 \end_layout
@@ -4141,7 +4262,7 @@ Adiabatic batch reactor: profiles of reaction rates (left) and formation
  rates of selected species (right).
  The profiles have been obtained directly using the 
 \family typewriter
-OpenSMOKE++ PostProcessor
+OpenSMOKE++ Graphical PostProcessor
 \family default
 .
 \end_layout
@@ -4539,7 +4660,7 @@ begin{lstlisting}[style=codesingleline]
 
 %OPENSMOKEPP_EXE_FOLDER%
 \backslash
-OpenSMOKE_BatchReactor.exe --input batch.dic
+OpenSMOKEpp_BatchReactor.exe --input batch.dic
 \end_layout
 
 \begin_layout Plain Layout
@@ -4571,7 +4692,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-OpenSMOKE_BatchReactor.sh --input batch.dic
+OpenSMOKEpp_BatchReactor.sh --input batch.dic
 \end_layout
 
 \begin_layout Plain Layout
@@ -4590,7 +4711,7 @@ end{lstlisting}
 If everything worked properly, you can now look at the results of sensitivity
  analysis using the 
 \family typewriter
-OpenSMOKE++ PostProcessor
+OpenSMOKE++ Graphical PostProcessor
 \family default
 .
  In particular, after selecting the folders containing the 
@@ -4706,7 +4827,7 @@ OpenSMOKE++ Suite
 \family default
  provides the 
 \family typewriter
-OpenSMOKE_CHEMKIN_PreProcessor
+OpenSMOKEpp_CHEMKIN_PreProcessor
 \family default
  utility.
  The user has to supply the files containing the thermodynamic data, the
@@ -4717,7 +4838,7 @@ OpenSMOKE_CHEMKIN_PreProcessor
  This is useful, since in many cases the transport data are not available.
  In order to run the 
 \family typewriter
-OpenSMOKE_CHEMKIN_PreProcessor
+OpenSMOKEpp_CHEMKIN_PreProcessor
 \family default
  utility, the user has to write an input file containing the instructions
  (i.e.
@@ -4735,7 +4856,7 @@ reference "sec:Dictionary-CHEMKIN-PreProcessor"
  Please look at the tutorials to have more details.
  The 
 \family typewriter
-OpenSMOKE_CHEMKIN_PreProcessor
+OpenSMOKEpp_CHEMKIN_PreProcessor
 \family default
  utility can be run from the command line using the following instructions,
  where it is assumed that the file containing the dictionary is called 
@@ -4773,7 +4894,7 @@ begin{lstlisting}[style=codesingleline]
 
 %OPENSMOKEPP_EXE_FOLDER%
 \backslash
-OpenSMOKE_CHEMKIN_PreProcessor.exe --input myinput.dic 
+OpenSMOKEpp_CHEMKIN_PreProcessor.exe --input myinput.dic 
 \end_layout
 
 \begin_layout Plain Layout
@@ -4822,7 +4943,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-OpenSMOKE_CHEMKIN_PreProcessor.sh --input myinput.dic --dictionary mydictionary
+OpenSMOKEpp_CHEMKIN_PreProcessor.sh --input myinput.dic --dictionary mydictionary
 \end_layout
 
 \begin_layout Plain Layout
@@ -4850,7 +4971,7 @@ The
  option can be omitted.
  In this case the 
 \family typewriter
-OpenSMOKE_CHEMKIN_PreProcessor
+OpenSMOKEpp_CHEMKIN_PreProcessor
 \family default
  assumes that the input file is called 
 \family typewriter
@@ -4865,7 +4986,7 @@ The
  option can be omitted.
  In this case the 
 \family typewriter
-OpenSMOKE_CHEMKIN_PreProcessor
+OpenSMOKEpp_CHEMKIN_PreProcessor
 \family default
  assumes that the dictionary is called 
 \family typewriter
@@ -4880,7 +5001,7 @@ kinetics.xml
 \family default
  file will be generated by the 
 \family typewriter
-OpenSMOKE_CHEMKIN_PreProcessor
+OpenSMOKEpp_CHEMKIN_PreProcessor
 \family default
 .
  This is the only file needed by the 
@@ -4943,7 +5064,7 @@ begin{lstlisting}[style=codesingleline]
 
 %OPENSMOKEPP_EXE_FOLDER%
 \backslash
-OpenSMOKE_SolverName.exe --input myinput.dic 
+OpenSMOKEpp_SolverName.exe --input myinput.dic 
 \end_layout
 
 \begin_layout Plain Layout
@@ -4992,7 +5113,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-OpenSMOKE_SolverName.sh --input myinput.dic --dictionary mydictionary
+OpenSMOKEpp_SolverName.sh --input myinput.dic --dictionary mydictionary
 \end_layout
 
 \begin_layout Plain Layout
@@ -5016,7 +5137,7 @@ Notes
 The –input option can be omitted.
  In this case the 
 \family typewriter
-OpenSMOKE_SolverName
+OpenSMOKEpp_SolverName
 \family default
  assumes that the input file is called 
 \family typewriter
@@ -5134,6 +5255,10 @@ PremixedLaminarFlame1D
 \end_layout
 
 \begin_layout Enumerate
+CounterFlowDiffusionFlame1D
+\end_layout
+
+\begin_layout Enumerate
 Thermodynamic-Equilibrium
 \end_layout
 
@@ -5174,10 +5299,14 @@ Dictionary: CHEMKIN-PreProcessor
 \begin_layout Standard
 This dictionary is used by the 
 \family typewriter
-OpenSMOKE_CHEMKIN_Preprocessor
+OpenSMOKEpp_CHEMKIN_Preprocessor
 \family default
  solver with the aim to preprocess (i.e.
- interpret) a kinetic mechanism written in the standard CHEMKIN format.
+ interpret) a kinetic mechanism written in the standard 
+\family typewriter
+CHEMKIN
+\family default
+ format.
  Only the thermodynamic file is strictly necessary, but, obviously, a kinetic
  mechanism must be provided if the aim is to perform simulations of reacting
  systems.
@@ -5201,7 +5330,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="14" columns="3">
+<lyxtabular version="3" rows="15" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3cm">
@@ -5258,8 +5387,11 @@ PATH
 \begin_inset Text
 
 \begin_layout Plain Layout
-Name of the file (ASCII) containing the thermodynamic data (CHEMKIN® format)
- 
+Name of the file (ASCII) containing the thermodynamic data (
+\family typewriter
+CHEMKIN
+\family default
+ format) 
 \end_layout
 
 \end_inset
@@ -5317,8 +5449,11 @@ PATH
 \begin_inset Text
 
 \begin_layout Plain Layout
-Name of the file (ASCII) containing the transport data (CHEMKIN® format)
- 
+Name of the file (ASCII) containing the transport data (
+\family typewriter
+CHEMKIN
+\family default
+ format) 
 \end_layout
 
 \end_inset
@@ -5347,7 +5482,11 @@ PATH
 \begin_inset Text
 
 \begin_layout Plain Layout
-Name of the file (ASCII) containing the kinetic mechanism (CHEMKIN® format)
+Name of the file (ASCII) containing the kinetic mechanism (
+\family typewriter
+CHEMKIN
+\family default
+ format)
 \end_layout
 
 \end_inset
@@ -5406,7 +5545,10 @@ BOOL
 \begin_inset Text
 
 \begin_layout Plain Layout
-The output file are written also using the old format used by the OpenSMOKE
+The output file are written also using the old format used by the 
+\family typewriter
+OpenSMOKE
+\family default
  framework (before 2013) 
 \end_layout
 
@@ -5469,6 +5611,36 @@ BOOL
 \begin_layout Plain Layout
 For each reaction detailed information is reported on a file (kinetic constants,
  change of moles, etc.) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@ReactionTablesListOfTemperatures
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TODO
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+List of temperatures at which the detailed information is reported on a
+ file for each reaction (kinetic constants, change of moles, etc.)
 \end_layout
 
 \end_inset
@@ -5587,9 +5759,12 @@ BOOL
 \begin_inset Text
 
 \begin_layout Plain Layout
-The kinetic mechanism is rewritten in CHEMKIN format by accounting for the
- corrections on atomic balances carried out during the pre-processing phase
- (default: true)
+The kinetic mechanism is rewritten in 
+\family typewriter
+CHEMKIN
+\family default
+ format by accounting for the corrections on atomic balances carried out
+ during the pre-processing phase (default: true)
 \end_layout
 
 \end_inset
@@ -5766,6 +5941,15 @@ Reaction_Tables.out
 Reaction_Tables.out
 \family default
  file is self-explanatory.
+\end_layout
+
+\begin_layout Subsubsection*
+@ReactionTablesListOfTemperatures
+\end_layout
+
+\begin_layout Standard
+List of temperatures at which the detailed information is reported on a
+ file for each reaction (kinetic constants, change of moles, etc.).
 \end_layout
 
 \begin_layout Subsubsection*
@@ -5951,7 +6135,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="17" columns="3">
+<lyxtabular version="3" rows="21" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
@@ -6534,7 +6718,7 @@ reference "sec:Sub-Dictionary-ODE-Parameters"
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6543,7 +6727,7 @@ reference "sec:Sub-Dictionary-ODE-Parameters"
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6552,7 +6736,7 @@ SUBDICT [Parametric-Analysis]
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6565,6 +6749,158 @@ reference "sec:Sub-Dictionary-Parametric-Analysis"
 \end_inset
 
 )
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@OnTheFlyROPA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [OnTheFly-ROPA]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary specifying the details for carrying out on the fly ROPA (Rate
+ of Production Analysis).
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-OnTheFlyROPA"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@OnTheFlyCEMA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [OnTheFly-CEMA]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary specifying the details for carrying out on the fly CEMA (Chemical
+ Explosive Mode Analysis).
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-OnTheFlyCEMA"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@OnTheFlyPostProcessing
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [OnTheFly-PostProcessing]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary specifying the details for carrying out on the fly post-processing
+ analyses.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-OnTheFlyPostProcessing"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@PolimiSoot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [Polimi-Soot]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary defining the rules for analyzing soot calculated using the Polimi
+ mechanism based on the Discrete Sectional Method.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-PolimiSoot"
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -6611,7 +6947,7 @@ kinetics.xml
 ).
  This file has to be generated using the 
 \family typewriter
-OpenSMOKE_CHEMKIN_Preprocessor
+OpenSMOKEpp_CHEMKIN_Preprocessor
 \family default
 .
  Instead of using this option, the user has the possibility to pre-process
@@ -6947,6 +7283,95 @@ reference "sec:Sub-Dictionary-Parametric-Analysis"
  to have more details.
 \end_layout
 
+\begin_layout Subsubsection*
+@OnTheFlyROPA
+\end_layout
+
+\begin_layout Standard
+Dictionary specifying the details for carrying out on the fly ROPA (Rate
+ of Production Analysis).
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-OnTheFlyROPA"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+@OnTheFlyCEMA
+\end_layout
+
+\begin_layout Standard
+Dictionary specifying the details for carrying out on the fly CEMA (Chemical
+ Explosive Mode Analysis), described in 
+\series bold
+T.F.
+ Lu, C.S.
+ Yoo, J.H.
+ Chen, C.K.
+ Law
+\series default
+, J.
+ Fluid Mech., 652 (2010), pp.
+ 45–64.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-OnTheFlyCEMA"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+@OnTheFlyPostProcessing
+\end_layout
+
+\begin_layout Standard
+Dictionary specifying the details for carrying out on the fly post-processing
+ analyses.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-OnTheFlyPostProcessing"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+@PolimiSoot
+\end_layout
+
+\begin_layout Standard
+Dictionary defining the rules for analyzing soot calculated using the Polimi
+ mechanism based on the Discrete Sectional Method (described in 
+\series bold
+Saggese, C., Ferrario, S., Camacho, J., Cuoci, A., Frassoldati, A., Ranzi, E.,
+ Wang, H., Faravelli, T.,
+\series default
+ 
+\shape italic
+Kinetic modeling of particle size distribution of soot in a premixed burner-stab
+ilized stagnation ethylene flame
+\shape default
+ (2015), Combustion and Flame, 162(9), p.
+ 3356–3369, DOI: 10.1016/j.combustflame.2015.06.002).
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-PolimiSoot"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Section
 Dictionary: Perfectly Stirred Reactor
 \end_layout
@@ -6971,7 +7396,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="17" columns="3">
+<lyxtabular version="3" rows="20" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
@@ -7545,7 +7970,7 @@ reference "sec:Sub-Dictionary-ODE-Parameters"
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -7554,7 +7979,7 @@ reference "sec:Sub-Dictionary-ODE-Parameters"
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -7563,7 +7988,7 @@ SUBDICT [Parametric-Analysis]
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -7576,6 +8001,120 @@ reference "sec:Sub-Dictionary-Parametric-Analysis"
 \end_inset
 
 )
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@OnTheFlyROPA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [OnTheFly-ROPA]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary specifying the details for carrying out on the fly ROPA (Rate
+ of Production Analysis).
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-OnTheFlyROPA"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@OnTheFlyPostProcessing
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [OnTheFly-PostProcessing]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary specifying the details for carrying out on the fly post-processing
+ analyses.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-OnTheFlyPostProcessing"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@PolimiSoot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [Polimi-Soot]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary defining the rules for analyzing soot calculated using the Polimi
+ mechanism based on the Discrete Sectional Method.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-PolimiSoot"
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -7622,7 +8161,7 @@ kinetics.xml
 ).
  This file has to be generated using the 
 \family typewriter
-OpenSMOKE_CHEMKIN_Preprocessor
+OpenSMOKEpp_CHEMKIN_Preprocessor
 \family default
 .
  Instead of using this option, the user has the possibility to pre-process
@@ -7942,6 +8481,68 @@ reference "sec:Sub-Dictionary-Parametric-Analysis"
  to have more details.
 \end_layout
 
+\begin_layout Subsubsection*
+@OnTheFlyROPA
+\end_layout
+
+\begin_layout Standard
+Dictionary specifying the details for carrying out on the fly ROPA (Rate
+ of Production Analysis).
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-OnTheFlyROPA"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+@OnTheFlyPostProcessing
+\end_layout
+
+\begin_layout Standard
+Dictionary specifying the details for carrying out on the fly post-processing
+ analyses.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-OnTheFlyPostProcessing"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+@PolimiSoot
+\end_layout
+
+\begin_layout Standard
+Dictionary defining the rules for analyzing soot calculated using the Polimi
+ mechanism based on the Discrete Sectional Method (described in 
+\series bold
+Saggese, C., Ferrario, S., Camacho, J., Cuoci, A., Frassoldati, A., Ranzi, E.,
+ Wang, H., Faravelli, T.,
+\series default
+ 
+\shape italic
+Kinetic modeling of particle size distribution of soot in a premixed burner-stab
+ilized stagnation ethylene flame
+\shape default
+ (2015), Combustion and Flame, 162(9), p.
+ 3356–3369, DOI: 10.1016/j.combustflame.2015.06.002).
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-PolimiSoot"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Section
 Dictionary: Shock Tube Reactor
 \end_layout
@@ -7964,7 +8565,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="16" columns="3">
+<lyxtabular version="3" rows="19" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
@@ -8461,7 +9062,7 @@ reference "sec:Sub-Dictionary-Output-Options"
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8470,7 +9071,7 @@ reference "sec:Sub-Dictionary-Output-Options"
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8479,7 +9080,7 @@ SUBDICT [ODE-Solver]
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8492,6 +9093,120 @@ reference "sec:Sub-Dictionary-ODE-Parameters"
 \end_inset
 
 )
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@OnTheFlyROPA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [OnTheFly-ROPA]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary specifying the details for carrying out on the fly ROPA (Rate
+ of Production Analysis).
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-OnTheFlyROPA"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@OnTheFlyPostProcessing
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [OnTheFly-PostProcessing]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary specifying the details for carrying out on the fly post-processing
+ analyses.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-OnTheFlyPostProcessing"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@PolimiSoot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [Polimi-Soot]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary defining the rules for analyzing soot calculated using the Polimi
+ mechanism based on the Discrete Sectional Method.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-PolimiSoot"
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -8538,7 +9253,7 @@ kinetics.xml
 ).
  This file has to be generated using the 
 \family typewriter
-OpenSMOKE_CHEMKIN_Preprocessor
+OpenSMOKEpp_CHEMKIN_Preprocessor
 \family default
 .
  Instead of using this option, the user has the possibility to pre-process
@@ -8707,6 +9422,68 @@ reference "sec:Sub-Dictionary-ODE-Parameters"
  to have more details.
 \end_layout
 
+\begin_layout Subsubsection*
+@OnTheFlyROPA
+\end_layout
+
+\begin_layout Standard
+Dictionary specifying the details for carrying out on the fly ROPA (Rate
+ of Production Analysis).
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-OnTheFlyROPA"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+@OnTheFlyPostProcessing
+\end_layout
+
+\begin_layout Standard
+Dictionary specifying the details for carrying out on the fly post-processing
+ analyses.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-OnTheFlyPostProcessing"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+@PolimiSoot
+\end_layout
+
+\begin_layout Standard
+Dictionary defining the rules for analyzing soot calculated using the Polimi
+ mechanism based on the Discrete Sectional Method (described in 
+\series bold
+Saggese, C., Ferrario, S., Camacho, J., Cuoci, A., Frassoldati, A., Ranzi, E.,
+ Wang, H., Faravelli, T.,
+\series default
+ 
+\shape italic
+Kinetic modeling of particle size distribution of soot in a premixed burner-stab
+ilized stagnation ethylene flame
+\shape default
+ (2015), Combustion and Flame, 162(9), p.
+ 3356–3369, DOI: 10.1016/j.combustflame.2015.06.002).
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-PolimiSoot"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Section
 Dictionary: Plug Flow Reactor 
 \end_layout
@@ -8731,7 +9508,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="21" columns="3">
+<lyxtabular version="3" rows="24" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
@@ -9415,7 +10192,7 @@ reference "sec:Sub-Dictionary-ODE-Parameters"
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -9424,7 +10201,7 @@ reference "sec:Sub-Dictionary-ODE-Parameters"
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -9433,7 +10210,7 @@ SUBDICT [Parametric-Analysis]
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -9446,6 +10223,120 @@ reference "sec:Sub-Dictionary-Parametric-Analysis"
 \end_inset
 
 )
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@OnTheFlyROPA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [OnTheFly-ROPA]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary specifying the details for carrying out on the fly ROPA (Rate
+ of Production Analysis).
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-OnTheFlyROPA"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@OnTheFlyPostProcessing
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [OnTheFly-PostProcessing]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary specifying the details for carrying out on the fly post-processing
+ analyses.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-OnTheFlyPostProcessing"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@PolimiSoot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [Polimi-Soot]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary defining the rules for analyzing soot calculated using the Polimi
+ mechanism based on the Discrete Sectional Method.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-PolimiSoot"
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -9492,7 +10383,7 @@ kinetics.xml
 ).
  This file has to be generated using the 
 \family typewriter
-OpenSMOKE_CHEMKIN_Preprocessor
+OpenSMOKEpp_CHEMKIN_Preprocessor
 \family default
 .
  Instead of using this option, the user has the possibility to pre-process
@@ -9828,13 +10719,75 @@ reference "sec:Sub-Dictionary-Parametric-Analysis"
  to have more details.
 \end_layout
 
+\begin_layout Subsubsection*
+@OnTheFlyROPA
+\end_layout
+
+\begin_layout Standard
+Dictionary specifying the details for carrying out on the fly ROPA (Rate
+ of Production Analysis).
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-OnTheFlyROPA"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+@OnTheFlyPostProcessing
+\end_layout
+
+\begin_layout Standard
+Dictionary specifying the details for carrying out on the fly post-processing
+ analyses.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-OnTheFlyPostProcessing"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+@PolimiSoot
+\end_layout
+
+\begin_layout Standard
+Dictionary defining the rules for analyzing soot calculated using the Polimi
+ mechanism based on the Discrete Sectional Method (described in 
+\series bold
+Saggese, C., Ferrario, S., Camacho, J., Cuoci, A., Frassoldati, A., Ranzi, E.,
+ Wang, H., Faravelli, T.,
+\series default
+ 
+\shape italic
+Kinetic modeling of particle size distribution of soot in a premixed burner-stab
+ilized stagnation ethylene flame
+\shape default
+ (2015), Combustion and Flame, 162(9), p.
+ 3356–3369, DOI: 10.1016/j.combustflame.2015.06.002).
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-PolimiSoot"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Section
 Dictionary: PremixedLaminarFlame1D
 \end_layout
 
 \begin_layout Standard
-This dictionary is used for setting the simulation for calculating laminar
- flame speeds.
+This dictionary is used for setting the simulation for simulating premixed
+ laminar flames.
 \end_layout
 
 \begin_layout Standard
@@ -9846,7 +10799,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="15" columns="3">
+<lyxtabular version="3" rows="14" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
@@ -9941,6 +10894,71 @@ reference "sec:Sub-Dictionary-Rapid-Kinetics"
 \end_inset
 
 )
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Backup
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PATH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Path to the backup file (in XML format) from which the simulation has to
+ be restarted.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STRING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type of simulation: 
+\family typewriter
+BurnerStabilized
+\family default
+ | 
+\family typewriter
+FlameSpeed
 \end_layout
 
 \end_inset
@@ -10228,7 +11246,7 @@ reference "tab:NLS-TridiagonalBlock-Parameters"
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -10237,7 +11255,7 @@ reference "tab:NLS-TridiagonalBlock-Parameters"
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -10246,7 +11264,7 @@ SUBDICT [FalseTransient-Solver]
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -10264,30 +11282,68 @@ reference "tab:FalseTransient-Parameters-dictio"
 \end_inset
 </cell>
 </row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+PremixedLaminarFlame1D options (Part I)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="14" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="3.5cm">
+<column alignment="center" valignment="top" width="13cm">
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none" width="6cm">
 \begin_inset Text
 
 \begin_layout Plain Layout
-@CheckMassFractions
+Option
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-BOOL
+Type
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Force non-negative mass fractions (default: false)
+Meaning
 \end_layout
 
 \end_inset
@@ -10324,7 +11380,37 @@ Use DAE solver (instead of NL solver) to solve the steady-state problems
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@UseNlsSolver
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Use the NLS solver to solve the steady state problems, after the DAE solver
+ (default: true)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -10335,7 +11421,7 @@ Use DAE solver (instead of NL solver) to solve the steady-state problems
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -10344,7 +11430,7 @@ DOUBLE
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -10352,6 +11438,381 @@ Enables the species bundling technique for the fast evaluation of mass diffusion
  coefficients.
  The double parameter is the maximum relative error which can be accepted
  (suggestion: 0.05)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@PolimiSoot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [Polimi-Soot]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary defining the rules for analyzing soot calculated using the Polimi
+ mechanism based on the Discrete Sectional Method.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-PolimiSoot"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@HMOM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [HMOM]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary defining the rules for applying the Hybrid Method of Moments
+ (HMOM).
+ See Section
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-HMOM"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@OnTheFlyPostProcessing
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [OnTheFly-PostProcessing]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary specifying the details for carrying out on the fly post-processing
+ analyses.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-OnTheFlyPostProcessing"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@FixedTemperatureProfile
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [XY-Profile]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary defining the fixed temperature profile.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-XY-Profile"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@FixedSpecificMassFlowRateProfile
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [XY-Profile]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+dDictionary describing the specific (i.e.
+ per unit area) mass flow rate profile.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-XY-Profile"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Soret
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Add Soret effect (default: true)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Radiation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Radiative heat transfer (default: false)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@EnvironmentTemperature
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MEASURE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Environment temperature for radiative heat transfer calculations (default:
+ 298.15 K)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@DerivativeGasMassFractions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STRING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Derivative gas mass fractions: 
+\family typewriter
+upwind
+\family default
+ | 
+\family typewriter
+backward
+\family default
+ | 
+\family typewriter
+forward
+\family default
+ | 
+\family typewriter
+centered
+\family default
+ (default: 
+\family typewriter
+backward
+\family default
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@DerivativeGasTemperature
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STRING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Derivative gas temperature: 
+\family typewriter
+upwind
+\family default
+ | 
+\family typewriter
+backward
+\family default
+ | 
+\family typewriter
+forward
+\family default
+ | 
+\family typewriter
+centered
+\family default
+ (default: 
+\family typewriter
+backward
+\family default
+)
 \end_layout
 
 \end_inset
@@ -10368,7 +11829,7 @@ Enables the species bundling technique for the fast evaluation of mass diffusion
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-PremixedLaminarFlame1D options
+PremixedLaminarFlame1D options (Part II)
 \end_layout
 
 \end_inset
@@ -10398,7 +11859,7 @@ kinetics.xml
 ).
  This file has to be generated using the 
 \family typewriter
-OpenSMOKE_CHEMKIN_Preprocessor
+OpenSMOKEpp_CHEMKIN_Preprocessor
 \family default
 .
  Instead of using this option, the user has the possibility to pre-process
@@ -10436,6 +11897,42 @@ reference "sec:Sub-Dictionary-Rapid-Kinetics"
 \end_inset
 
  to have more details.
+\end_layout
+
+\begin_layout Subsubsection*
+@Backup
+\end_layout
+
+\begin_layout Standard
+Path to the backup file (in XML format) from which the simulation has to
+ be restarted.
+\end_layout
+
+\begin_layout Subsubsection*
+@Type
+\end_layout
+
+\begin_layout Standard
+Type of simulation: 
+\family typewriter
+BurnerStabilized
+\family default
+ | 
+\family typewriter
+FlameSpeed
+\family default
+.
+ The 
+\family typewriter
+BurnerStabilized
+\family default
+ option usually requires a fixed temperature profile.
+ The 
+\family typewriter
+FlameSpeed
+\family default
+ option is adopted for calculating the adiabatic flame speed at the given
+ inlet temperature, composition and pressure.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -10630,6 +12127,15 @@ Use DAE solver (instead of NL solver) to solve the steady-state problems
 \end_layout
 
 \begin_layout Subsubsection*
+@UseNlsSolver
+\end_layout
+
+\begin_layout Standard
+Use the NLS solver to solve the steady state problems, after the DAE solver
+ (default: true)
+\end_layout
+
+\begin_layout Subsubsection*
 
 \size normal
 @SpeciesBundling	
@@ -10702,6 +12208,2515 @@ Diffusion coefficient reduction through species bundling
 \color none
 , Combustion and Flame, 148(3), p.
  117-126 (2007).
+\end_layout
+
+\begin_layout Subsubsection*
+@PolimiSoot
+\end_layout
+
+\begin_layout Standard
+Dictionary defining the rules for analyzing soot calculated using the Polimi
+ mechanism based on the Discrete Sectional Method (described in 
+\series bold
+Saggese, C., Ferrario, S., Camacho, J., Cuoci, A., Frassoldati, A., Ranzi, E.,
+ Wang, H., Faravelli, T.,
+\series default
+ 
+\shape italic
+Kinetic modeling of particle size distribution of soot in a premixed burner-stab
+ilized stagnation ethylene flame
+\shape default
+ (2015), Combustion and Flame, 162(9), p.
+ 3356–3369, DOI: 10.1016/j.combustflame.2015.06.002).
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-PolimiSoot"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+@HMOM
+\end_layout
+
+\begin_layout Standard
+Dictionary defining the rules for applying the Hybrid Method of Moments
+ (HMOM), described in 
+\series bold
+Mueller, M.
+ E.
+ and Blanquart, G.
+ and Pitsch, H.,
+\series default
+ 
+\shape italic
+Hybrid Method of Moments for modeling soot formation and growth
+\shape default
+ (2009), Combustion and Flame, 156 (6).
+ pp.
+ 1143-1155.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-HMOM"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+@OnTheFlyPostProcessing
+\end_layout
+
+\begin_layout Standard
+Dictionary specifying the details for carrying out on the fly post-processing
+ analyses.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-OnTheFlyPostProcessing"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+@FixedTemperatureProfile
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Dictionary defining the fixed temperature profile.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-XY-Profile"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+@FixedSpecificMassFlowRateProfile
+\end_layout
+
+\begin_layout Standard
+Dictionary specifying the 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+specific (i.e.
+ per unit area) mass flow rate profile
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+.
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-XY-Profile"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+@Soret
+\end_layout
+
+\begin_layout Standard
+Add Soret effect (default: true).
+\end_layout
+
+\begin_layout Subsubsection*
+@Radiation
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Radiative heat transfer (default: false).
+ The optically thin model is currently the only approach available.
+\end_layout
+
+\begin_layout Subsubsection*
+@EnvironmentTemperature
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Environment temperature for radiative heat transfer calculations (default:
+ 298.15 K)
+\end_layout
+
+\begin_layout Subsubsection*
+@DerivativeGasMassFractions
+\end_layout
+
+\begin_layout Standard
+Derivative of mass fractions of gaseous species: 
+\family typewriter
+upwind
+\family default
+ | 
+\family typewriter
+backward
+\family default
+ | 
+\family typewriter
+forward
+\family default
+ | 
+\family typewriter
+centered
+\family default
+ (default: 
+\family typewriter
+backward
+\family default
+)
+\end_layout
+
+\begin_layout Subsubsection*
+@DerivativeGasTemperature
+\end_layout
+
+\begin_layout Standard
+Derivative of temperature: 
+\family typewriter
+upwind
+\family default
+ | 
+\family typewriter
+backward
+\family default
+ | 
+\family typewriter
+forward
+\family default
+ | 
+\family typewriter
+centered
+\family default
+ (default: 
+\family typewriter
+backward
+\family default
+)
+\end_layout
+
+\begin_layout Section
+Dictionary: CounterFlowDiffusionFlame1D
+\end_layout
+
+\begin_layout Standard
+This dictionary is used for setting the simulation for simulating counterflow
+ diffusion flames.
+ Please consider that this solver is still under development.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="19" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="3.5cm">
+<column alignment="center" valignment="top" width="13cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none" width="6cm">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Option
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Meaning
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@KineticsFolder
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PATH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Name of the folder containing the kinetic scheme (XML Version) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@KineticsPreProcessor 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [Rapid-Kinetics]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary containing the list of kinetic files to be interpreted (see Section
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Rapid-Kinetics"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Backup
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PATH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Path to the backup file (in XML format) from which the simulation has to
+ be restarted.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STRING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type of simulation: 
+\family typewriter
+CounterFlowDiffusion | BurnerStabilizedStagnation
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Grid 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [AdaptiveGrid-1D]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary defining the computational 1D grid (see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Adaptive-Grid1D-dictionary"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@PlanarSymmetry
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Planar symmetry: default false (i.e.
+ cylyndrical symmetry)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@FuelStream
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [Gas-Status]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary defining the inlet gas composition, temperature, and pressure
+ on the fuel side (see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Gas-Status"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@OxidizerStream
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [Gas-Status]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary defining the inlet gas composition, temperature, and pressure
+ on the oxidizer side (see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Gas-Status"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@FuelVelocity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MEASURE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fuel stream velocity
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@OxidizerVelocity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MEASURE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Oxidizer stream velocity
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@RadialGradientFuelSide
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MEASURE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Radial gradient on the fuel side: default 0 1/s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@RadialGradientOxidizerSide
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MEASURE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Radial gradient on the oxidizer side: default 0 1/s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@PeakMixture
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [Gas-Status] 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary defining the peak mixture composition, temperature and pressure.
+ Used only as a first-guess value.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Gas-Status"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Output
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PATH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Folder where to write the results of the simulation 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@SensitivityAnalysis 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [Sensitivity-Analysis]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary containing additional options for sensitivity analysis (see Section
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Sensitivity-Analysis"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@DaeParameters
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [DAE-TridiagonalBlock-Solver]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary containing the numerical parameters for solving the Triadiagonal
+ Block DAE system (see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:DAE-TridiagonalBlock-Parameters"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@NlsParameters
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [NLS-TridiagonalBlock-Solver]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary containing the numerical parameters for solving the Triadiagonal
+ Block non-linear system (see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:NLS-TridiagonalBlock-Parameters"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@FalseTransientParameters
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [FalseTransient-Solver]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary containing the numerical parameters governing the false-transient
+ approach (see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:FalseTransient-Parameters-dictio"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+CounterFloDiffusionFlame1D options (Part I)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="21" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="3.5cm">
+<column alignment="center" valignment="top" width="13cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none" width="6cm">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Option
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Meaning
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@UseDaeSolver
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Use DAE solver (instead of NL solver) to solve the steady-state problems
+ (default: true)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@UseNlsSolver
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Use the NLS solver to solve the steady state problems, after the DAE solver
+ (default: true)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size normal
+@SpeciesBundling
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Enables the species bundling technique for the fast evaluation of mass diffusion
+ coefficients.
+ The double parameter is the maximum relative error which can be accepted
+ (suggestion: 0.05)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@PolimiSoot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [Polimi-Soot]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary defining the rules for analyzing soot calculated using the Polimi
+ mechanism based on the Discrete Sectional Method.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-PolimiSoot"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@HMOM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [HMOM]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary defining the rules for applying the Hybrid Method of Moments
+ (HMOM).
+ See Section
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-HMOM"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@OnTheFlyPostProcessing
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [OnTheFly-PostProcessing]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary specifying the details for carrying out on the fly post-processing
+ analyses.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-OnTheFlyPostProcessing"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@FixedTemperatureProfile
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [XY-Profile]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary defining the fixed temperature profile.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-XY-Profile"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@InitialTemperatureProfile
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [XY-Profile]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary describing the initial (i.e.
+ first-guess) temperature profile.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-XY-Profile"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Soret
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Add Soret effect (default: true)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Radiation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Radiative heat transfer (default: false)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@EnvironmentTemperature
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MEASURE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Environment temperature for radiative heat transfer calculations (default:
+ 298.15 K)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@DerivativeGasMassFractions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STRING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Derivative gas mass fractions: 
+\family typewriter
+upwind
+\family default
+ | 
+\family typewriter
+backward
+\family default
+ | 
+\family typewriter
+forward
+\family default
+ | 
+\family typewriter
+centered
+\family default
+ (default: 
+\family typewriter
+backward
+\family default
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@DerivativeGasTemperature
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STRING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Derivative gas temperature: 
+\family typewriter
+upwind
+\family default
+ | 
+\family typewriter
+backward
+\family default
+ | 
+\family typewriter
+forward
+\family default
+ | 
+\family typewriter
+centered
+\family default
+ (default: 
+\family typewriter
+backward
+\family default
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@InitialProfiles
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STRING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type of initial profiles for species and temperature: 
+\family typewriter
+triangular
+\family default
+ | 
+\family typewriter
+linear
+\family default
+ (default) | 
+\family typewriter
+plateau
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@PeakPosition
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MEASURE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Position of peak of temperature (if not provided it will be assumed equal
+ to the position of the stagnation plane)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MixingZoneWidth
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MEASURE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Width of the mixing zone
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@EigenValueStartingGuess
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MEASURE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Starting guess value for the eigen value: default -100 kg/m3/s2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@DepositionWall
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Deposition wall for burner stabilized stagnation flames
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@LewisNumbers
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [Lewis]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary containing the list of Lewis numbers of species.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-LewisNumbers"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@GasReactionRateMultiplier
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Optional multiplying factor applied to all the reaction rates (default is
+ 1)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+CounterFlowDiffusionFlame1D options (Part II)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Additional comments
+\end_layout
+
+\begin_layout Subsubsection*
+@KineticsFolder 
+\end_layout
+
+\begin_layout Standard
+This option is used to specify the name of the folder containing the kinetic
+ scheme in XML Version (
+\family typewriter
+kinetics.xml
+\family default
+).
+ This file has to be generated using the 
+\family typewriter
+OpenSMOKEpp_CHEMKIN_Preprocessor
+\family default
+.
+ Instead of using this option, the user has the possibility to pre-process
+ the kinetic scheme on the fly using the 
+\family typewriter
+@KineticsPreProcessor
+\family default
+ option (see below).
+\end_layout
+
+\begin_layout Subsubsection*
+@KineticsPreProcessor 
+\end_layout
+
+\begin_layout Standard
+The user can pre-process a kinetic scheme available in CHEMKIN format on
+ the fly, when the reactor simulation is performed (instead of pre-processing
+ the kinetics in a previous step).
+ This option is very useful when the kinetic mechanism is under construction
+ and/or tuning and the user has the need to change often the reactions and
+ the kinetic parameters.
+ Please consider that the pre-processing operation can be quite long for
+ very detailed kinetic schemes (thousands of species).
+ The 
+\family typewriter
+@KineticsPreProcessor
+\family default
+ option requires that the user specify the name of the sub-dictionary containing
+ all the information needed to pre-process kinetic mechanisms on the fly.
+ Please look at Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Rapid-Kinetics"
+
+\end_inset
+
+ to have more details.
+\end_layout
+
+\begin_layout Subsubsection*
+@Backup
+\end_layout
+
+\begin_layout Standard
+Path to the backup file (in XML format) from which the simulation has to
+ be restarted.
+\end_layout
+
+\begin_layout Subsubsection*
+@Type
+\end_layout
+
+\begin_layout Standard
+Type of simulation: 
+\family typewriter
+CounterFlowDiffusion | BurnerStabilizedStagnation
+\end_layout
+
+\begin_layout Subsubsection*
+@Grid
+\end_layout
+
+\begin_layout Standard
+Dictionary defining the computational 1D grid (see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Adaptive-Grid1D-dictionary"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Subsubsection*
+@PlanarSymmetry
+\end_layout
+
+\begin_layout Standard
+Planar symmetry: default false (i.e.
+ cylyndrical symmetry)
+\end_layout
+
+\begin_layout Subsubsection*
+@FuelStream
+\end_layout
+
+\begin_layout Standard
+This option is used to specify the features (temperature, pressure and compositi
+on) of the inlet stream on the fuel side.
+ The 
+\family typewriter
+@FuelStream
+\family default
+ option requires that the user specify the name of the corresponding sub-diction
+ary.
+ Please look at Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Gas-Status"
+
+\end_inset
+
+ to have more details.
+\end_layout
+
+\begin_layout Subsubsection*
+@OxidizerStream
+\end_layout
+
+\begin_layout Standard
+This option is used to specify the features (temperature, pressure and compositi
+on) of the inlet stream on the oxidizer side.
+ The 
+\family typewriter
+@OxidizerStream
+\family default
+ option requires that the user specify the name of the corresponding sub-diction
+ary.
+ Please look at Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Gas-Status"
+
+\end_inset
+
+ to have more details.
+\end_layout
+
+\begin_layout Subsubsection*
+@FuelVelocity 
+\end_layout
+
+\begin_layout Standard
+Inlet velocity of fuel stream.
+\end_layout
+
+\begin_layout Subsubsection*
+@OxidizerVelocity 
+\end_layout
+
+\begin_layout Standard
+Inlet velocity of oxidizer stream.
+\end_layout
+
+\begin_layout Subsubsection*
+@PeakMixture
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Dictionary defining the peak mixture composition, temperature and pressure.
+ Used only as a first-guess value.
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Gas-Status"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+@Output
+\end_layout
+
+\begin_layout Standard
+Folder where to write the results of the simulation 
+\end_layout
+
+\begin_layout Subsubsection*
+@SensitivityAnalysis 
+\end_layout
+
+\begin_layout Standard
+The user has to specify the name of the sub-dictionary in which the options
+ for performing the sensitivity analysis are reported.
+ Please look at Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Sensitivity-Analysis"
+
+\end_inset
+
+ to have more details.
+\end_layout
+
+\begin_layout Subsubsection*
+@DaeParameters 
+\end_layout
+
+\begin_layout Standard
+The user has to specify the name of the sub-dictionary in which the options
+ about the tridiagonal-block DAE solver adopted for the solution of transport
+ equations.
+ Please look at Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:DAE-TridiagonalBlock-Parameters"
+
+\end_inset
+
+ to have more details.
+\end_layout
+
+\begin_layout Subsubsection*
+@NlsParameters 
+\end_layout
+
+\begin_layout Standard
+The user has to specify the name of the sub-dictionary in which the options
+ about the tridiagonal-block non-linear (NL) solver adopted for the solution
+ of transport equations.
+ Please look at Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:NLS-TridiagonalBlock-Parameters"
+
+\end_inset
+
+ to have more details.
+\end_layout
+
+\begin_layout Subsubsection*
+@FalseTransientParameters 
+\end_layout
+
+\begin_layout Standard
+The user has to specify the name of the sub-dictionary in which the options
+ about the false-transient method adopted for the solution of transport
+ equations.
+ Please look at Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:FalseTransient-Parameters-dictio"
+
+\end_inset
+
+ to have more details.
+\end_layout
+
+\begin_layout Subsubsection*
+@UseDaeSolver
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Use DAE solver (instead of NL solver) to solve the steady-state problems
+ (default: true)
+\end_layout
+
+\begin_layout Subsubsection*
+@UseNlsSolver
+\end_layout
+
+\begin_layout Standard
+Use the NLS solver to solve the steady state problems, after the DAE solver
+ (default: true)
+\end_layout
+
+\begin_layout Subsubsection*
+
+\size normal
+@SpeciesBundling	
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Enables the species bundling technique for the fast evaluation of mass diffusion
+ coefficients.
+ The double parameter is the maximum relative error which can be accepted
+ (suggestion: 0.05).
+ The technique is described in the following paper: 
+\family default
+\series bold
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+Lu and Law
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+, 
+\family default
+\series default
+\shape italic
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+Diffusion coefficient reduction through species bundling
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+, Combustion and Flame, 148(3), p.
+ 117-126 (2007).
+\end_layout
+
+\begin_layout Subsubsection*
+@PolimiSoot
+\end_layout
+
+\begin_layout Standard
+Dictionary defining the rules for analyzing soot calculated using the Polimi
+ mechanism based on the Discrete Sectional Method (described in 
+\series bold
+Saggese, C., Ferrario, S., Camacho, J., Cuoci, A., Frassoldati, A., Ranzi, E.,
+ Wang, H., Faravelli, T.,
+\series default
+ 
+\shape italic
+Kinetic modeling of particle size distribution of soot in a premixed burner-stab
+ilized stagnation ethylene flame
+\shape default
+ (2015), Combustion and Flame, 162(9), p.
+ 3356–3369, DOI: 10.1016/j.combustflame.2015.06.002).
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-PolimiSoot"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+@HMOM
+\end_layout
+
+\begin_layout Standard
+Dictionary defining the rules for applying the Hybrid Method of Moments
+ (HMOM), described in 
+\series bold
+Mueller, M.
+ E.
+ and Blanquart, G.
+ and Pitsch, H.,
+\series default
+ 
+\shape italic
+Hybrid Method of Moments for modeling soot formation and growth
+\shape default
+ (2009), Combustion and Flame, 156 (6).
+ pp.
+ 1143-1155.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-HMOM"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+@OnTheFlyPostProcessing
+\end_layout
+
+\begin_layout Standard
+Dictionary specifying the details for carrying out on the fly post-processing
+ analyses.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-OnTheFlyPostProcessing"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+@FixedTemperatureProfile
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Dictionary defining the fixed temperature profile.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-XY-Profile"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+@InitialTemperatureProfile
+\end_layout
+
+\begin_layout Standard
+Dictionary describing the initial (i.e.
+ first-guess) temperature profile.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-XY-Profile"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+@Soret
+\end_layout
+
+\begin_layout Standard
+Add Soret effect (default: true).
+\end_layout
+
+\begin_layout Subsubsection*
+@Radiation
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Radiative heat transfer (default: false).
+ The optically thin model is currently the only approach available.
+\end_layout
+
+\begin_layout Subsubsection*
+@EnvironmentTemperature
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Environment temperature for radiative heat transfer calculations (default:
+ 298.15 K)
+\end_layout
+
+\begin_layout Subsubsection*
+@DerivativeGasMassFractions
+\end_layout
+
+\begin_layout Standard
+Derivative of mass fractions of gaseous species: 
+\family typewriter
+upwind
+\family default
+ | 
+\family typewriter
+backward
+\family default
+ | 
+\family typewriter
+forward
+\family default
+ | 
+\family typewriter
+centered
+\family default
+ (default: 
+\family typewriter
+backward
+\family default
+)
+\end_layout
+
+\begin_layout Subsubsection*
+@DerivativeGasTemperature
+\end_layout
+
+\begin_layout Standard
+Derivative of temperature: 
+\family typewriter
+upwind
+\family default
+ | 
+\family typewriter
+backward
+\family default
+ | 
+\family typewriter
+forward
+\family default
+ | 
+\family typewriter
+centered
+\family default
+ (default: 
+\family typewriter
+backward
+\family default
+)
+\end_layout
+
+\begin_layout Subsubsection*
+@InitialProfiles
+\end_layout
+
+\begin_layout Standard
+Type of initial profiles for species and temperature: 
+\family typewriter
+triangular
+\family default
+ | 
+\family typewriter
+linear
+\family default
+ (default) | 
+\family typewriter
+plateau
+\end_layout
+
+\begin_layout Subsubsection*
+@PeakPosition
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Position of peak of temperature (if not provided it will be assumed equal
+ to the position of the stagnation plane)
+\end_layout
+
+\begin_layout Subsubsection*
+@MixingZoneWidth
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Width of the mixing zone
+\end_layout
+
+\begin_layout Subsubsection*
+@EigenValueStartingGuess
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Starting guess value for the eigen value: default -100 kg/m3/s2
+\end_layout
+
+\begin_layout Subsubsection*
+@RadialGradientFuelSide
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Radial gradient on the fuel side: default 0 1/s
+\end_layout
+
+\begin_layout Subsubsection*
+@RadialGradientOxidizerSide
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Radial gradient on the oxidizer side: default 0 1/s
+\end_layout
+
+\begin_layout Subsubsection*
+@DepositionWall
+\end_layout
+
+\begin_layout Standard
+D
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+eposition wall for burner stabilized stagnation flame
+\end_layout
+
+\begin_layout Subsubsection*
+@LewisNumbers
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Dictionary containing the list of Lewis numbers of species
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-LewisNumbers"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+@GasReactionRateMultiplier
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Optional multiplying factor applied to all the reaction rates (default is
+ 1)
 \end_layout
 
 \begin_layout Section
@@ -11028,7 +15043,7 @@ kinetics.xml
 ).
  This file has to be generated using the 
 \family typewriter
-OpenSMOKE_CHEMKIN_Preprocessor
+OpenSMOKEpp_CHEMKIN_Preprocessor
 \family default
 .
  Instead of using this option, the user has the possibility to pre-process
@@ -11163,7 +15178,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="19" columns="3">
+<lyxtabular version="3" rows="18" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
@@ -11626,35 +15641,6 @@ reference "tab:FalseTransient-Parameters-dictio"
 \begin_inset Text
 
 \begin_layout Plain Layout
-@CheckMassFractions
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-BOOL
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Force non-negative mass fractions (default: false)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 @UseOdeSolver
 \end_layout
 
@@ -11841,7 +15827,7 @@ kinetics.xml
 ).
  This file has to be generated using the 
 \family typewriter
-OpenSMOKE_CHEMKIN_Preprocessor
+OpenSMOKEpp_CHEMKIN_Preprocessor
 \family default
 .
  Instead of using this option, the user has the possibility to pre-process
@@ -12064,14 +16050,6 @@ reference "tab:FalseTransient-Parameters-dictio"
 \end_inset
 
  to have more details.
-\end_layout
-
-\begin_layout Subsubsection*
-@CheckMassFractions
-\end_layout
-
-\begin_layout Standard
-Force non-negative mass fractions (default: false).
 \end_layout
 
 \begin_layout Subsubsection*
@@ -12553,7 +16531,7 @@ kinetics.xml
 ).
  This file has to be generated using the 
 \family typewriter
-OpenSMOKE_CHEMKIN_Preprocessor
+OpenSMOKEpp_CHEMKIN_Preprocessor
 \family default
 .
  Instead of using this option, the user has the possibility to pre-process
@@ -12679,6 +16657,7 @@ Dictionary: MicrogravityDroplet
 \begin_layout Standard
 This dictionary is used for setting the simulation for simulating evaporation
  and combustion of isolated fuel droplets in microgravity conditions.
+ Please, consider that the solver is still under development.
 \end_layout
 
 \begin_layout Standard
@@ -15158,7 +19137,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="3">
+<lyxtabular version="3" rows="7" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
@@ -15280,11 +19259,69 @@ Name of dictionary defining the properties of gas mixture
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 @GasPhaseReactions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reactions in the gaseous phase (default: true)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Buoyancy
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Buoyancy effects (default: false)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@NeglectVaporizationHeat
 \end_layout
 
 \end_inset
@@ -15302,7 +19339,7 @@ BOOL
 \begin_inset Text
 
 \begin_layout Plain Layout
-Reactions in the gaseous phase (default: true)
+Neglect vaporization heat (default: false)
 \end_layout
 
 \end_inset
@@ -15413,6 +19450,10 @@ Fiber
 
 \begin_layout Enumerate
 PolimiSoot
+\end_layout
+
+\begin_layout Enumerate
+HMOM
 \end_layout
 
 \begin_layout Enumerate
@@ -19094,6 +23135,12 @@ end{lstlisting}
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Sub-Dictionary-Adaptive-Grid1D"
+
+\end_inset
+
 Sub-Dictionary: Adaptive-Grid1D
 \end_layout
 
@@ -19722,6 +23769,12 @@ end{lstlisting}
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Sub-Dictionary-ODE-TridiagonalBlock-Parameters"
+
+\end_inset
+
 Sub-Dictionary: ODE-TridiagonalBlock-Parameters 
 \end_layout
 
@@ -20652,6 +24705,12 @@ end{lstlisting}
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Sub-Dictionary:-DAE-TridiagonalBlock-Parameters"
+
+\end_inset
+
 Sub-Dictionary: DAE-TridiagonalBlock-Parameters 
 \end_layout
 
@@ -21424,6 +25483,12 @@ end{lstlisting}
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Sub-Dictionary-NLS-TridiagonalBlock-Parameters"
+
+\end_inset
+
 Sub-Dictionary: NLS-TridiagonalBlock-Parameters 
 \end_layout
 
@@ -22182,6 +26247,12 @@ end{lstlisting}
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Sub-Dictionary-FalseTransient-Parameters"
+
+\end_inset
+
 Sub-Dictionary: FalseTransient-Parameters 
 \end_layout
 
@@ -23384,6 +27455,12 @@ end{lstlisting}
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Sub-Dictionary-Fiber"
+
+\end_inset
+
 Sub-Dictionary: Fiber
 \end_layout
 
@@ -23711,6 +27788,12 @@ Fiber dictionary
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Sub-Dictionary-PolimiSoot"
+
+\end_inset
+
 Sub-Dictionary: PolimiSoot
 \end_layout
 
@@ -24207,6 +28290,596 @@ PolimiSoot dictionary
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Sub-Dictionary-HMOM"
+
+\end_inset
+
+Sub-Dictionary: HMOM
+\end_layout
+
+\begin_layout Standard
+This dictionary can be used to manage/post-process the soot mechanism based
+ on the Hybrid Method of Moments (HMOM) developed by Mueller et al.
+ (described in 
+\series bold
+Mueller, M.
+ E.
+ and Blanquart, G.
+ and Pitsch, H.,
+\series default
+ 
+\shape italic
+Hybrid Method of Moments for modeling soot formation and growth
+\shape default
+ (2009), Combustion and Flame, 156 (6).
+ pp.
+ 1143-1155).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="17" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="3cm">
+<column alignment="center" valignment="top" width="14cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Option
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Meaning
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@HMOM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hybrid Method of Moments: on/off (default: true)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@NucleationModel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nucleation model: 0=off, 1=on (default: 1)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@SurfaceGrowthModel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Surface growth model: 0=off, 1=on (default: 1)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@OxidationModel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Oxidation model: 0=off, 1=on (default: 1)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@CondensationModel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Condensation model: 0=off, 1=on (default: 1)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@CoagulationModel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Coagulation model: 0=off, 1=on (default: 1)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@ContinousCoagulationModel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Continous coagulation model: 0=off, 1=on (default: 1)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@ThermophoreticModel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Thermophoretic model: 0=off, 1=on (default: 1)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@FractalDiameterModel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fractal diameter model: 0=off, 1=on (default: 1)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@CollisionDiameterModel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Collision diameter model: 1 or 2 (default: 2)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@NumberOfCarbonPAH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+INT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Number of carbon atoms in PAHs (default 16)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@PAH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STRINGS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Species to be assumed as PAH (example: 
+\family typewriter
+@PAH C10H8 BIN1A;
+\family default
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@PAHConsumption
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Consumption of PAH is accounted for (default: true)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@RadiativeHeatTransfer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Radiative heat transfer (default: true)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@PlanckCoefficient
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STRING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Calculation of Planck Coefficient: 
+\family typewriter
+Smooke
+\family default
+ (default) | 
+\family typewriter
+Kent
+\family default
+ | 
+\family typewriter
+Sazhin
+\family default
+ | 
+\family typewriter
+none
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@SchmidtNumber
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Schmidt number (default: 50)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:PolimiSoot-dictionary-1"
+
+\end_inset
+
+PolimiSoot dictionary
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Sub-Dictionary-OnTheFlyROPA"
+
+\end_inset
+
 Sub-Dictionary: OnTheFlyROPA
 \end_layout
 
@@ -24533,6 +29206,12 @@ OnTheFlyROPA dictionary
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Sub-Dictionary-OnTheFlyPostProcessing"
+
+\end_inset
+
 Sub-Dictionary: OnTheFlyPostProcessing
 \end_layout
 
@@ -24742,6 +29421,12 @@ OnTheFlyPostProcessing dictionary
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Sub-Dictionary-OnTheFlyCEMA"
+
+\end_inset
+
 Sub-Dictionary: OnTheFlyCEMA
 \end_layout
 
@@ -25000,6 +29685,12 @@ OnTheFlyCEMA dictionary
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Sub-Dictionary-LiquidMixture"
+
+\end_inset
+
 Sub-Dictionary: LiquidMixture
 \end_layout
 
@@ -25381,6 +30072,12 @@ LiquidMixture dictionary
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Sub-Dictionary-GasMixture"
+
+\end_inset
+
 Sub-Dictionary: GasMixture
 \end_layout
 
@@ -25486,6 +30183,160 @@ Raoult | PengRobinson
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:GasMixture-dictionary"
+
+\end_inset
+
+GasMixture dictionary
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Sub-Dictionary-LewisNumbers"
+
+\end_inset
+
+Sub-Dictionary: LewisNumbers
+\end_layout
+
+\begin_layout Standard
+This dictionary can be used to set the Lewis numbers of species.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="3cm">
+<column alignment="center" valignment="top" width="14cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Option
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Meaning
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Default
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Default Lewis numbers for species not available in the provided list
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Species
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+VECTOR_STRING_DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+List of Lewis numbrs for each species (example: 
+\family typewriter
+@Species CH4 0.90 N2 1.02;
+\family default
+).
+ If a species does not appear in the list, the 
+\family typewriter
+@Default
+\family default
+ Lewis number will be applied.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:GasMixture-dictionary-1"
 
 \end_inset
 
@@ -27291,10 +32142,80 @@ Publications using OpenSMOKE++
 \end_layout
 
 \begin_layout Standard
-These are most recent publications in which the OpenSMOKE++ framework was
- adopted.
- Please send us information about your publications using OpenSMOKE++ (alberto.cu
-oci@polimi.it).
+These are most recent publications in which 
+\family typewriter
+OpenSMOKE++
+\family default
+ was adopted.
+ Please send us information about your publications using 
+\family typewriter
+OpenSMOKE++
+\family default
+ (alberto.cuoci@polimi.it).
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Rodriguez, A., Herbinet, O., Meng, X., Fittschen, C., Wang, Z., Xing, L., Zhang,
+ L., Battin-Leclerc, F.
+
+\series default
+ Hydroperoxide Measurements during Low-Temperature Gas-Phase Oxidation of
+ n-Heptane and n-Decane (2017) Journal of Physical Chemistry A, 121 (9),
+ pp.
+ 1861-1876.
+ DOI: 10.1021/acs.jpca.6b10378
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Rodriguez, A., Herbinet, O., Wang, Z., Qi, F., Fittschen, C., Westmoreland, P.R.,
+ Battin-Leclerc, F.
+
+\series default
+ Measuring hydroperoxide chain-branching agents during n-pentane low-temperature
+ oxidation (2017) Proceedings of the Combustion Institute, 36 (1), pp.
+ 333-342.
+ DOI: 10.1016/j.proci.2016.05.044
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Pelucchi, M., Ranzi, E., Frassoldati, A., Faravelli, T.
+ 
+\series default
+Alkyl radicals rule the low temperature oxidation of long chain aldehydes
+ (2017) Proceedings of the Combustion Institute, 36 (1), pp.
+ 393-401.
+ DOI: 10.1016/j.proci.2016.05.051
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Tran, L.-S., Pieper, J., Carstensen, H.-H., Zhao, H., Graf, I., Ju, Y., Qi, F., Kohse-Höi
+nghaus, K.
+
+\series default
+ Experimental and kinetic modeling study of diethyl ether flames (2017)
+ Proceedings of the Combustion Institute, 36 (1), pp.
+ 1165-1173.
+ DOI: 10.1016/j.proci.2016.06.087
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Weber, I., Golka, L., Olzmann, M.
+ 
+\series default
+Thermal decomposition of propene: A shock-tube/H-ARAS and modeling study
+ (2017) Proceedings of the Combustion Institute, 36 (1), pp.
+ 299-306.
+ DOI: 10.1016/j.proci.2016.06.091
 \end_layout
 
 \begin_layout Itemize
@@ -27318,6 +32239,32 @@ Cell agglomeration algorithm for coupling microkinetic modeling and steady-state
  CFD simulations of catalytic reactors (2017) Computers and Chemical Engineering
 , 97, pp.
  175-182, DOI: 10.1016/j.compchemeng.2016.11.033
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Stagni, A., Esclapez, L., Govindaraju, P., Cuoci, A., Faravelli, T., Ihme, M.
+ 
+\series default
+The role of preferential evaporation on the ignition of multicomponent fuels
+ in a homogeneous spray/air mixture (2017) Proceedings of the Combustion
+ Institute, 36 (2), pp.
+ 2483-2491.
+ DOI: 10.1016/j.proci.2016.06.052
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Gentile, G., Debiagi, P.E.A., Cuoci, A., Frassoldati, A., Ranzi, E., Faravelli,
+ T.
+
+\series default
+ A computational framework for the pyrolysis of anisotropic biomass particles
+ (2017) Chemical Engineering Journal, 321, pp.
+ 458-473.
+ DOI: 10.1016/j.cej.2017.03.113
 \end_layout
 
 \begin_layout Itemize
