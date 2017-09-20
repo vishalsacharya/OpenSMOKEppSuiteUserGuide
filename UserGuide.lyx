@@ -5330,7 +5330,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="15" columns="3">
+<lyxtabular version="3" rows="17" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3cm">
@@ -5630,7 +5630,7 @@ For each reaction detailed information is reported on a file (kinetic constants,
 \begin_inset Text
 
 \begin_layout Plain Layout
-TODO
+LIST
 \end_layout
 
 \end_inset
@@ -5671,6 +5671,69 @@ BOOL
 \begin_layout Plain Layout
 For each reversible reaction the reverse kinetic constants are estimated
  assuming the Arrhenius' law 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@CollisionRateAnalysis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Collision rate analysis for bimolecular reactions is tuned on, in order
+ to recognize unfeasible kinetic parameters.
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@CollisionRateAnalysisListOfTemperatures
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+LIST
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+List of temperatures at which the collision rate analysis for bimolecular
+ reactions is carried on.
+ If not provided, the default list of temperatures is adopted (from 300
+ K to 2500 K, with increments of 100 K)
 \end_layout
 
 \end_inset
@@ -5965,6 +6028,80 @@ For each reversible reaction the reverse kinetic constants are estimated
 Reaction_FittedKinetics.out
 \family default
  file.
+\end_layout
+
+\begin_layout Subsubsection*
+@CollisionRateAnalysis
+\end_layout
+
+\begin_layout Subsubsection*
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Collision rate analysis for bimolecular reactions is tuned on, in order
+ to recognize unfeasible kinetic parameters.
+ Details about the analysis can be found in: 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+Chen D., Wang K., Wang H., 
+\series medium
+\shape italic
+Violation of collision limit in recently published reaction models
+\family roman
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+, Combustion and Flame 186, pp.
+ 208-210 (2017)
+\end_layout
+
+\begin_layout Subsubsection*
+
+@CollisionRateAnalysisListOfTemperatures
+\end_layout
+
+\begin_layout Subsubsection*
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+List of temperatures at which the collision rate analysis for bimolecular
+ reactions is carried on.
+ If not provided, the default list of temperatures is adopted (from 300
+ K to 2500 K, with increments of 100 K)
+
 \end_layout
 
 \begin_layout Subsubsection*
