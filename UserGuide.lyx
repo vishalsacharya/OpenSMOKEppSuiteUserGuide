@@ -97,7 +97,7 @@ The OpenSMOKE++ Suite
 \begin_inset Newline newline
 \end_inset
 
-Version 0.9.0
+Version 0.10.0
 \end_layout
 
 \begin_layout Standard
@@ -338,7 +338,7 @@ bigskip
 \end_layout
 
 \begin_layout Subsection*
-Main contributions
+Main contributors
 \end_layout
 
 \begin_layout Itemize
@@ -346,8 +346,9 @@ Main contributions
 \series bold
 Alberto Cuoci
 \series default
-: kernel and core functions, ideal reactors, 1D solvers, ODE, DAE and NLS
- solvers, CHEMKIN interpreter, graphical post-processor
+: kernel and core functions, ideal reactors, 1D-flame solvers, flamelet
+ solvers, ODE, DAE and NLS solvers, CHEMKIN interpreter, graphical post-processo
+r
 \end_layout
 
 \begin_layout Itemize
@@ -383,6 +384,14 @@ Mattia Bissoli
 \series default
 : interfaces with third-party ODE and DAE solvers, internal combustion enegines,
  sensitivity analysis
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Giancarlo Gentile
+\series default
+: reactor networks, heterogeneous gas-solid chemistry
 \end_layout
 
 \begin_layout Standard
@@ -1787,7 +1796,7 @@ reference "subsec:Notes-about-shared-libraries"
 \begin_layout Enumerate
 Unpack the 
 \family typewriter
-opensmoke++suite-0.9.0.tar.gz
+opensmoke++suite-0.10.0.tar.gz
 \family default
  file in the location you prefer using the following command:
 \begin_inset Separator latexpar
@@ -1810,7 +1819,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-tar -xzf opensmoke++suite-0.9.0.tar.gz
+tar -xzf opensmoke++suite-0.10.0.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
@@ -1964,7 +1973,7 @@ end{lstlisting}
 \begin_layout Standard
 As an example, if you unpacked the 
 \family typewriter
-opensmoke++suite-0.9.0.tar.gz
+opensmoke++suite-0.10.0.tar.gz
 \family default
  file directly in your home folder (
 \family typewriter
@@ -1986,12 +1995,12 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-export PATH=$PATH:$HOME/opensmoke++suite-0.9.0/bin
+export PATH=$PATH:$HOME/opensmoke++suite-0.10.0/bin
 \end_layout
 
 \begin_layout Plain Layout
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opensmoke++suite-0.9.0/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opensmoke++suite-0.10.0/lib
 \end_layout
 
 \begin_layout Plain Layout
@@ -2666,7 +2675,7 @@ https://gcc.gnu.org/wiki/GFortranBinaries#MacOS
 \begin_layout Enumerate
 Unpack the 
 \family typewriter
-opensmoke++suite-0.9.0-macos.tar.gz
+opensmoke++suite-0.10.0-macos.tar.gz
 \family default
  file in the location you prefer using the following command:
 \begin_inset Separator latexpar
@@ -2689,7 +2698,7 @@ begin{lstlisting}[style=codesingleline]
 
 \begin_layout Plain Layout
 
-tar -xzf opensmoke++suite-0.9.0-macos.tar.gz
+tar -xzf opensmoke++suite-0.10.0-macos.tar.gz
 \end_layout
 
 \begin_layout Plain Layout
@@ -2757,7 +2766,7 @@ end{lstlisting}
 \begin_layout Standard
 As an example, if you unpacked the 
 \family typewriter
-opensmoke++suite-0.9.0-macos.tar.gz
+opensmoke++suite-0.10.0-macos.tar.gz
 \family default
  file directly in your home folder (
 \family typewriter
@@ -2770,7 +2779,7 @@ $HOME
 
 \family typewriter
 \color black
-export PATH=$PATH:$HOME/opensmoke++suite-0.9.0-macos/bin
+export PATH=$PATH:$HOME/opensmoke++suite-0.10.0-macos/bin
 \end_layout
 
 \end_deeper
@@ -3022,7 +3031,7 @@ $HOME
 
 \family typewriter
 \color black
-$HOME/opensmoke++suite-0.9.0-macos/
+$HOME/opensmoke++suite-0.10.0-macos/
 \color inherit
 bin/OpenSMOKEpp_PostProcessor.sh.app
 \end_layout
@@ -5330,7 +5339,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="17" columns="3">
+<lyxtabular version="3" rows="18" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3cm">
@@ -5834,11 +5843,41 @@ CHEMKIN
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 @SpeciesBundling
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Enables the species bundling technique for the fast estimation of mass diffusion
+ coefficients (default: false)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@ChebyshevFitting
 \end_layout
 
 \end_inset
@@ -5856,8 +5895,8 @@ BOOL
 \begin_inset Text
 
 \begin_layout Plain Layout
-Enables the species bundling technique for the fast estimation of mass diffusion
- coefficients (default: false)
+For each Chebysheve reaction (if any), the corresponding kinetic constant
+ is fitted assuming the Arrhenius' law
 \end_layout
 
 \end_inset
@@ -6034,7 +6073,7 @@ Reaction_FittedKinetics.out
 @CollisionRateAnalysis
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Standard
 
 \family roman
 \series medium
@@ -6080,11 +6119,10 @@ Violation of collision limit in recently published reaction models
 \end_layout
 
 \begin_layout Subsubsection*
-
 @CollisionRateAnalysisListOfTemperatures
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Standard
 
 \family roman
 \series medium
@@ -6101,7 +6139,6 @@ List of temperatures at which the collision rate analysis for bimolecular
  reactions is carried on.
  If not provided, the default list of temperatures is adopted (from 300
  K to 2500 K, with increments of 100 K)
-
 \end_layout
 
 \begin_layout Subsubsection*
@@ -6247,6 +6284,28 @@ Diffusion coefficient reduction through species bundling
 \color none
 , Combustion and Flame, 148(3), p.
  117-126 (2007)
+\end_layout
+
+\begin_layout Subsubsection*
+@ChebyshevFitting
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+For each Chebysheve reaction (if any), the corresponding kinetic constant
+ is fitted assuming the Arrhenius' law
+.
 \end_layout
 
 \begin_layout Section
@@ -19334,7 +19393,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="7" columns="3">
+<lyxtabular version="3" rows="9" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
@@ -19514,7 +19573,7 @@ Buoyancy effects (default: false)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -19523,7 +19582,7 @@ Buoyancy effects (default: false)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -19532,11 +19591,73 @@ BOOL
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 Neglect vaporization heat (default: false)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@ConvectiveVelocity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MEASURE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The effect of convective velocity on the mass and heat transfer is simulated.
+ The user has to provide the mean value of convective velocity to be simulated
+ (default: 0)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@CoefficientConvectiveVelocity
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A user-defined correction coefficient can be applied to the mass and heat
+ transfer coefficients modified by the @CoefficientConvectiveVelocity option
+ (default: 1)
 \end_layout
 
 \end_inset
@@ -32807,6 +32928,31 @@ OpenSMOKE++
 \begin_layout Itemize
 
 \series bold
+Stagni, A., Brignoli, D., Cinquanta, M., Cuoci, A., Frassoldati, A., Ranzi, E.,
+ Faravelli, T.
+
+\series default
+ The influence of low-temperature chemistry on partially-premixed counterflow
+ n-heptane/air flames (2018) Combustion and Flame, 188, pp.
+ 440-452.
+ DOI: 10.1016/j.combustflame.2017.10.002
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Li, Z., Cuoci, A., Sadiki, A., Parente, A.
+
+\series default
+ Comprehensive numerical study of the Adelaide Jet in Hot-Coflow burner
+ by means of RANS and detailed chemistry (2017) Energy, 139, pp.
+ 555-570.
+ DOI: 10.1016/j.energy.2017.07.132
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
 Rodriguez, A., Herbinet, O., Meng, X., Fittschen, C., Wang, Z., Xing, L., Zhang,
  L., Battin-Leclerc, F.
 
@@ -32829,6 +32975,29 @@ Rodriguez, A., Herbinet, O., Wang, Z., Qi, F., Fittschen, C., Westmoreland, P.R.
  oxidation (2017) Proceedings of the Combustion Institute, 36 (1), pp.
  333-342.
  DOI: 10.1016/j.proci.2016.05.044
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Pelucchi, M., Bissoli, M., Rizzo, C., Zhang, Y., Somers, K., Frassoldati, A.,
+ Curran, H., Faravelli, T.
+
+\series default
+ A Kinetic Modelling Study of Alcohols Operating Regimes in a HCCI Engine
+ (2017) SAE International Journal of Engines, 10 (5), DOI: 10.4271/2017-24-0077
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Li, Z., Malik, M.R., Cuoci, A., Parente, A.
+
+\series default
+ edcSMOKE: A new combustion solver for stiff chemistry based on OpenFOAM®
+ (2017) AIP Conference Proceedings, 1863, art.
+ no.
+ 180004
 \end_layout
 
 \begin_layout Itemize
