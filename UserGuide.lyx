@@ -147,7 +147,7 @@ Copyrights
 \end_layout
 
 \begin_layout Standard
-OpenSMOKE++ Suite© Copyright 2008-2017 by Alberto Cuoci
+OpenSMOKE++ Suite© Copyright 2008-2018 by Alberto Cuoci
 \begin_inset Newline newline
 \end_inset
 
@@ -6304,8 +6304,7 @@ Diffusion coefficient reduction through species bundling
 \noun off
 \color none
 For each Chebysheve reaction (if any), the corresponding kinetic constant
- is fitted assuming the Arrhenius' law
-.
+ is fitted assuming the Arrhenius' law.
 \end_layout
 
 \begin_layout Section
@@ -6331,7 +6330,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="22" columns="3">
+<lyxtabular version="3" rows="23" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="5cm">
 <column alignment="center" valignment="top" width="3.5cm">
@@ -7105,7 +7104,7 @@ reference "sec:Sub-Dictionary-OnTheFlyPostProcessing"
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -7114,7 +7113,7 @@ reference "sec:Sub-Dictionary-OnTheFlyPostProcessing"
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -7123,7 +7122,7 @@ SUBDICT [Polimi-Soot]
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -7133,6 +7132,43 @@ Dictionary defining the rules for analyzing soot calculated using the Polimi
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Sub-Dictionary-PolimiSoot"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@IgnitionDelayTimes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SUBDICT [IgnitionDelayTimes]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dictionary defining the options for calculating the ignition delay times.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Ignition-Delay-Times"
 
 \end_inset
 
@@ -7622,6 +7658,22 @@ ilized stagnation ethylene flame
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Sub-Dictionary-PolimiSoot"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+@IgnitionDelayTimes
+\end_layout
+
+\begin_layout Standard
+Dictionary defining the options for calculating the ignition delay times.
+ See Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sub-Dictionary-Ignition-Delay-Times"
 
 \end_inset
 
@@ -19794,6 +19846,14 @@ LiquidMixture
 GasMixture
 \end_layout
 
+\begin_layout Enumerate
+LewisNumbers
+\end_layout
+
+\begin_layout Enumerate
+AutoignitionDelayTimes
+\end_layout
+
 \begin_layout Section
 Sub-Dictionary: Comments
 \end_layout
@@ -30664,6 +30724,430 @@ GasMixture dictionary
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Sub-Dictionary-Ignition-Delay-Times"
+
+\end_inset
+
+Sub-Dictionary: AutoignitionDelayTimes
+\end_layout
+
+\begin_layout Standard
+This dictionary can be used to specify the options to calculate the ignition
+ delay times in non-isothermal batch reactors.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="3cm">
+<column alignment="center" valignment="top" width="14cm">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Option
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Meaning
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Temperature
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The ignition delay time is calculated on the basis of the slope of temperature
+ (default: true)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Pressure
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The ignition delay time is calculated on the basis of the slope of pressure
+ (default: true)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@Species
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+LIST_STRINGS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+List of species names to be used for calculating the ignition delay times
+ (based and their maximum value and/or the maximum slope of their mole fractions
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@SpeciesThreshold
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DOUBLE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Minimum mole fraction of selected species to activate the evaluation of
+ ignition delay times (default: 1e-12)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@SpeciesSlope
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BOOL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The ignition delay times are calculated also on the basis of slope of mole
+ fractions of species (default: true)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MinimumTime
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MEASURE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Minimum time to activate the evalution of ignition delay times (default:
+ 1e-12 s)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+@MinimumTimeInterval
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MEASURE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Minimum time interval for calculating the slopes of relevant quantity (default:
+ 1e-12 s)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Ignition-delay-times-dictionary"
+
+\end_inset
+
+Ignition delay times dictionary
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Additional comments
+\end_layout
+
+\begin_layout Subsubsection*
+@Temperature
+\end_layout
+
+\begin_layout Standard
+The ignition delay time is calculated on the basis of the slope of temperature
+ (default: true)
+\end_layout
+
+\begin_layout Subsubsection*
+@Pressure
+\end_layout
+
+\begin_layout Standard
+The ignition delay time is calculated on the basis of the slope of pressure
+ (default: true)
+\end_layout
+
+\begin_layout Subsubsection*
+@Species
+\end_layout
+
+\begin_layout Standard
+List of species names to be used for calculating the ignition delay times
+ (based and their maximum value and/or the maximum slope of their mole fractions
+)
+\end_layout
+
+\begin_layout Subsubsection*
+@SpeciesThreshold
+\end_layout
+
+\begin_layout Standard
+Minimum mole fraction of selected species to activate the evaluation of
+ ignition delay times (default: 1e-12)
+\end_layout
+
+\begin_layout Subsubsection*
+@SpeciesSlope
+\end_layout
+
+\begin_layout Standard
+The ignition delay times are calculated also on the basis of slope of mole
+ fractions of species (default: true)
+\end_layout
+
+\begin_layout Subsubsection*
+@MinimumTime
+\end_layout
+
+\begin_layout Standard
+Minimum time to activate the evalution of ignition delay times (default:
+ 1e-12 s)
+\end_layout
+
+\begin_layout Subsubsection*
+@MinimumTimeInterval
+\end_layout
+
+\begin_layout Standard
+Minimum time interval for calculating the slopes of relevant quantity (default:
+ 1e-12 s)
+\end_layout
+
+\begin_layout Subsection
+Example
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[style=codefragment]
+\end_layout
+
+\begin_layout Plain Layout
+
+Dictionary ignition-delay-times 
+\end_layout
+
+\begin_layout Plain Layout
+
+{ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@Temperature    true; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@Pressure       true; 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	@Species        OH CH; 
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
 \end_layout
 
 \end_inset
